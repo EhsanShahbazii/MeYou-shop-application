@@ -1,0 +1,14 @@
+.anchor1{
+   -fx-background-color: linear-gradient(to right top, #06306d, #933a89, #f54e72, #ff9a3a, #fff805);
+   -fx-background-radius: 15px;
+}
+
+.anchor2{
+-fx-background-color: rgb(255,255,255);
+-fx-background-radius: 15px;
+}
+
+.LoginBtn{
+-fx-background-color: #FFC75F;
+-fx-background-radius: 10px;
+}
