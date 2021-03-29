@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="789.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="789.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.Login">
    <children>
       <AnchorPane layoutX="276.0" layoutY="140.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="47.0">
          <children>
@@ -22,15 +22,15 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <JFXTextField labelFloat="true" layoutX="80.0" layoutY="100.0" prefHeight="26.0" prefWidth="230.0" promptText="Username">
+                  <JFXTextField fx:id="userNameTextField" labelFloat="true" layoutX="80.0" layoutY="100.0" prefHeight="26.0" prefWidth="230.0" promptText="Username">
                      <font>
                         <Font size="15.0" />
                      </font></JFXTextField>
-                  <JFXButton layoutX="80.0" layoutY="255.0" prefHeight="28.0" prefWidth="91.0" styleClass="LoginBtn" stylesheets="@../../LoginStyle.css" text="Login">
+                  <JFXButton fx:id="LoginButton" layoutX="80.0" layoutY="255.0" onAction="#login" prefHeight="28.0" prefWidth="91.0" styleClass="LoginBtn" stylesheets="@../../LoginStyle.css" text="Login">
                      <font>
                         <Font size="14.0" />
                      </font></JFXButton>
-                  <JFXPasswordField labelFloat="true" layoutX="80.0" layoutY="187.0" prefHeight="26.0" prefWidth="230.0" promptText="Password">
+                  <JFXPasswordField fx:id="passwordTextField" labelFloat="true" layoutX="80.0" layoutY="187.0" prefHeight="26.0" prefWidth="230.0" promptText="Password">
                      <font>
                         <Font size="15.0" />
                      </font></JFXPasswordField>
@@ -79,7 +79,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <JFXButton layoutX="187.0" layoutY="225.0" text="Create new Account" textFill="#6242ff" />
+                  <JFXButton fx:id="createNewAccountButton" layoutX="187.0" layoutY="225.0" onAction="#createNewAccount" text="Create new Account" textFill="#6242ff" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="25.0" layoutY="47.0" prefHeight="373.0" prefWidth="400.0" styleClass="anchor1" stylesheets="@../css/LoginStyle.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="352.0" AnchorPane.topAnchor="19.0">
