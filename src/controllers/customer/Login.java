@@ -41,7 +41,15 @@ public class Login {
 
     @FXML
     void login(ActionEvent event) throws IOException {
-
+        Stage primaryStage = (Stage) createNewAccountButton.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../../pages/customer/MainPage.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("You and Me");
+        primaryStage.setScene(scene);
+        primaryStage.setX(450);
+        primaryStage.setY(100);
+        scene.setFill(Color.TRANSPARENT);
+        primaryStage.show();
     }
 
 }
