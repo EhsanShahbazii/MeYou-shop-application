@@ -12,7 +12,7 @@ public class LoginCustomer {
 
         try {
             //count lines of files in userInformation file
-            Scanner scanner1 = new Scanner(new File("D:\\project final\\src\\files\\data\\usersInformation.txt"));
+            Scanner scanner1 = new Scanner(new File("D:\\project final\\src\\files\\data\\usernameAndPassword.txt"));
             while (scanner1.hasNextLine()) {
                 lineCount++;
                 scanner1.nextLine();
@@ -22,7 +22,7 @@ public class LoginCustomer {
             //add username and password in array
             String[] counter = new String[lineCount];
             int correctIndex = 0;
-            Scanner scanner2 = new Scanner(new File("D:\\project final\\src\\files\\data\\usersInformation.txt"));
+            Scanner scanner2 = new Scanner(new File("D:\\project final\\src\\files\\data\\usernameAndPassword.txt"));
             while (scanner2.hasNextLine()) {
                 counter[index] = scanner2.nextLine();
                 index++;
