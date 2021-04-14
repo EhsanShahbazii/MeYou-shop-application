@@ -2,6 +2,7 @@ package modules.files;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 public class SigninCustomer {
@@ -37,7 +38,7 @@ public class SigninCustomer {
                 }
             }
             //check data is correct or not
-            if (username.equals(counter[correctIndex]) ){
+            if (username.equals(counter[correctIndex])){
                 state = true;
             }
 
@@ -48,4 +49,15 @@ public class SigninCustomer {
         //send state and show this data is true or not
         return state;
     }
+
+    public void usernameAndPasswordOfNewCustomer(String username, String password) {
+        try {
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\usernameAndPassword.txt", "rw");
+            Library.seek(Library.length());
+            Library.writeBytes(username + "\n" + password + "\n");
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
 }
