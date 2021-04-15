@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import modules.files.SigninCustomer;
 import modules.tools.GlobalTools;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class Signin {
@@ -61,33 +62,42 @@ public class Signin {
     @FXML
     void createAccount(ActionEvent event) {
 
+        String fullName = fullNameTextField.getText();
+        String username = usernameTextField.getText();
+        String password = passwordTextField.getText();
+        String repeatPassword = repeatPasswordTextField.getText();
+        String email = emailTextField.getText();
+        String phoneNumber = phoneNumberTextField.getText();
+        String address = addressTextArea.getText();
+
         //check that the fields are full or not
-        if (fullNameTextField.getText().isEmpty())
+        if (fullName.isEmpty())
             globalTools.AlertShow("Please enter your full name.");
-        else if (usernameTextField.getText().isEmpty())
+        else if (username.isEmpty())
             globalTools.AlertShow("Please enter your username.");
-        else if (passwordTextField.getText().isEmpty())
+        else if (password.isEmpty())
             globalTools.AlertShow("Please enter your password.");
-        else if (repeatPasswordTextField.getText().isEmpty())
+        else if (repeatPassword.isEmpty())
             globalTools.AlertShow("Please repeat your password.");
-        else if (emailTextField.getText().isEmpty())
+        else if (email.isEmpty())
             globalTools.AlertShow("Please enter your email.");
-        else if (phoneNumberTextField.getText().isEmpty())
+        else if (phoneNumber.isEmpty())
             globalTools.AlertShow("Please enter your phone number.");
-        else if (addressTextArea.getText().isEmpty())
+        else if (address.isEmpty())
             globalTools.AlertShow("Please enter your address.");
-        else if (!(passwordTextField.getText().equals(repeatPasswordTextField.getText())))
+        else if (!password.equals(repeatPassword))
             globalTools.AlertShow("password and repeat password not equals.");
-        else if (!globalTools.OnlyDigits(phoneNumberTextField.getText()))
+        else if (!globalTools.OnlyDigits(phoneNumber))
             globalTools.AlertShow("please enter just number in phone number.");
-        else if (phoneNumberTextField.getText().length() < 11)
+        else if (phoneNumber.length() < 11)
             globalTools.AlertShow("phone number should be 11 digits.");
-        else if (signinCustomer.checkSameUserOrNot(usernameTextField.getText())) {
+        else if (signinCustomer.checkSameUserOrNot(username)) {
             //checkSameUserOrNot() methods check it username is repetitious or not
             globalTools.AlertShow("this username in invalid. try another.");
         }else {
-            signinCustomer.usernameAndPasswordOfNewCustomer(usernameTextField.getText(), passwordTextField.getText());
-            
+            signinCustomer.usernameAndPasswordOfNewCustomer(username, password);
+            signinCustomer.signinNewCustomer(fullName, username, password, email, phoneNumber, address);
+            JOptionPane.showMessageDialog(null, "Registration was successful!", "Registration", JOptionPane.INFORMATION_MESSAGE);
 
             globalTools.clearFields(fullNameTextField, usernameTextField, emailTextField, phoneNumberTextField, addressTextArea, passwordTextField, repeatPasswordTextField);
         }
