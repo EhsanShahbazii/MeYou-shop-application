@@ -14,10 +14,12 @@ import java.io.IOException;
 
 public class Signin {
 
+    //variables which are used
     SigninCustomer signinCustomer = new SigninCustomer();
     GlobalTools globalTools = new GlobalTools();
 
     public void initialize() {
+        //limit text field length
         globalTools.LimitedTextField(fullNameTextField, 20);
         globalTools.LimitedTextField(usernameTextField, 20);
         globalTools.LimitedTextField(passwordTextField, 20);
@@ -54,14 +56,17 @@ public class Signin {
     @FXML
     private JFXButton backToLogin;
 
+    //open login pages and close current page
     @FXML
     void backToLogin(ActionEvent event) throws IOException {
         globalTools.OpenNewPage(backToLogin, "../../pages/customer/LoginPage.fxml", "Login");
     }
 
+    //add sign in logic in below
     @FXML
     void createAccount(ActionEvent event) {
 
+        //save text field data in variables
         String fullName = fullNameTextField.getText();
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
@@ -95,10 +100,13 @@ public class Signin {
             //checkSameUserOrNot() methods check it username is repetitious or not
             globalTools.AlertShow("this username in invalid. try another.");
         }else {
+            //write username and password in usernameAndPassword.txt file
             signinCustomer.usernameAndPasswordOfNewCustomer(username, password);
+            //write all information of customer in userInformation.txt file
             signinCustomer.signinNewCustomer(fullName, username, password, email, phoneNumber, address);
+            //show message when the register logic is not problem
             JOptionPane.showMessageDialog(null, "Registration was successful!", "Registration", JOptionPane.INFORMATION_MESSAGE);
-
+            //clear text fields when register was successful
             globalTools.clearFields(fullNameTextField, usernameTextField, emailTextField, phoneNumberTextField, addressTextArea, passwordTextField, repeatPasswordTextField);
         }
     }
