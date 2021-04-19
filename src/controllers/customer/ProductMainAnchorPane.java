@@ -31,6 +31,14 @@ public class ProductMainAnchorPane {
     private Text productCountText;
 
     @FXML
+    private JFXButton buyItButton;
+
+    @FXML
+    void buyProduct(ActionEvent event) {
+
+    }
+
+    @FXML
     void productIncreaseCounterAction(ActionEvent event) {
 
     }
