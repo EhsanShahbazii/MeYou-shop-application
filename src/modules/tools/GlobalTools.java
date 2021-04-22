@@ -13,6 +13,15 @@ import java.io.IOException;
 
 public class GlobalTools {
 
+    //refund method for personal information field
+    public String makeRefund(String phoneNumber) {
+        long number = Long.parseLong(phoneNumber);
+        number*=7;
+        //create refund and format is IR12345667894
+        String refund = "IR0010" + Long.toString(number);
+        return refund;
+    }
+
     private final Alert alert = new Alert(Alert.AlertType.ERROR);
     //set ERROR Alert with content
     public void AlertShow(String content) {

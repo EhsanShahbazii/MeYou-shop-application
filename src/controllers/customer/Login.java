@@ -18,6 +18,7 @@ public class Login {
     public LoginCustomer loginCustomer = new LoginCustomer();
     public GlobalTools globalTools = new GlobalTools();
     String username, password;
+    public static boolean loginIsDone = false;
 
     public void initialize() {
         //limit text field length
@@ -64,6 +65,7 @@ public class Login {
             //set username and password of current customer
             customer.setUsername(username);
             customer.setPassword(password);
+            loginIsDone = true;
 
             //open new main page and close login pages
             globalTools.OpenNewPageXY(LoginButton, "../../pages/customer/MainPage.fxml", "You and Me", 450, 100);
