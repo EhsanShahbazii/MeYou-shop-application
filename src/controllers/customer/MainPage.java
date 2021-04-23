@@ -21,6 +21,7 @@ import java.io.IOException;
 
 public class MainPage {
 
+    //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
 
@@ -47,7 +48,41 @@ public class MainPage {
             phoneNumberTextField.setText(customerPhoneNumber);
             addressTextArea.setText(customerAddress);
             refundMethodTextField.setText(customerRefund);
+
+            //limit text field length
+            globalTools.LimitedTextField(fullNameTextField, 20);
+            globalTools.LimitedTextField(usernameTextField, 20);
+            globalTools.LimitedTextField(emailTextField, 26);
+            globalTools.LimitedTextField(phoneNumberTextField, 11);
+            globalTools.LimitedTextArea(addressTextArea, 60);
         }
+    }
+
+    public boolean exceptionForFields() {
+        boolean state = false;
+        //save text field data in variables
+        String fullName = fullNameTextField.getText();
+        String username = usernameTextField.getText();
+        String email = emailTextField.getText();
+        String phoneNumber = phoneNumberTextField.getText();
+        String address = addressTextArea.getText();
+
+        //check that the fields are full or not
+        if (fullName.isEmpty())
+            globalTools.AlertShow("Please enter your full name.");
+        else if (email.isEmpty())
+            globalTools.AlertShow("Please enter your email.");
+        else if (phoneNumber.isEmpty())
+            globalTools.AlertShow("Please enter your phone number.");
+        else if (address.isEmpty())
+            globalTools.AlertShow("Please enter your address.");
+        else if (!globalTools.OnlyDigits(phoneNumber))
+            globalTools.AlertShow("please enter just number in phone number.");
+        else if (phoneNumber.length() < 11)
+            globalTools.AlertShow("phone number should be 11 digits.");
+        else
+            state = true;
+        return state;
     }
 
     @FXML
@@ -185,26 +220,35 @@ public class MainPage {
 
     }
 
+    //use for change state of edit button in personal information part
     boolean reAgain = false;
     @FXML
     void editInformationAction(ActionEvent event) {
         if (reAgain) {
+            //change button text to edit and change style
             editInformationButton.setText("Edit");
             editInformationButton.setStyle("-fx-background-color: #0CF485; -fx-background-radius: 16px;");
 
+            //text fields are not editable
             fullNameTextField.setEditable(false);
             emailTextField.setEditable(false);
             phoneNumberTextField.setEditable(false);
             addressTextArea.setEditable(false);
+            exceptionForFields();
+            //change state
             reAgain = false;
         }else {
+            //change button text to done and change style
             editInformationButton.setText("Done");
             editInformationButton.setStyle("-fx-background-color: #FFAB0F; -fx-background-radius: 16px;");
 
+            //text fields are editable
             fullNameTextField.setEditable(true);
             emailTextField.setEditable(true);
             phoneNumberTextField.setEditable(true);
             addressTextArea.setEditable(true);
+            exceptionForFields();
+            //change state
             reAgain = true;
         }
     }
