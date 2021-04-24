@@ -68,4 +68,24 @@ public class GlobalFileTools {
         }
         return data;
     }
+
+    public String returnWalletBalance(String username) {
+        int usernameIndex = 0;
+        String walletBalance = "0";
+        try {
+            Scanner scanner = new Scanner(new File("D:\\project final\\src\\files\\data\\userWalletBalance.txt"));
+            while (scanner.hasNextLine()) {
+                String user = scanner.nextLine();
+                usernameIndex++;
+                //try to found username and then return wallet balance current customer
+                if (username.equals(user)) {
+                    String[] files = fileAllRead("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+                    walletBalance = files[usernameIndex];
+                }
+            }
+        } catch (FileNotFoundException exception) {
+            exception.printStackTrace();
+        }
+        return walletBalance;
+    }
 }

@@ -163,7 +163,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="deleteCartButton" layoutX="42.0" layoutY="367.0" onAction="#deleteCartAcion" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
+                                    <JFXButton fx:id="deleteCartButton" layoutX="42.0" layoutY="367.0" onAction="#deleteCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
