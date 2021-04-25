@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +26,8 @@ public class MainPage {
     //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
+
+    final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
 
     public void initialize() {
 
@@ -61,10 +65,15 @@ public class MainPage {
             globalTools.LimitedTextField(emailTextField, 26);
             globalTools.LimitedTextField(phoneNumberTextField, 11);
             globalTools.LimitedTextArea(addressTextArea, 60);
+
+            //set data in comboBox in wallet balance
+            chargeComboBox.setItems(walletComboBoxType);
+            chargeComboBox.getSelectionModel().select("Favori");
+
         }
     }
 
-    public boolean exceptionForFields() {
+    public void exceptionForFields() {
         boolean state = false;
         //save text field data in variables
         String fullName = fullNameTextField.getText();
@@ -88,7 +97,6 @@ public class MainPage {
             globalTools.AlertShow("phone number should be 11 digits.");
         else
             state = true;
-        return state;
     }
 
     @FXML
@@ -188,7 +196,7 @@ public class MainPage {
     private JFXButton chargeBtn;
 
     @FXML
-    private JFXComboBox<?> chargeComboBox;
+    private JFXComboBox<String> chargeComboBox;
 
     @FXML
     private JFXTextField fullNameTextField;
