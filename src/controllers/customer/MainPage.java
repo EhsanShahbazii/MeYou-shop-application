@@ -11,14 +11,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
+import java.io.File;
 import java.io.IOException;
 
 public class MainPage {
@@ -68,7 +74,7 @@ public class MainPage {
 
             //set data in comboBox in wallet balance
             chargeComboBox.setItems(walletComboBoxType);
-            chargeComboBox.getSelectionModel().select("Favori");
+            chargeComboBox.getSelectionModel().select("Favorite");
 
         }
     }
@@ -220,6 +226,12 @@ public class MainPage {
     private JFXButton logoutButton;
 
     @FXML
+    private Button profileImageButton;
+
+    @FXML
+    private ImageView imageviewProfile;
+
+    @FXML
     void deleteCartAction(ActionEvent event) {
 
     }
@@ -284,4 +296,21 @@ public class MainPage {
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
     }
+
+    @FXML
+    void changeProfileImageAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();   //create file chooser
+        File file = fileChooser.showOpenDialog(null);   //get file(pic) path
+
+        if (file != null){
+            String path;
+            path = file.getAbsolutePath();
+            File files = new File(path);
+            Image image = new Image(files.toURI().toString());
+            imageviewProfile.setImage(image);
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture");   //show Error alert
+        }
+    }
+
 }
