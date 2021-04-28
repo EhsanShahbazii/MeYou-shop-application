@@ -33,6 +33,7 @@ public class MainPage {
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
 
+    //this list use for items of charge wallet combo box
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
 
     public void initialize() {
@@ -53,6 +54,9 @@ public class MainPage {
 
             //create refund method of customer
             String customerRefund = globalTools.makeRefund(customerPhoneNumber);
+
+            //get user profile image path
+            String userProfileImagePath = globalFileTools.userImageProfilePath(customerUsername);
 
             //set data in own fields in personal information field
             fullNameTextField.setText(customerFullName);
@@ -76,9 +80,14 @@ public class MainPage {
             chargeComboBox.setItems(walletComboBoxType);
             chargeComboBox.getSelectionModel().select("Favorite");
 
+            //set user profile image
+            File files = new File(userProfileImagePath);
+            Image image = new Image(files.toURI().toString());
+            imageviewProfile.setImage(image);
         }
     }
 
+    //this is Exception methods for text field if they are empty or invalid
     public void exceptionForFields() {
         boolean state = false;
         //save text field data in variables
@@ -284,6 +293,7 @@ public class MainPage {
         }
     }
 
+    //close main page and open new login page
     @FXML
     void logoutAction(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) logoutButton.getScene().getWindow();
@@ -299,8 +309,8 @@ public class MainPage {
 
     @FXML
     void changeProfileImageAction(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();   //create file chooser
-        File file = fileChooser.showOpenDialog(null);   //get file(pic) path
+        FileChooser fileChooser = new FileChooser(); //create file chooser
+        File file = fileChooser.showOpenDialog(null); //get file(pic) path
 
         if (file != null){
             String path;
@@ -309,7 +319,7 @@ public class MainPage {
             Image image = new Image(files.toURI().toString());
             imageviewProfile.setImage(image);
         }else {
-            Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture");   //show Error alert
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
     }
 
