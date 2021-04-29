@@ -94,7 +94,7 @@ public class GlobalFileTools {
     public String userImageProfilePath(String username) {
         int usernameIndex = 0;
         //this is default image path for show in image view
-        String imagePath = "D:\\project final\\src\\files\\image\\icon\\Man-16-icon.png";
+        String imagePath = "D:\\project final\\src\\files\\image\\profile image\\Man-16-icon.png";
         try {
             Scanner scanner = new Scanner(new File("D:\\project final\\src\\files\\data\\userProfileImage.txt"));
             while (scanner.hasNextLine()) {
