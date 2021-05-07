@@ -261,13 +261,13 @@ public class MainPage {
     }
 
     @FXML
-    void chargeWalletAction(ActionEvent event) throws IOException {
+    void chargeWalletAction(ActionEvent event) throws IOException, InterruptedException {
 
         chargeAmount = chargeComboBox.getValue();
         refundMethod = refundMethodTextField.getText();
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/pages/bankingPortal/bankingPortal.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/pages/bankingPortal/loadingPage.fxml"));
         //if "fx:controller" is not set in fxml
         //fxmlLoader.setController(NewWindowController);
         Scene scene = new Scene(fxmlLoader.load());
