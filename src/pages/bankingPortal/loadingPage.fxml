@@ -5,14 +5,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="loadingAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 32px; -fx-background-color: #DFDDCE;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.bankingPortal.LoadingPage">
+<AnchorPane fx:id="loadingAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 32px; -fx-background-color: white;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.bankingPortal.LoadingPage">
    <children>
-      <Text fx:id="loadingText" layoutX="61.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connecting...">
+      <Text fx:id="loadingText" layoutX="58.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connecting...">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <ImageView fx:id="imageview" fitHeight="40.0" fitWidth="40.0" layoutX="15.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview" fitHeight="40.0" fitWidth="40.0" layoutX="12.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
       
    </children>
 </AnchorPane>
