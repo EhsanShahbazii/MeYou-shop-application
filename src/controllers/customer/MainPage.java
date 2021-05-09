@@ -266,19 +266,7 @@ public class MainPage {
         chargeAmount = chargeComboBox.getValue();
         refundMethod = refundMethodTextField.getText();
 
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/pages/bankingPortal/loadingPage.fxml"));
-        //if "fx:controller" is not set in fxml
-        //fxmlLoader.setController(NewWindowController);
-        Scene scene = new Scene(fxmlLoader.load());
-        scene.setFill(Color.TRANSPARENT);
-        Stage stage = new Stage();
-        stage.setTitle("banking portal");
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setX(650);
-        stage.setY(130);
-        stage.show();
+        globalTools.connectToBankingPortal();
     }
 
     //use for change state of edit button in personal information part
