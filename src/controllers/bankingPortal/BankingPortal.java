@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import controllers.customer.MainPage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -12,14 +14,18 @@ import javafx.scene.text.Text;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
 
+import javax.script.ScriptException;
+import javax.swing.*;
 import java.io.File;
 
 public class BankingPortal {
 
     GlobalTools globalTools = new GlobalTools();
     RandomData randomData = new RandomData();
+    String cvv, captcha;
+    String captchaResult;
 
-    public void initialize() {
+    public void initialize() throws ScriptException {
         globalTools.moveToNextFieldByLimited(cardNumberTextField1, cardNumberTextField2, 4);
         globalTools.moveToNextFieldByLimited(cardNumberTextField2, cardNumberTextField3, 4);
         globalTools.moveToNextFieldByLimited(cardNumberTextField3, cardNumberTextField4, 4);
@@ -32,7 +38,9 @@ public class BankingPortal {
 
         amountText.setText(MainPage.chargeAmount);
         refundText.setText(MainPage.refundMethod);
-        captchaRandomTextField.setText(randomData.captchaData(1, 98));
+        captcha = randomData.captchaData(1, 98);
+        captchaRandomTextField.setText(captcha);
+        captchaResult = randomData.captchaSolve(captcha);
 
         terminalText.setText(randomData.randomNumberCreator(1900000000, 1989999999));
 
@@ -96,10 +104,12 @@ public class BankingPortal {
     private ImageView connectingImageView;
 
     @FXML
-    void nextCaptchaAction(ActionEvent event) {
+    void nextCaptchaAction(ActionEvent event) throws ScriptException {
         amountText.setText(MainPage.chargeAmount);
         refundText.setText(MainPage.refundMethod);
-        captchaRandomTextField.setText(randomData.captchaData(1, 98));
+        captcha = randomData.captchaData(1, 98);
+        captchaRandomTextField.setText(captcha);
+        captchaResult = randomData.captchaSolve(captcha);
     }
 
     @FXML
@@ -109,12 +119,31 @@ public class BankingPortal {
 
     @FXML
     void proceedAction(ActionEvent event) {
-
+        if (cardNumberTextField1.getText().isEmpty())
+            globalTools.AlertShow("Please enter your card number");
+        else if (cardNumberTextField2.getText().isEmpty())
+            globalTools.AlertShow("Please enter your card number");
+        else if (cardNumberTextField3.getText().isEmpty())
+            globalTools.AlertShow("Please enter your card number");
+        else if (cardNumberTextField4.getText().isEmpty())
+            globalTools.AlertShow("Please enter your card number");
+        else if (CVV2TextFIeld.getText().isEmpty())
+            globalTools.AlertShow("Please enter your cvv2");
+        else if (cvvTextField.getText().isEmpty())
+            globalTools.AlertShow("Please enter your cvv");
+        else if (captchaTextField.getText().isEmpty())
+            globalTools.AlertShow("Please enter captcha");
+        else if (captchaTextField.getText().equals(captchaResult))
+            globalTools.AlertShow("please enter captcha correct");
     }
 
     @FXML
     void requestSMSOTPAction(ActionEvent event) {
-
+        Alert alert = new Alert(AlertType.INFORMATION);
+        cvv = randomData.randomNumberCreator(1234, 9876);
+        alert.setHeaderText("Pay Pal");
+        alert.setContentText("Your CVV is: " + cvv);
+        alert.show();
     }
 
 }
