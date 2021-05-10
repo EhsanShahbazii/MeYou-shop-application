@@ -34,10 +34,15 @@ public class BankingPortal {
         refundText.setText(MainPage.refundMethod);
         captchaRandomTextField.setText(randomData.captchaData(1, 98));
 
+        terminalText.setText(randomData.randomNumberCreator(1900000000, 1989999999));
+
         File file = new File("D:\\project final\\src\\files\\image\\gif\\spinner.gif");
         Image image = new Image(file.toURI().toString());
         connectingImageView.setImage(image);
     }
+
+    @FXML
+    public Text terminalText;
 
     @FXML
     private Text amountText;

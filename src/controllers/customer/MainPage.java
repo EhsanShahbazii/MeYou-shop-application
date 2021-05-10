@@ -34,6 +34,8 @@ public class MainPage {
     //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
+
+    //variables for set in banking portal fields
     public static String chargeAmount = "0$";
     public static String refundMethod;
 
@@ -262,11 +264,15 @@ public class MainPage {
 
     @FXML
     void chargeWalletAction(ActionEvent event) throws IOException, InterruptedException {
-
+        //set combo box select data and sent refund method
         chargeAmount = chargeComboBox.getValue();
         refundMethod = refundMethodTextField.getText();
-
-        globalTools.connectToBankingPortal();
+        if (chargeAmount.equals("Favorite")) {
+            globalTools.AlertShow("Please select your favorite amount");
+        }else {
+            //connect to banking portal
+            globalTools.connectToBankingPortal();
+        }
     }
 
     //use for change state of edit button in personal information part
