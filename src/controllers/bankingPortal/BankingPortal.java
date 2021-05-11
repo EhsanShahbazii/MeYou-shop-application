@@ -20,30 +20,42 @@ import java.io.File;
 
 public class BankingPortal {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
     RandomData randomData = new RandomData();
+
+    //variables for captcha policy
     String cvv, captcha;
     String captchaResult;
 
     public void initialize() throws ScriptException {
+        //limit text field length by 4 characters
         globalTools.moveToNextFieldByLimited(cardNumberTextField1, cardNumberTextField2, 4);
         globalTools.moveToNextFieldByLimited(cardNumberTextField2, cardNumberTextField3, 4);
         globalTools.moveToNextFieldByLimited(cardNumberTextField3, cardNumberTextField4, 4);
         globalTools.moveToNextFieldByLimited(cardNumberTextField4, CVV2TextFIeld, 4);
 
+        //limit text field length
         globalTools.LimitedTextField(CVV2TextFIeld, 4);
         globalTools.LimitedTextField(captchaTextField, 4);
         globalTools.LimitedTextField(cvvTextField, 7);
         globalTools.LimitedTextField(emailTextField, 32);
 
+        //set amount and refund method in fields
         amountText.setText(MainPage.chargeAmount);
         refundText.setText(MainPage.refundMethod);
+
+        //create captcha logic
         captcha = randomData.captchaData(1, 98);
         captchaRandomTextField.setText(captcha);
+
+        //solve captcha and save it
         captchaResult = randomData.captchaSolve(captcha);
 
+        //create terminal number by random methods
         terminalText.setText(randomData.randomNumberCreator(1900000000, 1989999999));
 
+        //set gif in connected anchor pane
         File file = new File("D:\\project final\\src\\files\\image\\gif\\spinner.gif");
         Image image = new Image(file.toURI().toString());
         connectingImageView.setImage(image);
@@ -103,22 +115,39 @@ public class BankingPortal {
     @FXML
     private ImageView connectingImageView;
 
+    //create new captcha logic
     @FXML
     void nextCaptchaAction(ActionEvent event) throws ScriptException {
-        amountText.setText(MainPage.chargeAmount);
-        refundText.setText(MainPage.refundMethod);
+        //create new captcha logic
         captcha = randomData.captchaData(1, 98);
+        //set captcha in field
         captchaRandomTextField.setText(captcha);
+        //solve captcha and save it
         captchaResult = randomData.captchaSolve(captcha);
     }
 
+    //go back to dashboard
     @FXML
     void cancelAction(ActionEvent event) {
         globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
     }
+    
+    //sent cvv to customer and show it
+    @FXML
+    void requestSMSOTPAction(ActionEvent event) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        //create cvv number
+        cvv = randomData.randomNumberCreator(1234, 9876);
+        alert.setHeaderText("Pay Pal");
+        alert.setContentText("Your CVV is: " + cvv);
+        alert.show();
+    }
 
+    //prossed and finish payment
     @FXML
     void proceedAction(ActionEvent event) {
+
+        //check fields if they are empty show error for customer
         if (cardNumberTextField1.getText().isEmpty())
             globalTools.AlertShow("Please enter your card number");
         else if (cardNumberTextField2.getText().isEmpty())
@@ -135,15 +164,8 @@ public class BankingPortal {
             globalTools.AlertShow("Please enter captcha");
         else if (captchaTextField.getText().equals(captchaResult))
             globalTools.AlertShow("please enter captcha correct");
-    }
+        else {
 
-    @FXML
-    void requestSMSOTPAction(ActionEvent event) {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        cvv = randomData.randomNumberCreator(1234, 9876);
-        alert.setHeaderText("Pay Pal");
-        alert.setContentText("Your CVV is: " + cvv);
-        alert.show();
+        }
     }
-
 }
