@@ -131,7 +131,7 @@ public class BankingPortal {
     void cancelAction(ActionEvent event) {
         globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
     }
-    
+
     //sent cvv to customer and show it
     @FXML
     void requestSMSOTPAction(ActionEvent event) {
