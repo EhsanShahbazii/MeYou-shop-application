@@ -11,24 +11,30 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
 
 import javax.script.ScriptException;
 import javax.swing.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class BankingPortal {
 
     //variables which are used
     GlobalTools globalTools = new GlobalTools();
+    GlobalFileTools globalFileTools = new GlobalFileTools();
     RandomData randomData = new RandomData();
 
     //variables for captcha policy
-    String cvv, captcha;
+    String cvv, captcha, amount, username;
     String captchaResult;
 
     public void initialize() throws ScriptException {
+
+        username = MainPage.usernames;
+
         //limit text field length by 4 characters
         globalTools.moveToNextFieldByLimited(cardNumberTextField1, cardNumberTextField2, 4);
         globalTools.moveToNextFieldByLimited(cardNumberTextField2, cardNumberTextField3, 4);
@@ -51,6 +57,8 @@ public class BankingPortal {
 
         //solve captcha and save it
         captchaResult = randomData.captchaSolve(captcha);
+
+        amount = globalTools.justDigits(MainPage.chargeAmount);
 
         //create terminal number by random methods
         terminalText.setText(randomData.randomNumberCreator(1900000000, 1989999999));
@@ -146,7 +154,7 @@ public class BankingPortal {
 
     //pressed and finish payment
     @FXML
-    void proceedAction(ActionEvent event) {
+    void proceedAction(ActionEvent event) throws FileNotFoundException {
 
         //check fields if they are empty show error for customer
         if (cardNumberTextField1.getText().isEmpty())
@@ -163,10 +171,12 @@ public class BankingPortal {
             globalTools.AlertShow("Please enter your cvv");
         else if (captchaTextField.getText().isEmpty())
             globalTools.AlertShow("Please enter captcha");
-        else if (captchaTextField.getText().equals(captchaResult))
+        else if (!captchaTextField.getText().equals(captchaResult))
             globalTools.AlertShow("please enter captcha correct");
         else {
-
+            globalFileTools.updateWalletBalance(username, amount);
+            globalTools.AlertShowInformation("Payment is successful!");
+            globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
         }
     }
 }

@@ -14,6 +14,17 @@ import java.io.IOException;
 
 public class GlobalTools {
 
+    //remove word from string and return just numbers
+    public String justDigits(String string) {
+        StringBuilder result= new StringBuilder();
+        for (int i = 0; i < string.length(); i++) {
+            if (string.charAt(i) >= '0' && string.charAt(i) <= '9') {
+                result.append(string.charAt(i));
+            }
+        }
+        return result.toString();
+    }
+
     //refund method for personal information field
     public String makeRefund(String phoneNumber) {
         long number = Long.parseLong(phoneNumber);
@@ -26,6 +37,15 @@ public class GlobalTools {
     private final Alert alert = new Alert(Alert.AlertType.ERROR);
     //set ERROR Alert with content
     public void AlertShow(String content) {
+        //set header text of alerts
+        alert.setHeaderText("Me and You app says:");
+        alert.setContentText(content);
+        alert.show();
+    }
+
+    private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    //set ERROR Alert with content
+    public void AlertShowInformation(String content) {
         //set header text of alerts
         alert.setHeaderText("Me and You app says:");
         alert.setContentText(content);

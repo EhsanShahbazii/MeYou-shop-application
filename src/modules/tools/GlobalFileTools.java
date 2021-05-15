@@ -1,8 +1,5 @@
 package modules.tools;
 
-import javafx.stage.Stage;
-
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -181,4 +178,40 @@ public class GlobalFileTools {
         }
     }
 
+    //update image path in file with current information
+    public void updateWalletBalance(String username, String amount) throws FileNotFoundException {
+
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+
+        for (int i = 0; i <lineCount; i++) {
+            if (counter[i].equals(username)) {
+                double beforeAmount = Double.parseDouble(counter[i+1]);
+                double newAmount = Double.parseDouble(amount);
+                String finalResult = Double.toString(Math.floor(beforeAmount + newAmount));
+                counter[i+1] = finalResult;
+                break;
+            }
+        }
+        //clear current file but file is safe
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
+
+        try {
+            //write data in file by random access file
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userWalletBalance.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                //write data format (data) \n
+                Library.writeBytes(counter[i] + "\n");
+            }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
 }
