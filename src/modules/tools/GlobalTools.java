@@ -29,11 +29,12 @@ public class GlobalTools {
     public String makeRefund(String phoneNumber) {
         long number = Long.parseLong(phoneNumber);
         number*=7;
+        String result = "IR0010" + Long.toString(number);
         //create refund and format is IR12345667894
-        String refund = "IR0010" + Long.toString(number);
-        return refund;
+        return result;
     }
 
+    //show alert type of error
     private final Alert alert = new Alert(Alert.AlertType.ERROR);
     //set ERROR Alert with content
     public void AlertShow(String content) {
@@ -43,13 +44,14 @@ public class GlobalTools {
         alert.show();
     }
 
-    private final Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    //show alert type of information
+    private final Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
     //set ERROR Alert with content
     public void AlertShowInformation(String content) {
         //set header text of alerts
-        alert.setHeaderText("Me and You app says:");
-        alert.setContentText(content);
-        alert.show();
+        alert1.setHeaderText("Me and You app says:");
+        alert1.setContentText(content);
+        alert1.show();
     }
 
     //Check that parameter is a digit
