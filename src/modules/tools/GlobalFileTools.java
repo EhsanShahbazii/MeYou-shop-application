@@ -216,4 +216,41 @@ public class GlobalFileTools {
             System.out.println(exception.toString());
         }
     }
+
+    //update wallet balance in file
+    public void updatePersonalInformation(String username, String fullName, String email, String phoneNumber, String address) throws FileNotFoundException {
+
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userInformation.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\userInformation.txt");
+
+        for (int i = 1; i < lineCount; i++) {
+            if (counter[i].equals(username)) {
+                counter[i-1] = fullName;
+                counter[i+2] = email;
+                counter[i+3] = phoneNumber;
+                counter[i+4] = address;
+                break;
+            }
+        }
+        //clear current file but file is safe
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userInformation.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
+
+        try {
+            //write data in file by random access file
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userInformation.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                //write data format (data) \n
+                Library.writeBytes(counter[i] + "\n");
+            }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
 }

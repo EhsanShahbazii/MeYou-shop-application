@@ -127,7 +127,7 @@
                   <Font name="Digital-7 Mono" size="16.0" />
                </font>
             </TextField>
-            <JFXButton fx:id="recuqestSMSOTPButton" layoutX="330.0" layoutY="424.0" onAction="#requestSMSOTPAction" prefHeight="31.0" prefWidth="172.0" style="-fx-background-color: #36FE2E;" text="Request SMS OTP">
+            <JFXButton fx:id="requestSMSOTPButton" layoutX="330.0" layoutY="424.0" onAction="#requestSMSOTPAction" prefHeight="31.0" prefWidth="172.0" style="-fx-background-color: #36FE2E;" text="Request SMS OTP">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
