@@ -1,0 +1,15 @@
+The Words I Wish I Said
+caitlin kelly
+12.0
+10
+D:\project final\src\files\bookImage\the words i wish i said.jpg
+Death Note 1
+Tsugumi Ohba
+8.0
+5
+D:\project final\src\files\bookImage\Death Note 1.jpg
+Clean Code
+Robert C. Martin
+23.0
+12
+D:\project final\src\files\bookImage\Clean Code.jpg
