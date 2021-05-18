@@ -217,7 +217,7 @@ public class GlobalFileTools {
         }
     }
 
-    //update wallet balance in file
+    //update new personal information
     public void updatePersonalInformation(String username, String fullName, String email, String phoneNumber, String address) throws FileNotFoundException {
 
         //get count of lines in current file
@@ -228,10 +228,10 @@ public class GlobalFileTools {
 
         for (int i = 1; i < lineCount; i++) {
             if (counter[i].equals(username)) {
-                counter[i-1] = fullName;
-                counter[i+2] = email;
-                counter[i+3] = phoneNumber;
-                counter[i+4] = address;
+                counter[i-1] = fullName; //set fullName
+                counter[i+2] = email; //set email
+                counter[i+3] = phoneNumber; //set phoneNumber
+                counter[i+4] = address; //set address
                 break;
             }
         }
