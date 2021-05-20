@@ -2,14 +2,24 @@ The Words I Wish I Said
 caitlin kelly
 12.0
 10
-D:\project final\src\files\bookImage\the words i wish i said.jpg
+D:\project final\src\files\image\book\the words i wish i said.jpg
 Death Note 1
 Tsugumi Ohba
 8.0
 5
-D:\project final\src\files\bookImage\Death Note 1.jpg
+D:\project final\src\files\image\book\Death Note 1.jpg
 Clean Code
 Robert C. Martin
 23.0
 12
-D:\project final\src\files\bookImage\Clean Code.jpg
+D:\project final\src\files\image\book\Clean Code.jpg
+Yeni Hitit 3rd
+Ankara University
+27.0
+5
+D:\project final\src\files\image\book\Yeni Hitit 3rd.jpg
+home body
+Rupi Kaur
+6.0
+15
+D:\project final\src\files\image\book\home body.jpg
