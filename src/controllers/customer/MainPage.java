@@ -112,10 +112,10 @@ public class MainPage {
                 Image image1 = new Image(file.toURI().toString());
                 control.getImageViewProduct().setImage(image1);
 
-                double margin = 10;
+                double margin = 15;
 
                 AnchorPane.setLeftAnchor(root, margin + i * (margin + control.getAnchorPane().getPrefWidth()));
-                AnchorPane.setTopAnchor(root, 10.0);
+                AnchorPane.setTopAnchor(root, margin);
 
                 todayDealAnchorPane.getChildren().add(root);
             }

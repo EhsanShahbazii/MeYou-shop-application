@@ -13,3 +13,13 @@ Robert C. Martin
 23.0
 12
 D:\project final\src\files\bookImage\Clean Code.jpg
+Yeni Hitit 3rd
+Ankara University
+27.0
+5
+D:\project final\src\files\image\book\Yeni Hitit 3rd.jpg
+home body
+Rupi Kaur
+6.0
+15
+D:\project final\src\files\image\book\home body.jpg
