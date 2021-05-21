@@ -35,8 +35,8 @@
                                        </graphic>
                                     </Button>
                                     <AnchorPane fx:id="todayDealAnchorPane" layoutX="21.0" layoutY="378.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="380.0" />
-                                    <AnchorPane fx:id="mostPopularAnchorPane" layoutX="22.0" layoutY="104.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" />
-                                    <Text fill="#000000e5" layoutX="22.0" layoutY="89.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Most Popular">
+                                    <AnchorPane fx:id="mostPopularAnchorPane" layoutX="22.0" layoutY="74.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" />
+                                    <Text fill="#000000e5" layoutX="22.0" layoutY="59.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Most Popular">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -840,6 +840,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <JFXToggleButton fx:id="darkModeToggle" layoutX="832.0" layoutY="687.0" onAction="#setToDarkMode" prefHeight="44.0" prefWidth="158.0" text="Dark Mode" />
          </children>
       </AnchorPane>
    </children>

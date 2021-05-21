@@ -1,9 +1,6 @@
 package controllers.customer;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextArea;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -284,6 +281,13 @@ public class MainPage {
     private ImageView imageviewProfile;
 
     @FXML
+    public JFXToggleButton darkModeToggle;
+
+    @FXML
+    public void setToDarkMode(ActionEvent event) {
+    }
+
+    @FXML
     void deleteCartAction(ActionEvent event) {
 
     }
@@ -371,4 +375,5 @@ public class MainPage {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
     }
+
 }
