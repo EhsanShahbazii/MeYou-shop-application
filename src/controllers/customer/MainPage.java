@@ -93,11 +93,16 @@ public class MainPage {
             phoneNumber = phoneNumberTextField.getText();
             address = addressTextArea.getText();
 
-            //******************************************************************************//
+            //read product information for set it in parts of suggest
             String[] productData = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
 
+            //add product components in most popular anchorPane
             showProductDivs(productData, mostPopularAnchorPane);
+
+            //add product components in most todayDeal anchorPane
             showProductDivs(productData, todayDealAnchorPane);
+
+            //add product components in most suggest anchorPane
             showProductDivs(productData, suggestCartAnchorPane);
 
         }
