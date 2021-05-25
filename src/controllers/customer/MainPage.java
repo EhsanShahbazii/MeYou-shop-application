@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -105,6 +102,8 @@ public class MainPage {
             //add product components in most suggest anchorPane
             showProductDivs(productData, suggestCartAnchorPane);
 
+            showProductMain(productData, thisIsScroll);
+
         }
     }
 
@@ -135,6 +134,7 @@ public class MainPage {
             state = true;
     }
 
+    //this is show product component in main part and suggest part
     public void showProductDivs(String[] productData, AnchorPane anchorPane) throws IOException {
 
         for (int i = 0; i < 4; i++) {
@@ -158,6 +158,36 @@ public class MainPage {
             anchorPane.getChildren().add(root1);
         }
     }
+
+    //this method add all products in main page for showing
+    public void showProductMain(String[] productData, AnchorPane anchorPane) throws IOException {
+
+        int fileLength = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        for (int i = 0; i < fileLength/5; i++) {
+            FXMLLoader loader1 = new FXMLLoader(this.getClass().getResource("../../pages/customer/productMainAnchorPane.fxml"));
+
+            Parent root1 = loader1.load();
+            ProductMainAnchorPane control1 = loader1.getController();
+
+            control1.getProductNameText().setText(productData[5*i]);
+            control1.getProductPriceText().setText(productData[5*i+2]);
+            File file1 = new File(productData[5*i+4]);
+            Image image2 = new Image(file1.toURI().toString());
+            control1.getImageViewProduct().setImage(image2);
+
+            double marginLeft = 15;
+            double marginTop = 15;
+
+            AnchorPane.setTopAnchor(root1, marginTop + i * (marginTop + control1.getProductMainAnchorPane().getPrefHeight()));
+            AnchorPane.setLeftAnchor(root1, marginLeft);
+
+            anchorPane.getChildren().add(root1);
+        }
+    }
+
+    @FXML
+    public AnchorPane thisIsScroll;
 
     @FXML
     private Tab homeTab;
