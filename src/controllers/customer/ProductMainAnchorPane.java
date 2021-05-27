@@ -16,6 +16,18 @@ public class ProductMainAnchorPane {
     public Text ProductNameText;
 
     @FXML
+    public Text authorText;
+
+    @FXML
+    public Text onlyStockText;
+
+    @FXML
+    public Text scoreText;
+
+    @FXML
+    public Text countScore;
+
+    @FXML
     private AnchorPane productMainAnchorPane;
 
     @FXML
@@ -30,6 +42,30 @@ public class ProductMainAnchorPane {
     @FXML
     private Text productCountText;
 
+    public Text getScoreText() {
+        return scoreText;
+    }
+
+    public void setScoreText(Text scoreText) {
+        this.scoreText = scoreText;
+    }
+
+    public Text getCountScore() {
+        return countScore;
+    }
+
+    public void setCountScore(Text countScore) {
+        this.countScore = countScore;
+    }
+
+    public Text getAuthorText() {
+        return authorText;
+    }
+
+    public void setAuthorText(Text authorText) {
+        this.authorText = authorText;
+    }
+
     public ImageView getImageViewProduct() {
         return imageViewProduct;
     }
@@ -40,6 +76,14 @@ public class ProductMainAnchorPane {
 
     public Text getProductNameText() {
         return ProductNameText;
+    }
+
+    public Text getOnlyStockText() {
+        return onlyStockText;
+    }
+
+    public void setOnlyStockText(Text onlyStockText) {
+        this.onlyStockText = onlyStockText;
     }
 
     public void setProductNameText(Text productNameText) {

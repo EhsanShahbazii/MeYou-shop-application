@@ -86,9 +86,9 @@
                                     <URL value="@../css/homePageStyle.css" />
                                  </stylesheets>
                                  <children>
-                                    <ScrollPane hbarPolicy="NEVER" layoutX="41.0" prefHeight="620.0" prefWidth="903.0">
+                                    <ScrollPane hbarPolicy="NEVER" layoutX="41.0" prefHeight="620.0" prefWidth="903.0" styleClass="scrollBarCategories" stylesheets="@../css/homePageStyle.css">
                                        <content>
-                                          <AnchorPane fx:id="thisIsScroll" prefHeight="619.0" prefWidth="902.0" />
+                                          <AnchorPane fx:id="thisIsScroll" prefHeight="619.0" prefWidth="902.0" styleClass="scrollBarCategories" />
                                        </content>
                                     </ScrollPane>
                                  </children></AnchorPane>
