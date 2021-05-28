@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
+import modules.tools.RandomData;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,6 +25,7 @@ public class MainPage {
     //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
+    public RandomData randomData = new RandomData();
 
     //variables for set in banking portal fields
     public static String chargeAmount = "0$";
@@ -173,6 +175,8 @@ public class MainPage {
             control1.getProductNameText().setText(productData[5*i]);
             control1.getAuthorText().setText(productData[5*i+1]);
             control1.getProductPriceText().setText(productData[5*i+2]);
+            control1.getScoreText().setText(randomData.randomNumberCreatorRound(0, 5, 2));
+            control1.getCountScore().setText(randomData.randomNumberCreator(1,2000));
             if (productData[5*i+3].equals("0")){
                 control1.getOnlyStockText().setText("Currently unavailable");
             }else {
