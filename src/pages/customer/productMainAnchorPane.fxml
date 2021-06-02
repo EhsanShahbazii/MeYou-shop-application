@@ -9,22 +9,22 @@
 
 <AnchorPane fx:id="productMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="850.0" style="-fx-background-color: ivory; -fx-background-radius: 32px 5px 32px 5px;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.ProductMainAnchorPane">
    <children>
-      <ImageView fx:id="imageViewProduct" fitHeight="130.0" fitWidth="130.0" layoutX="79.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="ProductNameText" layoutX="224.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <ImageView fx:id="imageViewProduct" fitHeight="130.0" fitWidth="130.0" layoutX="37.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="ProductNameText" layoutX="182.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font size="21.0" />
          </font>
       </Text>
-      <Text layoutX="224.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:">
+      <Text layoutX="182.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="273.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="231.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../files/image/icon/Dollar-USD-icon.png" />
          </image></ImageView>
-      <Text fx:id="productPriceText" layoutX="305.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <Text fx:id="productPriceText" layoutX="263.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0">
          <font>
             <Font size="25.0" />
          </font>
@@ -83,5 +83,10 @@
          </image>
       </ImageView>
       <Text fx:id="countScore" fill="#000000b4" layoutX="669.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="newPrice" layoutX="315.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
