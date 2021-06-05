@@ -6,12 +6,16 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import modules.files.SelectAndBuyProduct;
 import modules.tools.GlobalTools;
+
+import java.io.FileNotFoundException;
 
 public class ProductMainAnchorPane {
 
     //variables which are used
     GlobalTools globalTools = new GlobalTools();
+    SelectAndBuyProduct selectAndBuyProduct =  new SelectAndBuyProduct();
 
     //variable for set count of product
     int productCount;
@@ -173,8 +177,9 @@ public class ProductMainAnchorPane {
     private JFXButton buyItButton;
 
     @FXML
-    void buyProduct(ActionEvent event) {
-
+    void buyProduct(ActionEvent event) throws FileNotFoundException {
+//        selectAndBuyProduct.addProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText());
+        selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText());
     }
 
     //increase one step product count until 9 or product count in inventory
