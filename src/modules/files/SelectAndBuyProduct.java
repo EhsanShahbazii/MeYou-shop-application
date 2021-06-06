@@ -10,7 +10,7 @@ public class SelectAndBuyProduct {
 
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
-    //set default image path for new customer when sign in
+    //update count of product in card of current customer
     public void updateProductToCard(String username, String productName, String productCount) throws FileNotFoundException {
         boolean flag = false;
         //get count of lines in current file
@@ -52,6 +52,7 @@ public class SelectAndBuyProduct {
         }
     }
 
+    //add new product in card of current customer
     public void addProductToCard(String username, String productName, String productCount) throws FileNotFoundException {
         //get count of lines in current file
         int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\cardInformation.txt");
