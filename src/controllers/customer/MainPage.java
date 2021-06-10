@@ -4,6 +4,8 @@ import com.jfoenix.controls.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -110,8 +112,6 @@ public class MainPage {
             //add product component with add data in scroll pane
             showProductMain(productData, thisIsScroll);
 
-            Product product = new Product();
-            ObservableList<Product> data = selectAndBuyProduct.tableData(Login.customer.getUsername());
             TableColumn productCode = new TableColumn("Code");
             productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
             TableColumn productName = new TableColumn("Product Name");
@@ -123,9 +123,28 @@ public class MainPage {
 
 
             cartTable.getColumns().addAll(productCode, productName, productCount, productPrice);
-            cartTable.setItems(data);
 
+            cartTab.setOnSelectionChanged(new EventHandler<Event>() {
+                @Override
+                public void handle(Event event) {
+                    if (cartTab.isSelected()) {
+                        try {
+                            cartTable.getItems().clear();
+                            refreshTable();
+                        } catch (Exception exception) {
+                            System.out.println(exception.toString());
+                        }
+                    }
+                }
+            });
         }
+    }
+
+    public void refreshTable() {
+        Product product = new Product();
+        ObservableList<Product> data = selectAndBuyProduct.tableData(Login.customer.getUsername());
+
+        cartTable.setItems(data);
     }
 
     //this is Exception methods for text field if they are empty or invalid
