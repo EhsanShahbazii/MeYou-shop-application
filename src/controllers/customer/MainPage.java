@@ -33,6 +33,7 @@ public class MainPage {
     public RandomData randomData = new RandomData();
     public SelectAndBuyProduct selectAndBuyProduct = new SelectAndBuyProduct();
 
+    //static variables
     public static String chargeAmount = "0$";
     public static String refundMethod;
     public static String usernames, fullName, email, phoneNumber, address;
@@ -112,18 +113,20 @@ public class MainPage {
             //add product component with add data in scroll pane
             showProductMain(productData, thisIsScroll);
 
-            TableColumn productCode = new TableColumn("Code");
+            //create cart table columns and give it ids
+            TableColumn productCode = new TableColumn("Code"); //code column
             productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
-            TableColumn productName = new TableColumn("Product Name");
+            TableColumn productName = new TableColumn("Product Name"); //name column
             productName.setCellValueFactory(new PropertyValueFactory<>("productName"));
-            TableColumn productCount = new TableColumn("Count");
+            TableColumn productCount = new TableColumn("Count"); //count column
             productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
-            TableColumn productPrice = new TableColumn("Price");
+            TableColumn productPrice = new TableColumn("Price"); //price column
             productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
 
-
+            //add columns in cart table javafx
             cartTable.getColumns().addAll(productCode, productName, productCount, productPrice);
 
+            //add setOnSelectionChange refresh method for refresh cart data
             cartTab.setOnSelectionChanged(new EventHandler<Event>() {
                 @Override
                 public void handle(Event event) {
@@ -140,11 +143,12 @@ public class MainPage {
         }
     }
 
+    //this method refresh cart table data
     public void refreshTable() {
         Product product = new Product();
         ObservableList<Product> data = selectAndBuyProduct.tableData(Login.customer.getUsername());
 
-        cartTable.setItems(data);
+        cartTable.setItems(data); //set data in cart table
     }
 
     //this is Exception methods for text field if they are empty or invalid
@@ -178,23 +182,29 @@ public class MainPage {
     public void showProductDivs(String[] productData, AnchorPane anchorPane) throws IOException {
 
         for (int i = 0; i < 4; i++) {
+            //load product anchor pane and control it
             FXMLLoader loader1 = new FXMLLoader(this.getClass().getResource("../../pages/customer/productAnchorPane.fxml"));
 
-            Parent root1 = loader1.load();
-            ProductAnchorPane control1 = loader1.getController();
+            Parent root1 = loader1.load(); //load parent
+            ProductAnchorPane control1 = loader1.getController(); //get anchor pane controller
 
+            //set data in product anchor pane text fields
             control1.getDetailsText().setText(productData[5*i]);
             control1.getPriceText().setText(productData[5*i+2]);
+            //set image in product anchor pane image view
             File file1 = new File(productData[5*i+4]);
             Image image2 = new Image(file1.toURI().toString());
             control1.getImageViewProduct().setImage(image2);
 
+            //these are margin variables
             double marginLeft = 45;
             double marginTop = 15;
 
+            //set position for anchor pane
             AnchorPane.setLeftAnchor(root1, marginLeft + i * (marginLeft + control1.getAnchorPane().getPrefWidth()));
             AnchorPane.setTopAnchor(root1, marginTop);
 
+            //add this anchor pane in main anchor pane
             anchorPane.getChildren().add(root1);
         }
     }
@@ -205,10 +215,11 @@ public class MainPage {
         int fileLength = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
 
         for (int i = 0; i < fileLength/5; i++) {
+            //load product anchor pane and control it
             FXMLLoader loader1 = new FXMLLoader(this.getClass().getResource("../../pages/customer/productMainAnchorPane.fxml"));
 
-            Parent root1 = loader1.load();
-            ProductMainAnchorPane control1 = loader1.getController();
+            Parent root1 = loader1.load(); //load parent
+            ProductMainAnchorPane control1 = loader1.getController(); //get anchor pane controller
 
             control1.getProductNameText().setText(productData[5*i]); //set product name
             control1.getAuthorText().setText(productData[5*i+1]); //set product  product author
@@ -222,16 +233,20 @@ public class MainPage {
             }else {
                 control1.getOnlyStockText().setText("Only " + productData[5*i+3] + " left in stock(more on the way)");
             }
+            //set image in product anchor pane image view
             File file1 = new File(productData[5*i+4]);
             Image image2 = new Image(file1.toURI().toString());
             control1.getImageViewProduct().setImage(image2);
 
+            //these are margin variables
 //            double marginLeft = 15;
             double marginTop = 15;
 
+            //set position for anchor pane
             AnchorPane.setTopAnchor(root1, marginTop + i * (marginTop + control1.getProductMainAnchorPane().getPrefHeight()));
             AnchorPane.setLeftAnchor(root1, 0.0);
 
+            //add this anchor pane in main anchor pane
             anchorPane.getChildren().add(root1);
         }
     }
