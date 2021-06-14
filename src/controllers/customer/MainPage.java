@@ -147,6 +147,8 @@ public class MainPage {
     public void refreshTable() {
         Product product = new Product();
         ObservableList<Product> data = selectAndBuyProduct.tableData(Login.customer.getUsername());
+        //set amount of total price in amount text field
+        totalAmountCartTextField.setText(selectAndBuyProduct.totalAmount(usernames));
 
         cartTable.setItems(data); //set data in cart table
     }
