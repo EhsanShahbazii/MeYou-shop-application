@@ -140,6 +140,21 @@ public class MainPage {
                     }
                 }
             });
+
+            //add setOnSelectionChange refresh method for refresh wallet balance text
+            dashboardTab.setOnSelectionChanged(new EventHandler<Event>() {
+                @Override
+                public void handle(Event event) {
+                    if (dashboardTab.isSelected()) {
+                        try {
+                            //set wallet balance of customer in field
+                            walletBalanceTextField.setText(globalFileTools.returnWalletBalance(customerUsername));
+                        } catch (Exception exception) {
+                            System.out.println(exception.toString());
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -252,6 +267,9 @@ public class MainPage {
             anchorPane.getChildren().add(root1);
         }
     }
+
+    @FXML
+    public Tab dashboardTab;
 
     @FXML
     public AnchorPane thisIsScroll;
