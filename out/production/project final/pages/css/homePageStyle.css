@@ -1,3 +1,7 @@
+.layout {
+    -fx-background-color:  #F2F0F0;
+}
+
 /*login page css code*/
 .anchor1{
    -fx-background-color: linear-gradient(to right bottom, #7693fe, #008fd6, #007b88, #005f3a, #2c4100);
@@ -21,10 +25,6 @@
 .todayDealAnchorPane, .forMenCategories, .forWomenCategories, .forKidsCategories, .suggestCartAnchorPane, .suggestLatestOrdersAnchorPane {
    -fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);
    -fx-background-radius: 20px;
-}
-
-.favoriteshomeAnchorPane {
-   -fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);
 }
 
 .table-view .column-header,
