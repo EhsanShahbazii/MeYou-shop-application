@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="410.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.home.Notification">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #F2F0F0; -fx-background-radius: 0 0 16px 16px;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="260.0" prefWidth="400.0" style="-fx-background-color: #F2F0F0;">
+               <content>
+                  <AnchorPane fx:id="notificationScrollAnchor" prefHeight="260.0" prefWidth="398.0" style="-fx-background-color: #F2F0F0;" />
+               </content>
+            </ScrollPane>
+            <JFXButton fx:id="closeNotificationButton" layoutX="8.0" layoutY="264.0" onAction="#closeNotificationAction" style="-fx-background-color: #0CF485;" text="Close" />
+            <JFXButton fx:id="deleteNotificationButton" layoutX="64.0" layoutY="264.0" onAction="#deleteNotificationAction" style="-fx-background-color: #FF8267;" text="Delete All" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
