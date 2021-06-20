@@ -291,6 +291,9 @@ public class MainPage {
     }
 
     @FXML
+    public Button notificationButton;
+
+    @FXML
     public Tab dashboardTab;
 
     @FXML
@@ -424,6 +427,10 @@ public class MainPage {
 
     @FXML
     public JFXToggleButton darkModeToggle;
+
+    @FXML
+    public void showNotificationAction(ActionEvent event) {
+    }
 
     //dark mode toggle operations
     @FXML
