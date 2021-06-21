@@ -18,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import modules.files.SelectAndBuyProduct;
 import modules.objects.Product;
 import modules.tools.GlobalFileTools;
@@ -429,7 +430,18 @@ public class MainPage {
     public JFXToggleButton darkModeToggle;
 
     @FXML
-    public void showNotificationAction(ActionEvent event) {
+    public void showNotificationAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/home/notificationPage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("notification");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(1000);
+        stage1.setY(179);
+        stage1.show();
     }
 
     //dark mode toggle operations
