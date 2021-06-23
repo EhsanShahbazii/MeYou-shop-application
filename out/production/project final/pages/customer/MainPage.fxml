@@ -777,7 +777,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="945.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="945.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="20.0">
+            <Button fx:id="messageButton" layoutX="945.0" layoutY="20.0" mnemonicParsing="false" onAction="#showMessageAction" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="945.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="20.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0">
                      <image>
