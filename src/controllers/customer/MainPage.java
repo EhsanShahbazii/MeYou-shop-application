@@ -290,6 +290,9 @@ public class MainPage {
             anchorPane.getChildren().add(root1);
         }
     }
+    
+    @FXML
+    public JFXButton giftCardButton;
 
     @FXML
     public Button messageButton;
@@ -433,6 +436,10 @@ public class MainPage {
     public JFXToggleButton darkModeToggle;
 
     @FXML
+    public void giftCardAction(ActionEvent event) {
+    }
+
+    @FXML
     public void showMessageAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
         fxmlLoader1.setLocation(getClass().getResource("/pages/home/messagePage.fxml"));
@@ -564,6 +571,5 @@ public class MainPage {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
     }
-
 
 }
