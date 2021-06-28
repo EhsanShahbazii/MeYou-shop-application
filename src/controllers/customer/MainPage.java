@@ -512,8 +512,10 @@ public class MainPage {
     }
 
     @FXML
-    void deleteCartAction(ActionEvent event) {
-
+    void deleteCartAction(ActionEvent event) throws FileNotFoundException {
+        Product selectItem = cartTable.getSelectionModel().getSelectedItem();
+        cartTable.getItems().remove(selectItem);
+        selectAndBuyProduct.removeProductToCard(Login.customer.getUsername(), selectItem.getProductName());
     }
 
     @FXML
