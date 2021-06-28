@@ -292,6 +292,9 @@ public class MainPage {
     }
 
     @FXML
+    public JFXButton serviceButton;
+
+    @FXML
     public JFXButton giftCardButton;
 
     @FXML
@@ -434,6 +437,21 @@ public class MainPage {
 
     @FXML
     public JFXToggleButton darkModeToggle;
+
+    @FXML
+    public void showServiceAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/home/sevicePage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("message");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(600);
+        stage1.setY(300);
+        stage1.show();
+    }
 
     @FXML
     public void giftCardAction(ActionEvent event) throws IOException {
