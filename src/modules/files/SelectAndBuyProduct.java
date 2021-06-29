@@ -6,10 +6,12 @@ import modules.objects.Product;
 import modules.tools.GlobalFileTools;
 import modules.tools.RandomData;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SelectAndBuyProduct {
 
@@ -161,5 +163,57 @@ public class SelectAndBuyProduct {
             }
         }
         return Double.toString(total);
+    }
+
+    public String getProductFinalCount(String productName) {
+        int index = 0;
+        String result = "";
+        //count lines of files in userInformation file
+        int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+        String[] counter = new String[lineCount];
+        try {
+            Scanner scanner2 = new Scanner(new File("D:\\project final\\src\\files\\data\\ProductInformation.txt"));
+            //push all data in array
+            while (scanner2.hasNextLine()) {
+                counter[index] = scanner2.nextLine();
+                index++;
+            }
+            for (int i = 0; i < lineCount; i++) {
+                if (counter[i].equals(productName)) {
+                    result = counter[i+3];
+                    return result;
+                }
+            }
+            scanner2.close();
+        }catch (FileNotFoundException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return result;
+    }
+
+    public String getProductFinalPrice(String productName) {
+        int index = 0;
+        String result = "";
+        //count lines of files in userInformation file
+        int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+        String[] counter = new String[lineCount];
+        try {
+            Scanner scanner2 = new Scanner(new File("D:\\project final\\src\\files\\data\\ProductInformation.txt"));
+            //push all data in array
+            while (scanner2.hasNextLine()) {
+                counter[index] = scanner2.nextLine();
+                index++;
+            }
+            for (int i = 0; i < lineCount; i++) {
+                if (counter[i].equals(productName)) {
+                    result = counter[i+2];
+                    return result;
+                }
+            }
+            scanner2.close();
+        }catch (FileNotFoundException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return result;
     }
 }

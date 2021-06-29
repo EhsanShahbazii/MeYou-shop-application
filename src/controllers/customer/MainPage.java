@@ -188,6 +188,16 @@ public class MainPage {
         //set amount of total price in amount text field
         totalAmountCartTextField.setText(selectAndBuyProduct.totalAmount(usernames));
 
+        for (Product datum : data) {
+            String finalCount = selectAndBuyProduct.getProductFinalCount(datum.getProductName());
+            String finalPrice = selectAndBuyProduct.getProductFinalPrice(datum.getProductName());
+            if (Integer.parseInt(datum.getProductCount()) > Integer.parseInt(finalCount)) {
+                datum.setProductCount(finalCount);
+                double finalPrices = Double.parseDouble(finalCount)*Double.parseDouble(finalPrice);
+                datum.setProductPrice(Double.toString(finalPrices));
+            }
+        }
+
         cartTable.setItems(data); //set data in cart table
     }
 
