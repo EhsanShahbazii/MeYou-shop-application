@@ -1,0 +1,17 @@
+.mainAnchor, .secondAnchor {
+    -fx-background-radius: 16px;
+}
+
+.mainAnchor {
+    /* -fx-background-color: linear-gradient(to right bottom, #e4e5e1, #e4ebd1, #e3f0c2, #e1f6b1, #dffba1); */
+    -fx-background-color: linear-gradient(to right bottom, #ffffff, #eefeff, #ceffff, #c5ffe8, #e7fbb9);
+}
+
+.secondAnchor {
+    -fx-background-color: linear-gradient(to right top, #06306d, #933a89, #f54e72, #ff9a3a, #fff805);
+}
+
+.LoginBtn{
+-fx-background-color: #FFC75F;
+-fx-background-radius: 10px;
+}
