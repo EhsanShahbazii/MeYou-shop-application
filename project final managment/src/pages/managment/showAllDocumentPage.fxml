@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="610.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Management.ShowAllDocuments">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="760.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #eefeff, #ceffff, #c5ffe8, #e7fbb9); -fx-background-radius: 32px;" stylesheets="@../css/tableStyle.css">
+         <children>
+            <Text layoutX="228.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show all documents">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Separator layoutX="125.0" layoutY="53.0" prefWidth="350.0" />
+            <JFXButton fx:id="exitButton" layoutX="272.0" layoutY="694.0" onAction="#exitAction" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: #FF8267; -fx-background-radius: 10px;" text="Exit">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <LineChart fx:id="profitLineGraph" layoutX="50.0" layoutY="302.0" prefHeight="200.0" prefWidth="500.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <PieChart fx:id="inventorycCrcleGraph" layoutX="361.0" layoutY="82.0" prefHeight="200.0" prefWidth="200.0" />
+            <Text layoutX="31.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taxation">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="38.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     According to Article 165.2 of the Constitution, the taxes paid by digital and marketing companies are based on the 9% value added tax for you, with the information that we have from the company's net profit, and the calculations made on the tax result to be paid are as follows By paying taxes on time, you can also get rewards, and on the contrary, you will receive heavy fines for not paying taxes.:" wrappingWidth="322.7119140625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="65.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tax rate to be paid:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="taxationText" layoutX="199.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="27419.35$">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Text>
+            <Text layoutX="395.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inventory balance graph">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="247.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profit from sales graph">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="38.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     In the chart above, the profits that the company is supposed to make by selling the goods are drawn according to each product and its selling price.The total assets of the company, including net profit and value added, and transportation and storage costs of goods are as follows:" wrappingWidth="533.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="38.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="     The algorithm for calculating this number is such that it subtracts taxes and VAT from the total sales prices and gross profit, and then reduces the cost of transporting and storing goods, and finally obtains this number." wrappingWidth="533.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="160.0" layoutY="675.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total assets of the company:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="totalAssetsText" layoutX="352.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="187452.25$">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
