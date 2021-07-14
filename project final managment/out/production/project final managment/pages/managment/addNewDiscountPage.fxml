@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="610.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Management.AddNewDiscount">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="760.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #eefeff, #ceffff, #c5ffe8, #e7fbb9); -fx-background-radius: 32px;" stylesheets="@../css/tableStyle.css">
+         <children>
+            <Text layoutX="224.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add new discount">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <TableView fx:id="discountTable" layoutX="50.0" layoutY="126.0" prefHeight="200.0" prefWidth="500.0" />
+            <Text layoutX="255.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All discounts">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="138.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount Name: ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="138.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount Amount: ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="138.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount Start time:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="discountNameTextField" layoutX="345.0" layoutY="376.0" prefHeight="31.0" prefWidth="117.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="discountAmountComboBox" layoutX="345.0" layoutY="446.0" prefHeight="25.0" prefWidth="117.0" />
+            <Text layoutX="138.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount Start time:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <JFXDatePicker fx:id="startDatePicker" layoutX="345.0" layoutY="516.0" onAction="#discountStartAction" prefWidth="117.0" />
+            <JFXDatePicker fx:id="discountEndDatePicker" layoutX="345.0" layoutY="586.0" onAction="#discountEndAction" prefWidth="117.0" />
+            <Separator layoutX="125.0" layoutY="53.0" prefWidth="350.0" />
+            <JFXButton fx:id="addDiscountButton" layoutX="224.0" layoutY="662.0" onAction="#addDiscountAction" prefHeight="37.0" prefWidth="151.0" style="-fx-background-color: #FFC75F; -fx-background-radius: 16px;" text="Add discount">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="exitButton" layoutX="271.0" layoutY="715.0" onAction="#exitAction" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: #FF8267; -fx-background-radius: 10px;" text="Exit">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
