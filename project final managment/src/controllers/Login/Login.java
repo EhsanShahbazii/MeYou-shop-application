@@ -17,6 +17,8 @@ import java.io.IOException;
 public class Login {
 
     public GlobalTools globalTools = new GlobalTools();
+    String username, password, toggle = "management";
+    public static boolean loginIsDone = false;
 
     public void initialize() {
         //limit text field length
@@ -38,6 +40,10 @@ public class Login {
 
     @FXML
     void LoginAction(ActionEvent event) throws IOException {
+
+        
+
+
         Stage primaryStage = (Stage) loginButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("../pages/managment/managementPage.fxml"));
         Scene scene = new Scene(root);
@@ -52,6 +58,11 @@ public class Login {
 
     @FXML
     void toggleAction(ActionEvent event) {
+        if (chooseToggle.isSelected()) {
+            toggle = "admin";
+        }else {
+            toggle = "management";
+        }
 
     }
 
