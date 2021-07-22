@@ -2,7 +2,7 @@ package modules.files;
 
 import modules.tools.GlobalFileTools;
 
-public class Login {
+public class LoginCheck {
 
     public GlobalFileTools globalFileTools = new GlobalFileTools();
 
