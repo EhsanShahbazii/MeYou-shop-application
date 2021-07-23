@@ -5,6 +5,11 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import modules.files.LoginCheck;
 import modules.object.Person;
 import modules.tools.GlobalTools;
@@ -60,10 +65,10 @@ public class Login {
             loginIsDone = true;
             if (toggle.equals("management")) {
                 //open new management page and close login pages
-                globalTools.OpenNewPageXY(loginButton, "./pages/managment/managementPage.fxml", "management", 450, 110);
+                globalTools.OpenNewPageXY(loginButton, "/pages/managment/managementPage.fxml", "management", 450, 110);
             } else {
                 //open new admin page and close login pages
-                globalTools.OpenNewPageXY(loginButton, "./pages/admin/adminPage.fxml", "admin", 450, 110);
+                globalTools.OpenNewPageXY(loginButton, "/pages/admin/adminPage.fxml", "admin", 450, 110);
             }
         }
     }
