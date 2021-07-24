@@ -12,6 +12,9 @@ import javafx.scene.text.Text;
 public class Admin {
 
     @FXML
+    public JFXButton logoutButton;
+
+    @FXML
     private JFXButton addProductButton;
 
     @FXML
@@ -69,4 +72,6 @@ public class Admin {
 
     }
 
+    public void logoutAction(ActionEvent event) {
+    }
 }
