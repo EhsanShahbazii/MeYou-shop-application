@@ -93,6 +93,7 @@
                   <Font size="14.0" />
                </font>
             </Text>
+            <JFXButton fx:id="logoutButton" layoutX="52.0" layoutY="187.0" onAction="#logoutAction" style="-fx-background-color: #FF8267;" text="Logout" />
          </children>
       </AnchorPane>
    </children>

@@ -1,15 +1,11 @@
 package controllers.Login;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import modules.files.LoginCheck;
 import modules.object.Person;
 import modules.tools.GlobalTools;
@@ -37,7 +33,7 @@ public class Login {
     private JFXTextField usernameTextField;
 
     @FXML
-    private JFXTextField passwordTextField;
+    private JFXPasswordField passwordTextField;
 
     @FXML
     private JFXButton loginButton;
