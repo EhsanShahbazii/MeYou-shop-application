@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class Login {
 
+    //variables which are used
     public static Person person = new Person();
     public GlobalTools globalTools = new GlobalTools();
     public LoginCheck loginCheck = new LoginCheck();
@@ -38,6 +39,7 @@ public class Login {
     @FXML
     private JFXButton loginButton;
 
+    //add login logic in below
     @FXML
     void LoginAction(ActionEvent event) throws IOException {
 
@@ -59,6 +61,8 @@ public class Login {
             person.setPassword(password);
             person.setToggle(toggle);
             loginIsDone = true;
+
+            //this statement show person is admin or management
             if (toggle.equals("management")) {
                 //open new management page and close login pages
                 globalTools.OpenNewPageXY(loginButton, "/pages/managment/managementPage.fxml", "management", 450, 110);
@@ -69,6 +73,7 @@ public class Login {
         }
     }
 
+    //set admin or management toggle
     @FXML
     void toggleAction(ActionEvent event) {
         if (chooseToggle.isSelected()) {
