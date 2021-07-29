@@ -5,15 +5,18 @@ import com.jfoenix.controls.JFXTextField;
 import controllers.Login.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Admin {
@@ -88,8 +91,19 @@ public class Admin {
     }
 
     @FXML
-    void changeProfileImageAction(ActionEvent event) {
+    void changeProfileImageAction(ActionEvent event) throws FileNotFoundException {
+        FileChooser fileChooser = new FileChooser(); //create file chooser
+        File file = fileChooser.showOpenDialog(null); //get file(pic) path
 
+        if (file != null){
+            String path;
+            path = file.getAbsolutePath(); //take file path which is choose
+            File files = new File(path); //convert path to file format
+            //update new profile image path current customer
+            globalFileTools.updateUserProfileImage(Login.person.getUsername(), path);
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
+        }
     }
 
     @FXML
