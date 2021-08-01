@@ -127,4 +127,16 @@ public class GlobalFileTools {
             System.out.println(exception.toString());
         }
     }
+
+    //add new product information in ProductInformation.txt file
+    public void addNewProduct(String productName, String productAuthor, String productPrice, String productCount, String productImage) {
+        try {
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\ProductInformation.txt", "rw");
+            Library.seek(Library.length());
+            //template is this : productName, productAuthor, productPrice, productCount, productImage
+            Library.writeBytes(productName + "\n" + productAuthor + "\n" + productPrice + "\n" + productCount + "\n" + productImage + "\n");
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
 }

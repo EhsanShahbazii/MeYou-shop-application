@@ -5,13 +5,18 @@ import com.jfoenix.controls.JFXTextField;
 import controllers.Login.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import modules.tools.DigitalClock;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
@@ -99,8 +104,18 @@ public class Admin {
     private Text dateTextField;
 
     @FXML
-    void addProductAction(ActionEvent event) {
-
+    void addProductAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/admin/addNewProductPage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("add new product");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(530);
+        stage1.setY(120);
+        stage1.show();
     }
 
     @FXML

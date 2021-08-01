@@ -82,7 +82,7 @@
             </Text>
             <Text fx:id="timeTextField" layoutX="105.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
-                  <Font size="17.0" />
+                  <Font name="Arial" size="17.0" />
                </font>
             </Text>
             <Text fx:id="dateTextField" layoutX="117.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0">
