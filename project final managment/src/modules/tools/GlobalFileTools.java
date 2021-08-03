@@ -139,4 +139,21 @@ public class GlobalFileTools {
             System.out.println(exception.toString());
         }
     }
+
+    public boolean checkProductAvailable(String productName) {
+        boolean state = false;
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        for (int i = 0; i <lineCount; i++) {
+            if (counter[i].equals(productName)) {
+                state = true;
+                break;
+            }
+        }
+        return state;
+    }
 }
