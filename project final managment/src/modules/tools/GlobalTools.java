@@ -58,7 +58,8 @@ public class GlobalTools {
         return true;
     }
 
-    public void clearFields(JFXTextField productNameTextField, TextField textField1, TextField textField2, TextField textField3, TextField textField4, TextArea textArea) {
+    public void clearFields(JFXTextField textField, TextField textField1, TextField textField2, TextField textField3, TextField textField4, TextArea textArea) {
+        textField.setText("");
         textField1.setText("");
         textField2.setText("");
         textField3.setText("");
@@ -90,6 +91,12 @@ public class GlobalTools {
         primaryStage.setY(Y);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
+    }
+
+    //this method close page without closing previous pages
+    public void closeCurrentPage(Button button, String currentPagePath) {
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
     }
 
 }
