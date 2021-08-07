@@ -3,6 +3,7 @@ package controllers.admin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import controllers.Login.Login;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -83,7 +84,9 @@ public class Admin {
     }
 
     public void setDataInTable() {
-
+        Product product = new Product();
+        ObservableList<Product> data = globalFileTools.tableData();
+        allProductTable.setItems(data); //set data in cart table
     }
 
     @FXML

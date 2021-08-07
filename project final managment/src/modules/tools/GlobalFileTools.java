@@ -1,12 +1,19 @@
 package modules.tools;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import modules.object.Product;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GlobalFileTools {
+
+    RandomData randomData = new RandomData();
 
     //this method count number of lines in files
     public int fileLengthCounter(String path) {
@@ -185,5 +192,26 @@ public class GlobalFileTools {
         }catch (Exception exception){
             System.out.println(exception.toString());
         }
+    }
+
+    //get product data for showing in table current customer format ObservableList
+    public ObservableList<Product> tableData() {
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        //create array list product data type
+        ArrayList<Product> arrayList = new ArrayList<>();
+        for (int i = 0; i <lineCount; i++) {
+            if (counter[i].equals(username)) {
+                //set this data in product  productName, productCount, productPrice, productCode
+                Product product = new Product(counter[i+1], counter[i+2], counter[i+3], randomData.createCode(counter[i+1]));
+                arrayList.add(product);
+            }
+        }
+        //return format observableArrayList
+        return FXCollections.observableArrayList(arrayList);
     }
 }
