@@ -204,12 +204,10 @@ public class GlobalFileTools {
 
         //create array list product data type
         ArrayList<Product> arrayList = new ArrayList<>();
-        for (int i = 0; i <lineCount; i++) {
-            if (counter[i].equals(username)) {
+        for (int i = 0; i <lineCount; i = i+5) {
                 //set this data in product  productName, productCount, productPrice, productCode
                 Product product = new Product(counter[i+1], counter[i+2], counter[i+3], randomData.createCode(counter[i+1]));
                 arrayList.add(product);
-            }
         }
         //return format observableArrayList
         return FXCollections.observableArrayList(arrayList);
