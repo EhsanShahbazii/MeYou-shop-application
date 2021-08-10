@@ -4,16 +4,26 @@ public class Product {  private String productCode;
     private String productName;
     private String productCount;
     private String productPrice;
+    private String productAuthor;
 
-    public Product(String productName, String productCount, String productPrice, String productCode) {
+    public Product(String productName, String productAuthor, String productCount, String productPrice, String productCode) {
         this.productCode = productCode;
         this.productName = productName;
+        this.productAuthor = productAuthor;
         this.productCount = productCount;
         this.productPrice = productPrice;
     }
 
     public Product() {
 
+    }
+
+    public String getProductAuthor() {
+        return productAuthor;
+    }
+
+    public void setProductAuthor(String productAuthor) {
+        this.productAuthor = productAuthor;
     }
 
     public String getProductCode() {
