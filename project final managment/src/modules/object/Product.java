@@ -1,6 +1,7 @@
 package modules.object;
 
-public class Product {  private String productCode;
+public class Product {
+    private String productCode;
     private String productName;
     private String productCount;
     private String productPrice;
