@@ -105,6 +105,7 @@ public class MainPage {
                 public void handle(Event event) {
                     if (cartTab.isSelected()) {
                         try {
+                            //refresh table data and show it
                             cartTable.getItems().clear();
                             refreshTable();
                         } catch (Exception exception) {
