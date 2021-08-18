@@ -24,6 +24,14 @@ public class Person {
         this.toggle = toggle;
     }
 
+    public Person(String fullName, String username, String email, String phoneNumber, String address) {
+        this.fullName = fullName;
+        this.username = username;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
     public String getToggle() {
         return toggle;
     }

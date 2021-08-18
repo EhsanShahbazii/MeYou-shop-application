@@ -19,16 +19,16 @@ public class ShowAllAdmins {
 
     public void initialize() {
         //create cart table columns and give it ids
-        TableColumn productCode = new TableColumn("Code"); //code column
-        productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
-        TableColumn productName = new TableColumn("Product Name"); //name column
-        productName.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        TableColumn productAuthor = new TableColumn("Product Author"); //name column
-        productAuthor.setCellValueFactory(new PropertyValueFactory<>("productAuthor"));
-        TableColumn productCount = new TableColumn("Price"); //count column
-        productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
-        TableColumn productPrice = new TableColumn("Count"); //price column
-        productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+        TableColumn productCode = new TableColumn("Full name"); //code column
+        productCode.setCellValueFactory(new PropertyValueFactory<>("fullName"));
+        TableColumn productName = new TableColumn("username"); //name column
+        productName.setCellValueFactory(new PropertyValueFactory<>("username"));
+        TableColumn productAuthor = new TableColumn("email"); //name column
+        productAuthor.setCellValueFactory(new PropertyValueFactory<>("email"));
+        TableColumn productCount = new TableColumn("phone number"); //count column
+        productCount.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        TableColumn productPrice = new TableColumn("address"); //price column
+        productPrice.setCellValueFactory(new PropertyValueFactory<>("address"));
         //add columns in cart table javafx
         adminTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
@@ -39,7 +39,7 @@ public class ShowAllAdmins {
 
     public void setDataInTable() {
         Person person = new Person();
-        ObservableList<Person> data = globalFileTools.tableData();
+        ObservableList<Person> data = globalFileTools.tableDataPersonAdmin();
         adminTable.setItems(data); //set data in cart table
     }
 

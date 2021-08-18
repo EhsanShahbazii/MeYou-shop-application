@@ -217,10 +217,10 @@ public class GlobalFileTools {
     //get product data for showing in table current customer format ObservableList
     public ObservableList<Person> tableDataPersonAdmin() {
         //get count of lines in current file
-        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\adminProfiles.txt");
+        int lineCount = fileLengthCounter("D:\\project final\\project final managment\\src\\files\\data\\adminProfiles.txt");
 
         //set all data of a current file in array
-        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\adminProfiles.txt");
+        String[] counter = fileAllRead("D:\\project final\\project final managment\\src\\files\\data\\adminProfiles.txt");
 
         //create array list product data type
         ArrayList<Person> arrayList = new ArrayList<>();
