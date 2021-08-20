@@ -51,7 +51,7 @@ public class ShowAllAdmins {
 
     @FXML
     void exitAction(ActionEvent event) {
-
+        globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
     }
 
 }
