@@ -11,7 +11,7 @@
    <children>
       <AnchorPane layoutX="98.0" layoutY="87.0" prefHeight="630.0" prefWidth="850.0" style="-fx-background-color: linear-gradient(to right bottom, #f7f7f7, #d3f7ff, #7cffff, #6cffc9, #c7f55f);; -fx-background-radius: 32px;">
          <children>
-            <JFXButton fx:id="showAllCustomersButton" layoutX="370.0" layoutY="100.0" onAction="#showAllCustomersButton" prefWidth="190.0" style="-fx-background-color: #829C65; -fx-background-radius: 16PX;" text="Show all customers" textFill="WHITE">
+            <JFXButton fx:id="showAllCustomersButton" layoutX="370.0" layoutY="100.0" onAction="#showAllCustomersAction" prefWidth="190.0" style="-fx-background-color: #829C65; -fx-background-radius: 16PX;" text="Show all customers" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
@@ -21,7 +21,7 @@
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="showAllDocumentButton" layoutX="110.0" layoutY="260.0" onAction="#showAllDocumentButton" prefWidth="190.0" style="-fx-background-color: #829C65; -fx-background-radius: 16PX;" text="Show all documents" textFill="WHITE">
+            <JFXButton fx:id="showAllDocumentButton" layoutX="110.0" layoutY="260.0" onAction="#showAllDocumentAction" prefWidth="190.0" style="-fx-background-color: #829C65; -fx-background-radius: 16PX;" text="Show all documents" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
