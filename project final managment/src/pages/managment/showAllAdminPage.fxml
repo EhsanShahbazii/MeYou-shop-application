@@ -20,7 +20,10 @@
                   <Font size="15.0" />
                </font>
             </JFXButton>
-            <TableView fx:id="adminTable" layoutX="50.0" layoutY="80.0" prefHeight="600.0" prefWidth="500.0" />
+            <TableView fx:id="adminTable" layoutX="50.0" layoutY="80.0" prefHeight="600.0" prefWidth="500.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy></TableView>
          </children>
       </AnchorPane>
    </children>

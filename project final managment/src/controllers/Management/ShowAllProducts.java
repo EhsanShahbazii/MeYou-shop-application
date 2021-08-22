@@ -50,7 +50,7 @@ public class ShowAllProducts {
 
     @FXML
     void exitAction(ActionEvent event) {
-
+        globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
     }
 
 }
