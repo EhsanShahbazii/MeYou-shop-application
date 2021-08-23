@@ -164,7 +164,7 @@ public class Management {
     @FXML
     void showAllProductAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/admin/showAllProductPage.fxml"));
+        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/showAllProductPage.fxml"));
         Scene scene1 = new Scene(fxmlLoader1.load());
         scene1.setFill(Color.TRANSPARENT);
         Stage stage1 = new Stage();
