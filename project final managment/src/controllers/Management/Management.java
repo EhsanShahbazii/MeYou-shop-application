@@ -112,12 +112,22 @@ public class Management {
     private Text dateTextField;
 
     @FXML
-    void addNewAdminAction(ActionEvent event) {
-
+    void addNewAdminAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/addNewAdmin.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("show all admins");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(530);
+        stage1.setY(120);
+        stage1.show();
     }
 
     @FXML
-    void addNewDiscountAction(ActionEvent event) {
+    void addNewDiscountAction(ActionEvent event) throws IOException {
 
     }
 
@@ -186,7 +196,8 @@ public class Management {
         stage1.show();
     }
 
-    public void logoutAction(ActionEvent event) throws IOException {
+    @FXML
+    void logoutAction(ActionEvent event) throws IOException {
         globalTools.OpenNewPageXY(logoutButton, "/pages/login/LoginPage.fxml", "login", 650, 110);
     }
 }
