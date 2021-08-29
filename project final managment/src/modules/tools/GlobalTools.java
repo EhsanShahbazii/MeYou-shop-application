@@ -81,6 +81,16 @@ public class GlobalTools {
         textArea.setText("");
     }
 
+    public void clearFields(JFXTextField textField, TextField textField1, PasswordField textField2, PasswordField textField3, TextField textField4, TextField textField5, TextArea textArea) {
+        textField.setText("");
+        textField1.setText("");
+        textField2.setText("");
+        textField3.setText("");
+        textField4.setText("");
+        textField5.setText("");
+        textArea.setText("");
+    }
+
     //open new page and close current pages
     public void OpenNewPage(Button button, String roots, String title) throws IOException {
         Stage primaryStage = (Stage) button.getScene().getWindow();
