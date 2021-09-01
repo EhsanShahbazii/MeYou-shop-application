@@ -14,7 +14,10 @@
                   <Font size="19.0" />
                </font>
             </Text>
-            <TableView fx:id="discountTable" layoutX="50.0" layoutY="126.0" prefHeight="200.0" prefWidth="500.0" style="-fx-border-color: ivory;" stylesheets="@../css/loginStyle.css" />
+            <TableView fx:id="discountTable" layoutX="50.0" layoutY="126.0" prefHeight="200.0" prefWidth="500.0" style="-fx-border-color: ivory;" stylesheets="@../css/loginStyle.css">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy></TableView>
             <Text layoutX="255.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All discounts">
                <font>
                   <Font size="16.0" />
