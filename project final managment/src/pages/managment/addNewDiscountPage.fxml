@@ -49,8 +49,8 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <DatePicker fx:id="startDatePicker" layoutX="345.0" layoutY="516.0" onAction="#discountStartAction" prefWidth="117.0" />
-            <DatePicker fx:id="discountEndDatePicker" layoutX="345.0" layoutY="586.0" onAction="#discountEndAction" prefWidth="117.0" />
+            <DatePicker fx:id="startDatePicker" layoutX="345.0" layoutY="516.0" prefWidth="117.0" />
+            <DatePicker fx:id="discountEndDatePicker" layoutX="345.0" layoutY="586.0" prefWidth="117.0" />
             <Separator layoutX="125.0" layoutY="53.0" prefWidth="350.0" />
             <JFXButton fx:id="addDiscountButton" layoutX="224.0" layoutY="662.0" onAction="#addDiscountAction" prefHeight="37.0" prefWidth="151.0" style="-fx-background-color: #FFC75F; -fx-background-radius: 16px;" text="Add discount">
                <font>
