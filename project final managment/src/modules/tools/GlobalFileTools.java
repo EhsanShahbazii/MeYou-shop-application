@@ -265,7 +265,7 @@ public class GlobalFileTools {
         ArrayList<Discount> arrayList = new ArrayList<>();
         for (int i = 0; i <lineCount; i = i+5) {
             //set this data in product  productName, productCount, productPrice, productCode
-            Discount discount = new Discount(counter[i], counter[i+1], counter[i+3], counter[i+4]);
+            Discount discount = new Discount(counter[i], counter[i+1], counter[i+2], counter[i+3]);
             arrayList.add(discount);
         }
         //return format observableArrayList
@@ -333,5 +333,34 @@ public class GlobalFileTools {
         }catch (Exception exception){
             System.out.println(exception.toString());
         }
+    }
+
+    //add new customer information in userInformation.txt file
+    public void addNewDiscount(String discountName, String discountAmount, String discountStartDate, String discountEndDate) {
+        try {
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt", "rw");
+            Library.seek(Library.length());
+            //template is this : fullName, username, password, email, phoneNumber, address
+            Library.writeBytes(discountName + "\n" + discountAmount + "\n" + discountStartDate + "\n" + discountEndDate + "\n");
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
+    public boolean checkDiscount(String discountName) {
+        boolean state = false;
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt");
+
+        for (int i = 0; i <lineCount; i++) {
+            if (counter[i].equals(discountName)) {
+                state = true;
+                break;
+            }
+        }
+        return state;
     }
 }

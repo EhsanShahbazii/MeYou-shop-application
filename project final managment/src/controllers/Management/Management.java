@@ -2,6 +2,8 @@ package controllers.Management;
 
 import com.jfoenix.controls.JFXButton;
 import controllers.Login.Login;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +37,6 @@ public class Management {
 
     public void initialize() {
         getDataFromFile();
-
     }
 
     public void getDataFromFile() {
