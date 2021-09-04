@@ -76,15 +76,11 @@ public class AddNewDiscount {
     void addDiscountAction(ActionEvent event) {
 
         String discountName = discountNameTextField.getText();
-        String discountAmount = discountAmountComboBox.getSelectionModel().toString();
-        String discountStartDate = startDatePicker.getValue().toString();
-        String discountEndDate = discountEndDatePicker.toString();
+        String discountAmount = discountAmountComboBox.getItems().toString();
 
         if ((startDatePicker.getValue().isAfter(discountEndDatePicker.getValue()))){
             globalTools.AlertShow("please enter right date.");
-        }
-
-        else if (discountName.isEmpty()){
+        } else if (discountName.isEmpty()){
             globalTools.AlertShow("please enter your discount name.");
         }else if (discountAmount.isEmpty()){
             globalTools.AlertShow("please enter your discount Amount.");
@@ -93,6 +89,8 @@ public class AddNewDiscount {
             globalTools.AlertShow("this discount is invalid. please try another one.");
         }
         else {
+            String discountStartDate = startDatePicker.getValue().toString();
+            String discountEndDate = discountEndDatePicker.getValue().toString();
             globalFileTools.addNewDiscount(discountName, discountAmount, discountStartDate, discountEndDate);
             globalTools.AlertShow("discount create!");
         }
