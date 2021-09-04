@@ -119,7 +119,7 @@ public class Management {
         Scene scene1 = new Scene(fxmlLoader1.load());
         scene1.setFill(Color.TRANSPARENT);
         Stage stage1 = new Stage();
-        stage1.setTitle("show all admins");
+        stage1.setTitle("add new admin");
         stage1.setScene(scene1);
         stage1.initStyle(StageStyle.TRANSPARENT);
         stage1.setX(530);
@@ -134,7 +134,7 @@ public class Management {
         Scene scene1 = new Scene(fxmlLoader1.load());
         scene1.setFill(Color.TRANSPARENT);
         Stage stage1 = new Stage();
-        stage1.setTitle("show all admins");
+        stage1.setTitle("add new discount");
         stage1.setScene(scene1);
         stage1.initStyle(StageStyle.TRANSPARENT);
         stage1.setX(530);
@@ -180,7 +180,7 @@ public class Management {
         Scene scene1 = new Scene(fxmlLoader1.load());
         scene1.setFill(Color.TRANSPARENT);
         Stage stage1 = new Stage();
-        stage1.setTitle("show all admins");
+        stage1.setTitle("show all customers");
         stage1.setScene(scene1);
         stage1.initStyle(StageStyle.TRANSPARENT);
         stage1.setX(530);
@@ -190,6 +190,17 @@ public class Management {
 
     @FXML
     void showAllDocumentAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/showAllDocumentPage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("show all documents");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(530);
+        stage1.setY(120);
+        stage1.show();
     }
 
     @FXML

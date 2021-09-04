@@ -7,7 +7,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -92,7 +91,7 @@ public class AddNewDiscount {
             String discountStartDate = startDatePicker.getValue().toString();
             String discountEndDate = discountEndDatePicker.getValue().toString();
             globalFileTools.addNewDiscount(discountName, discountAmount, discountStartDate, discountEndDate);
-            globalTools.AlertShow("discount create!");
+            globalTools.AlertShowInformation("discount create!");
         }
 
     }
