@@ -7,9 +7,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -19,6 +21,8 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modules.charts.LineChartData;
+import modules.charts.PieChartData;
 import modules.tools.DigitalClock;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
@@ -34,9 +38,32 @@ public class Management {
     //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
+    LineChartData lineChartData = new LineChartData();
+    PieChartData pieChartData = new PieChartData();
 
     public void initialize() {
         getDataFromFile();
+
+        //creating the series
+        XYChart.Series series = new XYChart.Series();
+        series.setName("NapLog(x) = -10^7ln(x/10^7) + y'log(x^ie)");
+
+        String[] data = lineChartData.lineChartProductData();
+        long totalAssets = 0;
+
+        for (int i = 0; i <data.length/2.5; i = i+2) {
+            double price = Double.parseDouble(data[i]);
+            int real = (int) Math.round(price);
+            totalAssets += real*Long.parseLong(data[i+1]);
+            series.getData().add(new XYChart.Data(Integer.toString(i+2009) + "/" + Integer.toString(i+1),Integer.parseInt(data[i+1])*real));
+        }
+
+        //adding series to the lineChart
+        lineChart.getData().add(series);
+        
+        pieChart.setClockwise(false);
+        pieChart.setData(pieChartData.PieChartProductData());
+
     }
 
     public void getDataFromFile() {
