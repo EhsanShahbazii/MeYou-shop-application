@@ -60,7 +60,7 @@ public class Management {
 
         //adding series to the lineChart
         lineChart.getData().add(series);
-        
+
         pieChart.setClockwise(false);
         pieChart.setData(pieChartData.PieChartProductData());
 
