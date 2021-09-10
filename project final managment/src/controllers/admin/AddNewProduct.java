@@ -54,6 +54,7 @@ public class AddNewProduct {
     @FXML
     private JFXButton chooseImageButton;
 
+    //thi method added new product in product information file
     @FXML
     void addProductAction(ActionEvent event) {
         //save text field data in variables
@@ -82,13 +83,14 @@ public class AddNewProduct {
         else if (!globalTools.OnlyDigits(productPrice))
             globalTools.AlertShow("please enter just number in product price.");
         else if (globalFileTools.checkProductAvailable(productName)) {
-            //checkSameUserOrNot() methods check it username is repetitious or not
+            //checkSameProductOrNot() methods check it new product is repetitious or not
             globalTools.AlertShow("This product is available in stock.");
         }else {
 
+            //casting product price to double format
             double formatPrice = Double.parseDouble(productPrice);
 
-            //write all information of customer in userInformation.txt file
+            //write all information of new product in productInformation.txt file
             globalFileTools.addNewProduct(productName, productAuthor, Double.toString(formatPrice), productCount, productImage);
 
             //show message when the register logic is not problem
@@ -99,6 +101,7 @@ public class AddNewProduct {
         }
     }
 
+    //this method open directory and admin can choose product image
     @FXML
     void chooseImageAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser(); //create file chooser
@@ -115,6 +118,7 @@ public class AddNewProduct {
         }
     }
 
+    //this method close current page(add new product)
     @FXML
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/admin/addNewProductPage.fxml");
