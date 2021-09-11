@@ -13,10 +13,12 @@ import modules.tools.GlobalTools;
 
 public class ShowAllProductsAdmin {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public void initialize() {
+
         //create cart table columns and give it ids
         TableColumn productCode = new TableColumn("Code"); //code column
         productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
@@ -28,14 +30,15 @@ public class ShowAllProductsAdmin {
         productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
         TableColumn productPrice = new TableColumn("Count"); //price column
         productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+
         //add columns in cart table javafx
         productTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
+        //set new data of product in product table
         setDataInTable();
     }
 
-
-
+    //create object from Product class and set data in product table
     public void setDataInTable() {
         Product product = new Product();
         ObservableList<Product> data = globalFileTools.tableData();
@@ -48,6 +51,7 @@ public class ShowAllProductsAdmin {
     @FXML
     private TableView<Product> productTable;
 
+    //this method close current page(show all products admin)
     @FXML
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
