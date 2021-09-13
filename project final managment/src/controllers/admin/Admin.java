@@ -21,23 +21,24 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import modules.object.Product;
-import modules.tools.DigitalClock;
+import modules.tools.DigitalTime;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Admin {
 
     //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
+    DigitalTime digitalTime = new DigitalTime();
 
     public void initialize() {
+
+        //get admin some data from userInformation.txt file
         getDataFromFile();
 
         //create cart table columns and give it ids
@@ -56,8 +57,12 @@ public class Admin {
 
         //refresh table data and show it
         setDataInTable();
+
+        //set live time and date data in fields
+        digitalTime.LiveTimeDate(timeTextField, dateTextField);
     }
 
+    //get admin fullName, username and some other data like user image path and set it in imageview
     public void getDataFromFile() {
         //get current admin data from files
         String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
@@ -65,21 +70,11 @@ public class Admin {
         String customerFullName = userDataInformation[0]; //add adminFullName
         String customerUsername = userDataInformation[1]; //add customerUsername
 
-        //get user profile image path
+        //get admin profile image path
         String userProfileImagePath = globalFileTools.userImageProfilePath(customerUsername);
 
         //set data in own fields in personal information field
         fullNameTextField.setText(customerFullName);
-
-        //get current date from DateTimeFormatter and LocalDateTime
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
-
-        DigitalClock digitalClock = new DigitalClock();
-        digitalClock.LiveDateSwing(timeTextField);
-
-        //set current date adn show it
-        dateTextField.setText(dtf.format(now));
 
         //set user profile image
         File files = new File(userProfileImagePath);
@@ -87,6 +82,8 @@ public class Admin {
         //set image format in imageview
         profileImageView.setImage(image);
     }
+
+
 
     //this method refresh all product table data
     public void setDataInTable() {
