@@ -65,25 +65,23 @@ public class Admin {
     //get admin fullName, username and some other data like user image path and set it in imageview
     public void getDataFromFile() {
         //get current admin data from files
-        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
+        String[] AdminDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
 
-        String customerFullName = userDataInformation[0]; //add adminFullName
-        String customerUsername = userDataInformation[1]; //add customerUsername
+        String adminFullName = AdminDataInformation[0]; //add adminFullName
+        String adminUsername = AdminDataInformation[1]; //add adminUsername
 
         //get admin profile image path
-        String userProfileImagePath = globalFileTools.userImageProfilePath(customerUsername);
+        String userProfileImagePath = globalFileTools.userImageProfilePath(adminUsername);
 
-        //set data in own fields in personal information field
-        fullNameTextField.setText(customerFullName);
+        //set admin full name in fullNameTextField
+        fullNameTextField.setText(adminFullName);
 
-        //set user profile image
+        //set admin profile image and show it
         File files = new File(userProfileImagePath);
         Image image = new Image(files.toURI().toString());
         //set image format in imageview
         profileImageView.setImage(image);
     }
-
-
 
     //this method refresh all product table data
     public void setDataInTable() {
@@ -131,17 +129,7 @@ public class Admin {
     //this method adding new product in file
     @FXML
     void addProductAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/admin/addNewProductPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("add new product");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/addNewProductPage.fxml", "add new product", 530, 120);
     }
 
     //this method changing profile image
