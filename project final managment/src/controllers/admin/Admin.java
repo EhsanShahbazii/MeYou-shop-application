@@ -6,8 +6,6 @@ import controllers.Login.Login;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -15,11 +13,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import modules.object.Product;
 import modules.tools.DigitalTime;
 import modules.tools.GlobalFileTools;
@@ -62,7 +57,8 @@ public class Admin {
         digitalTime.LiveTimeDate(timeTextField, dateTextField);
     }
 
-    //get admin fullName, username and some other data like user image path and set it in imageview
+    /*get admin fullName, username and some other data
+     like user image path and set it in imageview*/
     public void getDataFromFile() {
         //get current admin data from files
         String[] AdminDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
@@ -126,7 +122,7 @@ public class Admin {
     @FXML
     private Text dateTextField;
 
-    //this method adding new product in file
+    //this method open a page and adding new product in file
     @FXML
     void addProductAction(ActionEvent event) throws IOException {
         globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/addNewProductPage.fxml", "add new product", 530, 120);
@@ -149,41 +145,41 @@ public class Admin {
         }
     }
 
+    //this method charge product count in store
     @FXML
     void chargeProductAction(ActionEvent event) throws FileNotFoundException {
+        //show error if admin isn't set product count in field
         if (productNewCountTextField.getText().isEmpty()) {
             globalTools.AlertShow("Please enter new product count");
         }else {
+            //get selected product and get name of it
             Product selectItem = allProductTable.getSelectionModel().getSelectedItem();
             String productName = selectItem.getProductName();
+            //charge new product count and show it
             globalFileTools.chargeProductCount(productName, productNewCountTextField.getText());
-            productNewCountTextField.setText("");
+            productNewCountTextField.setText(""); //clear product new count field
             globalTools.AlertShowInformation("Product(" + productName + ") charge successful.");
         }
     }
 
+    //delete product witch select by admin
     @FXML
     void deleteProductAction(ActionEvent event) throws FileNotFoundException {
+        //get selected product in table
         Product selectItem = allProductTable.getSelectionModel().getSelectedItem();
-        allProductTable.getItems().remove(selectItem);
+        allProductTable.getItems().remove(selectItem); //remove it in table
+        //delete it in productInformation file
         globalFileTools.removeProduct(selectItem.getProductName());
     }
 
+    //this method open a page and show all product
     @FXML
     void showProductAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/admin/showAllProductPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("show all product");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/showAllProductPage.fxml", "show all product", 530, 120);
     }
 
+    //this method close current page and open login page
+    @FXML
     public void logoutAction(ActionEvent event) throws IOException {
         globalTools.OpenNewPageXY(logoutButton, "/pages/login/LoginPage.fxml", "login", 650, 110);
     }
