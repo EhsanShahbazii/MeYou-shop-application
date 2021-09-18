@@ -19,6 +19,7 @@ public class Login {
     public GlobalTools globalTools = new GlobalTools();
     public LoginCheck loginCheck = new LoginCheck();
     String username, password, toggle = "management";
+    //to know user can login or not
     public static boolean loginIsDone = false;
 
     public void initialize() {
@@ -39,7 +40,7 @@ public class Login {
     @FXML
     private JFXButton loginButton;
 
-    //add login logic in below
+    //add login logic in below with exceptions
     @FXML
     void LoginAction(ActionEvent event) throws IOException {
 
@@ -56,7 +57,7 @@ public class Login {
             //checkToLogin() method checks is username and password  and toggle are right or not
             globalTools.AlertShow("your username or password is incorrect.");
         } else {
-            //set username and password of current customer
+            //set username and password of current user
             person.setUsername(username);
             person.setPassword(password);
             person.setToggle(toggle);
@@ -76,6 +77,7 @@ public class Login {
     //set admin or management toggle
     @FXML
     void toggleAction(ActionEvent event) {
+        //get toggle and is selected or not
         if (chooseToggle.isSelected()) {
             toggle = "admin";
         }else {
@@ -83,5 +85,4 @@ public class Login {
         }
 
     }
-
 }
