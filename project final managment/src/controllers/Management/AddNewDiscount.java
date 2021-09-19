@@ -17,38 +17,41 @@ import modules.tools.GlobalTools;
 
 public class AddNewDiscount {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
+    //create comboBox data by observableList
     final ObservableList<String> discountAmounts = FXCollections.observableArrayList("10","20","50","85");
 
     public void initialize() {
-        //create cart table columns and give it ids
-        TableColumn productCode = new TableColumn("Discount name"); //code column
-        productCode.setCellValueFactory(new PropertyValueFactory<>("discountName"));
-        TableColumn productName = new TableColumn("Discount amount"); //name column
-        productName.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
-        TableColumn productAuthor = new TableColumn("Discount start date"); //name column
-        productAuthor.setCellValueFactory(new PropertyValueFactory<>("discountStartDate"));
-        TableColumn productCount = new TableColumn("Discount end date"); //count column
-        productCount.setCellValueFactory(new PropertyValueFactory<>("discountEndDate"));
-        //add columns in cart table javafx
-        discountTable.getColumns().addAll(productCode, productName, productAuthor, productCount);
 
+        //create discount table columns and give it ids
+        TableColumn discountName = new TableColumn("Discount name"); //code column
+        discountName.setCellValueFactory(new PropertyValueFactory<>("discountName"));
+        TableColumn discountAmount = new TableColumn("Discount amount"); //name column
+        discountAmount.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
+        TableColumn discountStartDate = new TableColumn("Discount start date"); //name column
+        discountStartDate.setCellValueFactory(new PropertyValueFactory<>("discountStartDate"));
+        TableColumn discountEndDate = new TableColumn("Discount end date"); //count column
+        discountEndDate.setCellValueFactory(new PropertyValueFactory<>("discountEndDate"));
+        //add columns in discount table javafx
+        discountTable.getColumns().addAll(discountName, discountAmount, discountStartDate, discountEndDate);
+
+        //set new data of product in product table
         setDataInTable();
 
+        //set discount comboBox items and select default 0
         discountAmountComboBox.setItems(discountAmounts);
         discountAmountComboBox.getSelectionModel().select(0);
     }
 
-
-
+    //create object from discount class and set data in discount table
     public void setDataInTable() {
         Discount discount = new Discount();
         ObservableList<Discount> data = globalFileTools.tableDataDiscount();
-        discountTable.setItems(data); //set data in cart table
+        discountTable.setItems(data); //set data in discount table
     }
-
 
     @FXML
     private TableView<Discount> discountTable;
@@ -71,13 +74,17 @@ public class AddNewDiscount {
     @FXML
     private JFXButton exitButton;
 
+    //this method add new discount in discountDetails.txt file
     @FXML
     void addDiscountAction(ActionEvent event) {
 
+        //save discount name and discount amount
         String discountName = discountNameTextField.getText();
         String discountAmount = discountAmountComboBox.getItems().toString();
 
+        //show error if text fields is empty or not choose file
         if ((startDatePicker.getValue().isAfter(discountEndDatePicker.getValue()))){
+            //show error if start date is after than end date
             globalTools.AlertShow("please enter right date.");
         } else if (discountName.isEmpty()){
             globalTools.AlertShow("please enter your discount name.");
@@ -85,20 +92,23 @@ public class AddNewDiscount {
             globalTools.AlertShow("please enter your discount Amount.");
         }
         else if (globalFileTools.checkDiscount(discountName)){
+            //show error if this discount is available in table
             globalTools.AlertShow("this discount is invalid. please try another one.");
         }
         else {
+            //save discount start and end date
             String discountStartDate = startDatePicker.getValue().toString();
             String discountEndDate = discountEndDatePicker.getValue().toString();
-            globalFileTools.addNewDiscount(discountName, discountAmount, discountStartDate, discountEndDate);
-            globalTools.AlertShowInformation("discount create!");
-        }
 
+            //add new discount details in discountDetails.txt file
+            globalFileTools.addNewDiscount(discountName, discountAmount, discountStartDate, discountEndDate);
+            globalTools.AlertShowInformation("discount create!"); //show successful alert
+        }
     }
 
+    //this method close current page(add new discount)
     @FXML
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/managment/addNewDiscountPage.fxml");
     }
-
 }
