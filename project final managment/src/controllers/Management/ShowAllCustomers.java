@@ -13,33 +13,35 @@ import modules.tools.GlobalTools;
 
 public class ShowAllCustomers {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public void initialize() {
-        //create cart table columns and give it ids
-        TableColumn productCode = new TableColumn("Full name"); //code column
-        productCode.setCellValueFactory(new PropertyValueFactory<>("fullName"));
-        TableColumn productName = new TableColumn("username"); //name column
-        productName.setCellValueFactory(new PropertyValueFactory<>("username"));
-        TableColumn productAuthor = new TableColumn("email"); //name column
-        productAuthor.setCellValueFactory(new PropertyValueFactory<>("email"));
-        TableColumn productCount = new TableColumn("phone number"); //count column
-        productCount.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
-        TableColumn productPrice = new TableColumn("address"); //price column
-        productPrice.setCellValueFactory(new PropertyValueFactory<>("address"));
-        //add columns in cart table javafx
-        customerTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
+        //create customer table columns and give it ids
+        TableColumn fullName = new TableColumn("Full name"); //code column
+        fullName.setCellValueFactory(new PropertyValueFactory<>("fullName"));
+        TableColumn username = new TableColumn("username"); //name column
+        username.setCellValueFactory(new PropertyValueFactory<>("username"));
+        TableColumn email = new TableColumn("email"); //name column
+        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        TableColumn phoneNumber = new TableColumn("phone number"); //count column
+        phoneNumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
+        TableColumn address = new TableColumn("address"); //price column
+        address.setCellValueFactory(new PropertyValueFactory<>("address"));
+        //add columns in customer table javafx
+        customerTable.getColumns().addAll(fullName, username, email, phoneNumber, address);
+
+        //set new data of customer in customer table
         setDataInTable();
     }
 
-
-
+    //create object from Person class and set data in customer table
     public void setDataInTable() {
         Person person = new Person();
         ObservableList<Person> data = globalFileTools.tableDataPersonCustomer();
-        customerTable.setItems(data); //set data in cart table
+        customerTable.setItems(data); //set data in customer table
     }
 
     @FXML
@@ -48,6 +50,7 @@ public class ShowAllCustomers {
     @FXML
     private TableView<Person> customerTable;
 
+    //this method close current page(show all product)
     @FXML
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/managment/showAllCustomerPage.fxml");
