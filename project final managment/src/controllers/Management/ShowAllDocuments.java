@@ -80,7 +80,6 @@ public class ShowAllDocuments implements Initializable {
         inventorycCrcleGraph.setTitle("inventory balance graph");
         inventorycCrcleGraph.setClockwise(false);
         inventorycCrcleGraph.setData(pieChartData.PieChartProductData());
-
     }
 
 

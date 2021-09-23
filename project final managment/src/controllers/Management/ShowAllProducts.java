@@ -13,11 +13,12 @@ import modules.tools.GlobalTools;
 
 public class ShowAllProducts {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public void initialize() {
-        //create cart table columns and give it ids
+        //create product table columns and give it ids
         TableColumn productCode = new TableColumn("Code"); //code column
         productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
         TableColumn productName = new TableColumn("Product Name"); //name column
@@ -28,18 +29,18 @@ public class ShowAllProducts {
         productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
         TableColumn productPrice = new TableColumn("Count"); //price column
         productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
-        //add columns in cart table javafx
+        //add columns in product table javafx
         productTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
+        //set new data of product in product table
         setDataInTable();
     }
 
-
-
+    //create object from Product class and set data in product table
     public void setDataInTable() {
         Product product = new Product();
         ObservableList<Product> data = globalFileTools.tableData();
-        productTable.setItems(data); //set data in cart table
+        productTable.setItems(data); //set data in product table
     }
 
     @FXML
@@ -48,6 +49,7 @@ public class ShowAllProducts {
     @FXML
     private TableView<Product> productTable;
 
+    //this method close current page(show all products)
     @FXML
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
