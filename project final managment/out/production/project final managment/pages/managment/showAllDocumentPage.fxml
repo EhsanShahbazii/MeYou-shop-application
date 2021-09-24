@@ -29,7 +29,7 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </LineChart>
-            <PieChart fx:id="inventorycCrcleGraph" layoutX="361.0" layoutY="82.0" prefHeight="200.0" prefWidth="200.0" />
+            <PieChart fx:id="inventoryPieGraph" layoutX="361.0" layoutY="82.0" prefHeight="200.0" prefWidth="200.0" />
             <Text layoutX="31.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taxation">
                <font>
                   <Font size="18.0" />
