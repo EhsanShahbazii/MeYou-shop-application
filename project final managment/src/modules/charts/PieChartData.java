@@ -12,7 +12,7 @@ public class PieChartData {
     //get product data for showing in table current customer format ObservableList
     public ObservableList<PieChart.Data> PieChartProductData() {
         int index = 0;
-
+        //this is for setting data in pie chart
         ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
 
         //get count of lines in current file
