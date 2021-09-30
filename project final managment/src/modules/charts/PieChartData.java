@@ -7,6 +7,7 @@ import modules.tools.GlobalFileTools;
 
 public class PieChartData {
 
+    //variables which are used
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
     //get product data for showing in table current customer format ObservableList
