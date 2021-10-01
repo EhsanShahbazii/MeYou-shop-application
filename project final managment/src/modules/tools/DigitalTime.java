@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 public class DigitalTime {
 
+    //this method set live time and date
     public void LiveTimeDate(Text timeTextField, Text dateTextField) {
         //get current date from DateTimeFormatter and LocalDateTime
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");

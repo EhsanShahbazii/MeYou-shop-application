@@ -7,8 +7,10 @@ import java.util.Date;
 
 public class DigitalClock {
 
+    //create simple date format
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
 
+    //this method get live date and time
     public void LiveDateSwing(Text textField) {
 
         Runnable runnable = new Runnable() {
