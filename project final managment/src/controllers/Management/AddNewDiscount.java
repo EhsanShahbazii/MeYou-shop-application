@@ -109,6 +109,6 @@ public class AddNewDiscount {
     //this method close current page(add new discount)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/managment/addNewDiscountPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 }

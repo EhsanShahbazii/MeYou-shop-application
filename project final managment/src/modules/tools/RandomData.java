@@ -2,6 +2,7 @@ package modules.tools;
 
 public class RandomData {
 
+    //this method create product code from product name
     public String createCode(String productName) {
         String result = "";
         int decimal = 0;

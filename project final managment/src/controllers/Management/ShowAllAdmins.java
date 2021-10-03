@@ -53,6 +53,6 @@ public class ShowAllAdmins {
     //this method close current page(show all admins)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/managment/showAllAdminPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 }

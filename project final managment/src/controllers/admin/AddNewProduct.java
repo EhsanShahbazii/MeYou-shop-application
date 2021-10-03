@@ -122,7 +122,7 @@ public class AddNewProduct {
     //this method close current page(add new product)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/admin/addNewProductPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 
 }

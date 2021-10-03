@@ -73,6 +73,7 @@ public class GlobalTools {
         return true;
     }
 
+    //this method clear text fields
     public void clearFields(JFXTextField textField, TextField textField1, TextField textField2, TextField textField3, TextField textField4, TextArea textArea) {
         textField.setText("");
         textField1.setText("");
@@ -82,6 +83,7 @@ public class GlobalTools {
         textArea.setText("");
     }
 
+    //this method clear text fields
     public void clearFields(JFXTextField textField, TextField textField1, PasswordField textField2, PasswordField textField3, TextField textField4, TextField textField5, TextArea textArea) {
         textField.setText("");
         textField1.setText("");
@@ -90,18 +92,6 @@ public class GlobalTools {
         textField4.setText("");
         textField5.setText("");
         textArea.setText("");
-    }
-
-    //open new page and close current pages
-    public void OpenNewPage(Button button, String roots, String title) throws IOException {
-        Stage primaryStage = (Stage) button.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource(roots));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("./pages/css/loginStyle.css");
-        primaryStage.setTitle(title);
-        primaryStage.setScene(scene);
-        scene.setFill(Color.TRANSPARENT);
-        primaryStage.show();
     }
 
     //open new page and close current pages
@@ -119,11 +109,12 @@ public class GlobalTools {
     }
 
     //this method close page without closing previous pages
-    public void closeCurrentPage(Button button, String currentPagePath) {
+    public void closeCurrentPage(Button button) {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
     }
 
+    //this method open new page without closing current page
     public void openNewPageWithoutCloseCurrentPage(String pagePath, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource(pagePath));
@@ -137,5 +128,4 @@ public class GlobalTools {
         stage.setY(120);
         stage.show();
     }
-
 }
