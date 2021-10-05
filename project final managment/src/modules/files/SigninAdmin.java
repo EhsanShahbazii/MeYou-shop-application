@@ -49,4 +49,17 @@ public class SigninAdmin {
             System.out.println(exception.toString());
         }
     }
+
+    //add new customer information in userInformation.txt file
+    public void signinNewCustomer(String username, String password, String toggle) {
+
+        try {
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\project final managment\\src\\files\\data\\managementAndAdminLogin.txt", "rw");
+            Library.seek(Library.length());
+            //template is this : username, password and toggle
+            Library.writeBytes(username + "\n" + password + "\n" + toggle + "\n");
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
 }
