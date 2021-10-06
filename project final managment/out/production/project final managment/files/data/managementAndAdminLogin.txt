@@ -10,3 +10,6 @@ management
 nima
 1
 admin
+kamran
+1
+admin

@@ -80,7 +80,7 @@ public class AddNewDiscount {
 
         //save discount name and discount amount
         String discountName = discountNameTextField.getText();
-        String discountAmount = discountAmountComboBox.getItems().toString();
+        String discountAmount = discountAmountComboBox.getSelectionModel().getSelectedItem();
 
         //show error if text fields is empty or not choose file
         if ((startDatePicker.getValue().isAfter(discountEndDatePicker.getValue()))){
