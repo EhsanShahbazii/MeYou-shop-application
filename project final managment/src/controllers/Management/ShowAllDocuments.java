@@ -49,8 +49,8 @@ public class ShowAllDocuments implements Initializable {
         profitLineGraph.getData().add(series);
 
         //setting data into total and taxation fields
-        totalAssetsText.setText(String.valueOf(totalAssets*0.98) + "$");
-        taxationText.setText(String.valueOf(totalAssets*0.17) + "$");
+        totalAssetsText.setText(String.valueOf(totalAssets*0.8) + "$");
+        taxationText.setText(String.valueOf(totalAssets*0.16) + "$");
 
         //add some attribute for inventory pie graph
         inventoryPieGraph.setLegendSide(Side.LEFT);
