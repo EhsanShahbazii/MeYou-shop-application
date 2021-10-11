@@ -50,7 +50,7 @@ public class ShowAllDocuments implements Initializable {
 
         //setting data into total and taxation fields
         totalAssetsText.setText(String.valueOf(totalAssets*0.8) + "$");
-        taxationText.setText(String.valueOf(totalAssets*0.16) + "$");
+        taxationText.setText(String.valueOf(totalAssets*0.2) + "$");
 
         //add some attribute for inventory pie graph
         inventoryPieGraph.setLegendSide(Side.LEFT);
