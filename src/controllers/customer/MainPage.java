@@ -144,10 +144,6 @@ public class MainPage {
         }
     }
 
-    public void messageAdded() {
-        
-    }
-
     public void getDataFromFile() {
         //get current customer data from files
         String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
