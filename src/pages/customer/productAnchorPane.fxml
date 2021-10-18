@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="170.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.ProductAnchorPane">
    <children>
-      <AnchorPane prefHeight="190.0" prefWidth="170.0" style="-fx-background-radius: 16px; -fx-background-color: #DFDDCE;">
+      <AnchorPane prefHeight="190.0" prefWidth="170.0" style="-fx-background-radius: 16px; -fx-background-color: ivory;">
          <children>
             <Button layoutX="6.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: none;">
                <graphic>

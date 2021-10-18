@@ -23,7 +23,7 @@
 }
 
 .todayDealAnchorPane, .forMenCategories, .forWomenCategories, .forKidsCategories, .suggestCartAnchorPane, .suggestLatestOrdersAnchorPane {
-   -fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);
+   -fx-background-color: #f7fcff;
    -fx-background-radius: 20px;
 }
 
