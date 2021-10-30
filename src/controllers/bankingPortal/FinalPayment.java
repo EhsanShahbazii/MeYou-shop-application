@@ -7,8 +7,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import modules.tools.GlobalFileTools;
+import modules.tools.GlobalTools;
+import modules.tools.RandomData;
 
 public class FinalPayment {
+
+    //variables which are used
+    GlobalTools globalTools = new GlobalTools();
+    GlobalFileTools globalFileTools = new GlobalFileTools();
+    RandomData randomData = new RandomData();
 
     @FXML
     private Text amountText;
@@ -39,7 +47,7 @@ public class FinalPayment {
 
     @FXML
     void cancelAction(ActionEvent event) {
-
+        globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
     }
 
     @FXML

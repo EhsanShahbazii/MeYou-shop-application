@@ -607,7 +607,7 @@ public class MainPage {
     }
 
     @FXML
-    void paymentCartAction(ActionEvent event) {
+    void paymentCartAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
         fxmlLoader1.setLocation(getClass().getResource("/pages/bankingPortal/finalPaymentPage.fxml"));
         Scene scene1 = new Scene(fxmlLoader1.load());
