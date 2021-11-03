@@ -26,6 +26,8 @@ public class FinalPayment {
         username = MainPage.usernames;
 
         globalTools.LimitedTextField(captchaTextField, 4);
+
+        amountText.setText( "$ " + MainPage.cartAmount);
     }
 
     @FXML
