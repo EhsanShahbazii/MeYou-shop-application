@@ -19,7 +19,7 @@ public class FinalPayment {
     GlobalFileTools globalFileTools = new GlobalFileTools();
     RandomData randomData = new RandomData();
 
-    String username;
+    String username, captcha;
 
     public void initialize() {
 
@@ -28,6 +28,9 @@ public class FinalPayment {
         globalTools.LimitedTextField(captchaTextField, 4);
 
         amountText.setText( "$ " + MainPage.cartAmount);
+
+        captcha = randomData.captchaData(1, 98);
+        captchaRandomTextField.setText(captcha);
     }
 
     @FXML
