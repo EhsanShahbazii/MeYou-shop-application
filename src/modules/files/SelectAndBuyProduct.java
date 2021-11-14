@@ -165,5 +165,35 @@ public class SelectAndBuyProduct {
         return Double.toString(total);
     }
 
+    public void finalPayment(String username) throws FileNotFoundException {
+        //get count of lines in current file
+        int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\cardInformation.txt");
+
+        //set all data of a current file in array
+        String[] counter = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\cardInformation.txt");
+
+        //clear current file but file is safe
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\cardInformation.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
+
+        try {
+            //write data in file by random access file
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\cardInformation.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                if (username.equals(counter[i])) {
+                    i += 3;
+                }else {
+                    //write data format (data) \n
+                    Library.writeBytes(counter[i] + "\n");
+                }
+            }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
 
 }
