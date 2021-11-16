@@ -165,7 +165,9 @@ public class SelectAndBuyProduct {
         return Double.toString(total);
     }
 
-    public void finalPayment(String username) throws FileNotFoundException {
+    public ArrayList<String> finalPayment(String username) throws FileNotFoundException {
+
+        ArrayList<String> arrayList = new ArrayList<>();
         //get count of lines in current file
         int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\cardInformation.txt");
 
@@ -184,6 +186,9 @@ public class SelectAndBuyProduct {
             Library.seek(Library.length());
             for (int i=0; i < lineCount; i++){
                 if (username.equals(counter[i])) {
+                    arrayList.add(counter[i]);
+                    arrayList.add(counter[i+1]);
+                    arrayList.add(counter[i+2]);
                     i += 3;
                 }else {
                     //write data format (data) \n
@@ -193,7 +198,6 @@ public class SelectAndBuyProduct {
         }catch (Exception exception){
             System.out.println(exception.toString());
         }
+        return arrayList;
     }
-
-
 }

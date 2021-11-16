@@ -95,12 +95,10 @@ public class FinalPayment {
             //show successful alert
             globalTools.AlertShowInformation("Payment is successful!");
 
-            selectAndBuyProduct.finalPayment(username);
-
+            globalFileTools.addToHistoryPayment(selectAndBuyProduct.finalPayment(username));
             //close banking portal page and back to dashboard
             globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/finalPaymentPage.fxml");
         }
     }
-
 }
 
