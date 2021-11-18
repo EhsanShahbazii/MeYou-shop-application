@@ -284,4 +284,44 @@ public class GlobalFileTools {
             System.out.println(exception.toString());
         }
     }
+
+    //update new
+    public void updateProductCount(ArrayList<String> array) throws FileNotFoundException {
+
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+        for(int j = 1; j < array.size(); j= j+3) {
+            for (int i = 1; i < lineCount; i++) {
+                if (counter[i].equals(array.get(j))) {
+
+                    int before = Integer.parseInt(counter[i+3]) - Integer.parseInt(array.get(j+1));
+                    counter[i+3] = Integer.toString(before);
+                    break;
+                }
+            }
+        }
+
+        //clear current file but file is safe
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
+
+        try {
+            //write data in file by random access file
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\ProductInformation.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                //write data format (data) \n
+                Library.writeBytes(counter[i] + "\n");
+            }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
 }
