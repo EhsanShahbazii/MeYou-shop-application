@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="productMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="850.0" style="-fx-background-color: ivory; -fx-background-radius: 32px 5px 32px 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.ProductMainAnchorPane">
+<AnchorPane fx:id="productMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="850.0" style="-fx-background-color: #AEBFF9; -fx-background-radius: 32px 5px 32px 5px;" styleClass="smallProductAnchor" stylesheets="@../css/darkMode.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.ProductMainAnchorPane">
    <children>
       <ImageView fx:id="imageViewProduct" fitHeight="130.0" fitWidth="130.0" layoutX="37.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
       <Text fx:id="ProductNameText" layoutX="182.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0">

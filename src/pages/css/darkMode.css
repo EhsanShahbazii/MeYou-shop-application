@@ -1,28 +1,33 @@
 .text {
-    -fx-fill: #fffff0;
+    -fx-fill: #FFFFFF;
 }
 
 .layout {
-    -fx-background-color:  #2C2F33;
+    -fx-background-color: #23272A;
+}
+
+.smallProductAnchor {
+    -fx-background-color: #7289DA;
 }
 
 .tab-pane .tab-header-area .tab-header-background {
-    -fx-background-color: #2C2F33;
+    -fx-background-color: #23272A;
 }
 
 .homeAnchorPane, .categoriesAnchorPane, .cartAnchorPane, .favoritesAnchorPane, .accountAnchorPane, .scrollBarCategories {
-   -fx-background-color: #3F4042;
+   -fx-background-color: #2C2F33;
 }
 
 .todayDealAnchorPane, .forMenCategories, .forWomenCategories, .forKidsCategories, .suggestCartAnchorPane, .suggestLatestOrdersAnchorPane {
-   -fx-background-color: linear-gradient(to right bottom, #002a4a, #29244e, #481745, #5d022f, #640011);
+   -fx-background-color: #4D555B;
    -fx-background-radius: 20px;
 }
 
 .table-view .column-header,
 .table-view .column-header .filler,
 .table-view .column-header-background .filler {
-    -fx-background-color: derive;
+    -fx-text-fill: black;
+    -fx-background-color: #7289DA;
     -fx-stroke: transparent;
     -fx-size:50;
     -fx-alignment: CENTER ;
@@ -31,12 +36,19 @@
 }
 
 .table-row-cell:filled:hover {
-
+    -fx-text-fill: black;
     -fx-size:50;
     -fx-alignment: CENTER;
     -fx-text-alignment: center;
 
 
+}
+
+.table-view {
+    -fx-fixed-cell-size: 50;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: center;
+    -fx-text-fill: black;
 }
 
 .table-view:row-selection {
