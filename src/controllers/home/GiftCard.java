@@ -14,7 +14,7 @@ public class GiftCard {
 
     @FXML
     void closeGiftCardAnchorAction(ActionEvent event) {
-        globalTools.closeCurrentPage(closeGiftCardAnchor, "/pages/home/giftCardPage.fxml");
+        globalTools.closeCurrentPage(closeGiftCardAnchor);
     }
 
 }

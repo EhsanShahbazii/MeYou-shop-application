@@ -55,7 +55,7 @@ public class Notification {
 
     @FXML
     void closeNotificationAction(ActionEvent event) {
-        globalTools.closeCurrentPage(closeNotificationButton, "/pages/home/notificationPage.fxml");
+        globalTools.closeCurrentPage(closeNotificationButton);
     }
 
     @FXML

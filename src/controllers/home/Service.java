@@ -14,7 +14,7 @@ public class Service {
 
     @FXML
     void backServiceAction(ActionEvent event) {
-        globalTools.closeCurrentPage(backServiceButton, "/pages/home/sevicePage.fxml");
+        globalTools.closeCurrentPage(backServiceButton);
     }
 
 }
