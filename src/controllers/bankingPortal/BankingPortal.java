@@ -27,8 +27,7 @@ public class BankingPortal {
     RandomData randomData = new RandomData();
 
     //variables for captcha policy
-    String cvv, captcha, amount, username;
-    String captchaResult;
+    String cvv, captcha, amount, username, captchaResult;
 
     public void initialize() {
 
