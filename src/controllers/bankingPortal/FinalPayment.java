@@ -27,15 +27,20 @@ public class FinalPayment {
 
     public void initialize() {
 
+        //get username and save it
         username = MainPage.usernames;
 
+        //add limit for captcha text field
         globalTools.LimitedTextField(captchaTextField, 4);
 
+        //set $ sign before cart amount field
         amountText.setText( "$ " + MainPage.cartAmount);
 
+        //create captcha and set captcha
         captcha = randomData.captchaData(1, 98);
         captchaRandomTextField.setText(captcha);
 
+        //solve captcha and save it
         captchaResult = randomData.captchaSolve(captcha);
     }
 
@@ -66,11 +71,13 @@ public class FinalPayment {
     @FXML
     private JFXButton proceedButton1;
 
+    //this method is get back to main page
     @FXML
     void cancelAction(ActionEvent event) {
         globalTools.closeCurrentPage(cancelButton);
     }
 
+    //set new captcha and show it
     @FXML
     void nextCaptchaAction(ActionEvent event) {
         //create new captcha logic
@@ -81,20 +88,24 @@ public class FinalPayment {
         captchaResult = randomData.captchaSolve(captcha);
     }
 
+    //this method add some proceedAction
     @FXML
     void proceedAction(ActionEvent event) throws FileNotFoundException {
 
+        //show error message if captcha is invalid
         if (!captchaTextField.getText().equals(captchaResult))
             globalTools.AlertShow("please enter captcha correct");
         else {
             //update wallet balance and add new balance
             globalFileTools.updateWalletBalance(username, "-" + MainPage.cartAmount);
 
+            //update product count and set product
             globalFileTools.updateProductCount(selectAndBuyProduct.finalPayment(username));
 
             //show successful alert
             globalTools.AlertShowInformation("Payment is successful!");
 
+            //add information into the history payment
             globalFileTools.addToHistoryPayment(selectAndBuyProduct.finalPayment(username));
 
             //close banking portal page and back to dashboard
