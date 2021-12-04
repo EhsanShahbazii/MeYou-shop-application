@@ -37,7 +37,7 @@ public class Message {
             double marginTop = 5;
 
             //set position for anchor pane
-            AnchorPane.setTopAnchor(root1, marginTop + i * (marginTop + control1.getAnchorpane().getPrefHeight()));
+            AnchorPane.setTopAnchor(root1, marginTop + i * (marginTop + control1.getAnchorPane().getPrefHeight()));
             AnchorPane.setLeftAnchor(root1, marginLeft);
 
             //add this anchor pane in main anchor pane
