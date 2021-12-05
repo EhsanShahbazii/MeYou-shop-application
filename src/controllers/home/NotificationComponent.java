@@ -19,11 +19,11 @@ public class NotificationComponent {
     @FXML
     private Text notificationBodyTextField;
 
-    public AnchorPane getAnchorpane() {
+    public AnchorPane getAnchorPane() {
         return anchorpane;
     }
 
-    public void setAnchorpane(AnchorPane anchorpane) {
+    public void setAnchorPane(AnchorPane anchorpane) {
         this.anchorpane = anchorpane;
     }
 
