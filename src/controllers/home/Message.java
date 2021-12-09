@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class Message {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
 
     public void initialize() throws IOException {
@@ -53,11 +54,13 @@ public class Message {
     @FXML
     private JFXButton deleteMessageButton;
 
+    //this method is close message page
     @FXML
     void closeMessageAction(ActionEvent event) {
         globalTools.closeCurrentPage(closeMessageButton);
     }
 
+    //this method is delete message
     @FXML
     void deleteMessageAction(ActionEvent event) {
         messageScrollAnchor.getChildren().clear();
