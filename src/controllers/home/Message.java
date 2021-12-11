@@ -1,7 +1,6 @@
 package controllers.home;
 
 import com.jfoenix.controls.JFXButton;
-import controllers.customer.ProductAnchorPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
