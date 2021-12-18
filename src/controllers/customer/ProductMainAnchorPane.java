@@ -222,7 +222,7 @@ public class ProductMainAnchorPane {
         int countBefore = Integer.parseInt(productCountText.getText());
 
         //if countBefore smaller than 1, do nothing
-        if (countBefore <=1) {
+        if (countBefore <= 1) {
 
         }else {
             //show count*price in format ($number)
