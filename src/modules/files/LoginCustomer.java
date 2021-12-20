@@ -4,6 +4,7 @@ import modules.tools.GlobalFileTools;
 
 public class LoginCustomer {
 
+    //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public boolean loginCheck(String username, String password) {
