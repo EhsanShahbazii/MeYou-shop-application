@@ -6,12 +6,10 @@ import modules.objects.Product;
 import modules.tools.GlobalFileTools;
 import modules.tools.RandomData;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class SelectAndBuyProduct {
 
