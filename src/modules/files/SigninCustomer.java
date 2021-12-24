@@ -6,8 +6,10 @@ import java.io.RandomAccessFile;
 
 public class SigninCustomer {
 
+    //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
 
+    //this method check username in invalid or not
     public boolean checkSameUserOrNot(String username) {
         int index = 0, lineCount = 0;
         boolean state = false;
