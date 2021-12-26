@@ -255,6 +255,7 @@ public class GlobalFileTools {
         }
     }
 
+    //this method add payment to history table
     public void addToHistoryPayment(ArrayList<String> array) throws FileNotFoundException {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userPaymentHistory.txt");
@@ -285,7 +286,7 @@ public class GlobalFileTools {
         }
     }
 
-    //update new
+    //update new product count
     public void updateProductCount(ArrayList<String> array) throws FileNotFoundException {
 
         //get count of lines in current file
