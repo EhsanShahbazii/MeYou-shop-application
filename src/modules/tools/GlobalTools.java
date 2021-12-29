@@ -132,6 +132,7 @@ public class GlobalTools {
         primaryStage.show();
     }
 
+    //this method clearFields and set ""
     public void clearFields(TextField textField1, TextField textField2, TextField textField3, TextField textField4, TextArea textArea, PasswordField passwordField1, PasswordField passwordField2) {
         textField1.setText("");
         textField2.setText("");
@@ -148,6 +149,7 @@ public class GlobalTools {
         stage.close();
     }
 
+    //this method connect to bankingPortal
     public void connectToBankingPortal() throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
         fxmlLoader1.setLocation(getClass().getResource("/pages/bankingPortal/bankingPortal.fxml"));
