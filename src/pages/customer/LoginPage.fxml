@@ -26,7 +26,7 @@
                      <font>
                         <Font size="15.0" />
                      </font></JFXTextField>
-                  <JFXButton fx:id="LoginButton" layoutX="80.0" layoutY="255.0" prefHeight="28.0" prefWidth="91.0" styleClass="LoginBtn" stylesheets="@../../LoginStyle.css" text="Login">
+                  <JFXButton fx:id="LoginButton" layoutX="80.0" layoutY="255.0" onAction="#login" prefHeight="28.0" prefWidth="91.0" styleClass="LoginBtn" stylesheets="@../../LoginStyle.css" text="Login">
                      <font>
                         <Font size="14.0" />
                      </font></JFXButton>
@@ -79,7 +79,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <JFXButton fx:id="createNewAccountButton" layoutX="187.0" layoutY="225.0" text="Create new Account" textFill="#6242ff" />
+                  <JFXButton fx:id="createNewAccountButton" layoutX="187.0" layoutY="225.0" onAction="#createNewAccount" text="Create new Account" textFill="#6242ff" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="25.0" layoutY="47.0" prefHeight="373.0" prefWidth="400.0" styleClass="anchor1" stylesheets="@../css/LoginStyle.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="352.0" AnchorPane.topAnchor="19.0">
