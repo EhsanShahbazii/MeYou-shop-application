@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class LoginCustomer {
 
     public boolean loginCheck(String username, String password) {
-        int index = 0, lineCount = 0, correctIndex = 0;
+        int index = 0, lineCount = 0;
         boolean state = false;
 
         try {
@@ -21,6 +21,7 @@ public class LoginCustomer {
 
             //add username and password in array
             String[] counter = new String[lineCount];
+            int correctIndex = 0;
             Scanner scanner2 = new Scanner(new File("D:\\project final\\src\\files\\data\\usersInformation.txt"));
             while (scanner2.hasNextLine()) {
                 counter[index] = scanner2.nextLine();
@@ -29,7 +30,8 @@ public class LoginCustomer {
             scanner2.close();
 
             //find correct index which one is equals with data
-            for (int j = 0; j < lineCount; j++) {
+            //j = j+2 because odd lines are username and even lines are passwords
+            for (int j = 0; j < lineCount-1; j = j+2) {
                 if (username.equals(counter[j]) && password.equals(counter[j+1])) {
                     correctIndex = j;
                 }
