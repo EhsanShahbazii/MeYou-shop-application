@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modules.files.LoginCustomer;
 import modules.objects.Customer;
 
 import java.io.IOException;
@@ -24,7 +25,9 @@ public class Login {
 
     //variables which are used
     public static Customer customer = new Customer();
+    public LoginCustomer loginCustomer = new LoginCustomer();
     private final Alert alert = new Alert(Alert.AlertType.ERROR);
+    String username, password;
 
     public void initialize() {
         LimitedTextField(passwordTextField, 20);
@@ -58,19 +61,22 @@ public class Login {
     @FXML
     void login(ActionEvent event) throws IOException {
 
+        username = userNameTextField.getText();
+        password = passwordTextField.getText();
+
         if (userNameTextField.getText().isEmpty()) {
            AlertShow("please enter your username.");
         }else if (passwordTextField.getText().isEmpty()) {
             AlertShow("please enter your password.");
         }
-//        else if (checkToLogin() == false) {
-//            //checkToLogin method checks is username and password are right or not
-//            AlertShow("your username or password is incorrect.");
-//        }
+        else if (loginCustomer.loginCheck(username, password) == false) {
+            //checkToLogin method checks is username and password are right or not
+            AlertShow("your username or password is incorrect.");
+        }
         else {
             //set username and password of current customer
-            customer.setUsername(userNameTextField.getText());
-            customer.setPassword(passwordTextField.getText());
+            customer.setUsername(username);
+            customer.setPassword(password);
 
             //open new main page and close login pages
             Stage primaryStage = (Stage) createNewAccountButton.getScene().getWindow();
