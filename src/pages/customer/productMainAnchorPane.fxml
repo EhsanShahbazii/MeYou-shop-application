@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="productMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="850.0" style="-fx-background-color: ivory; -fx-background-radius: 32px 5px 32px 5px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.ProductMainAnchorPane">
+<AnchorPane fx:id="productMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="850.0" style="-fx-background-color: ivory; -fx-background-radius: 32px 5px 32px 5px;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.ProductMainAnchoerPane">
    <children>
       <ImageView fx:id="te" fitHeight="130.0" fitWidth="130.0" layoutX="68.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
       <Text fx:id="pri" layoutX="224.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0">
@@ -44,13 +45,7 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="795.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../files/image/icon/icons8-favorite-50.png" />
-         </image></ImageView>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="753.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../files/image/icon/icons8-chart-64.png" />
-         </image></ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="795.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="753.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
