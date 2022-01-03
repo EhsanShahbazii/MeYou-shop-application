@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1044.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="105.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F2F0F0; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <AnchorPane layoutX="90.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
+               <children>
+                  <TabPane layoutX="66.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" side="LEFT" stylesheets="@../css%20style/homePageStyle.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                           <content>
+                              <AnchorPane fx:id="homeAnchorPane" prefHeight="200.0" prefWidth="967.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="homeAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
+                                 <children>
+                                    <Text fill="#000000e5" layoutX="22.0" layoutY="368.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Deals">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="885.0" layoutY="347.0" mnemonicParsing="false" style="-fx-background-color: none;">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.7">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/icons8-more-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <AnchorPane fx:id="todayDealAnchorPane" layoutX="21.0" layoutY="378.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="380.0" />
+                                    <AnchorPane fx:id="todayDealAnchorPane1" layoutX="22.0" layoutY="104.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" />
+                                    <Text fill="#000000e5" layoutX="22.0" layoutY="89.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Most Popular">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Button layoutX="885.0" layoutY="68.0" mnemonicParsing="false" style="-fx-background-color: none;">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.7">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/icons8-more-64.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children></AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../Data%20Base/icons/icons8-home-60.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                      <Tab style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                           <content>
+                              <AnchorPane fx:id="categoriesAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="categoriesAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
+                                 <children>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="898.0" layoutY="598.0" opacity="0.7">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-help-60.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="906.0" layoutY="594.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Help">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                 </children></AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../Data%20Base/icons/icons8-health-data-50.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                          <content>
+                            <AnchorPane fx:id="cartAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="cartAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
+                                 <children>
+                                    <AnchorPane layoutX="192.0" layoutY="22.0" prefHeight="400.0" prefWidth="730.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);; -fx-background-radius: 0 0 12px 12px;" AnchorPane.topAnchor="22.0">
+                                       <children>
+                                          <TableView prefHeight="400.0" prefWidth="730.0" style="-fx-border-color: white; -fx-border-radius: 0 0 12px 12px; -fx-border-width: 2px;" stylesheets="@../css%20style/homePageStyle.css" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="suggestCartAnchorPane" layoutX="21.0" layoutY="445.0" prefHeight="150.0" prefWidth="902.0" styleClass="suggestCartAnchorPane" stylesheets="@../css%20style/homePageStyle.css" />
+                                    <Text fill="#000000e5" layoutX="40.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggest for you">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="61.0" layoutY="151.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <Text fill="#000000e5" layoutX="45.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount($)">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000e5" layoutX="61.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount($)">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="60.0" layoutY="231.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <JFXButton layoutX="43.0" layoutY="295.0" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Payment">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton layoutX="42.0" layoutY="367.0" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="52.0" layoutY="346.0" opacity="0.7">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-help-60.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="60.0" layoutY="342.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Help">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                          </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../Data%20Base/icons/icons8-shopping-cart-50.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                           <content>
+                              <AnchorPane fx:id="accountAnchorPane1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="accountAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
+                                 <children>
+                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digi Coin">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="898.0" layoutY="598.0" opacity="0.7">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-help-60.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button layoutX="906.0" layoutY="594.0" mnemonicParsing="false" style="-fx-background-color: none;" text="Help">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Button>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="890.0" layoutY="18.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-coins-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="825.0" layoutY="21.0" prefHeight="26.0" prefWidth="64.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <AnchorPane fx:id="forMenCategories1121" layoutX="695.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="28.0" fitWidth="156.0" layoutX="22.0" layoutY="32.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/580b57fcd9996e24bc43c518.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="29.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25% discount on purchases up to $ 200" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="32.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="425" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories11211" layoutX="480.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="64.0" fitWidth="134.0" layoutX="33.0" layoutY="14.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/5847e991cef1014c0b5e4826.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="29.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20% discount on purchases up to $ 100" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="33.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="355" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories11212" layoutX="265.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="48.0" fitWidth="146.0" layoutX="26.0" layoutY="23.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/587b518244060909aa603a8b.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="29.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 20 discount per person up to a maximum of 5 people" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="32.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="475" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories112111" layoutX="50.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="74.0" fitWidth="104.0" layoutX="48.0" layoutY="14.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/580b57fcd9996e24bc43c4f2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="29.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 point for the $ 4,000 Adidas raffle" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="32.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="5" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories11213" layoutX="695.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="53.0" layoutY="14.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/5859902f4f6ae202fedf28d0.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="30.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount up to $ 30 for purchases over $ 100" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="33.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="450" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories112112" layoutX="480.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="48.0" fitWidth="159.0" layoutX="21.0" layoutY="24.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/58419140a6515b1e0ad75a4c.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="33.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 13 discount for up to 4 entrants" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="34.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="50" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories112121" layoutX="265.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="49.0" fitWidth="134.0" layoutX="33.0" layoutY="28.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/5a314c90cb9a85480a628f7f.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="29.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Up to $ 10 off purchases over $ 40" wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="33.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="75" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="forMenCategories1121111" layoutX="50.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                       <children>
+                                          <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="53.0" layoutY="7.0">
+                                             <image>
+                                                <Image url="@../Data%20Base/icons/587b511a44060909aa603a81.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="30.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10% discount for foreign travel of the airline." wrappingWidth="141.60001220703134">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Text>
+                                          <JFXButton layoutX="33.0" layoutY="180.0" prefHeight="35.0" prefWidth="134.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="200" textFill="#000000cc">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0">
+                                                   <image>
+                                                      <Image url="@../Data%20Base/icons/icons8-coin-63.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                    <JFXButton layoutX="667.0" layoutY="20.0" prefHeight="30.0" prefWidth="50.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Show" textFill="#000000cc">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="766.0" layoutY="18.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-movie-ticket-48.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="720.0" layoutY="21.0" prefHeight="26.0" prefWidth="46.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <Text layoutX="214.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can receive digi coins with the purchase you make and get the following items with it.">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Separator layoutX="222.0" layoutY="97.0" prefWidth="500.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0">
+                                 <image>
+                                    <Image url="@../Data%20Base/icons/icons8-coin-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                           <content>
+                              <AnchorPane fx:id="accountAnchorPane2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="accountAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
+                                 <children>
+                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000e5" layoutX="475.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000cc" layoutX="705.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXTextArea editable="false" focusColor="#415aa6" layoutX="475.0" layoutY="301.0" prefHeight="80.0" prefWidth="230.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor></JFXTextArea>
+                                    <Text fill="#000000cc" layoutX="705.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Refund method:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXButton layoutX="789.0" layoutY="422.0" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Edit">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <Separator layoutX="454.0" layoutY="47.0" prefHeight="6.0" prefWidth="450.0" />
+                                    <Separator layoutX="453.0" layoutY="48.0" orientation="VERTICAL" prefHeight="363.0" prefWidth="8.0" />
+                                    <Separator layoutX="454.0" layoutY="408.0" prefHeight="6.0" prefWidth="450.0" style="-fx-background-radius: 12px;" />
+                                    <Separator layoutX="901.0" layoutY="48.0" orientation="VERTICAL" prefHeight="363.0" prefWidth="8.0" />
+                                    <Button layoutX="38.0" layoutY="93.0" mnemonicParsing="false" style="-fx-background-color: none;">
+                                       <graphic>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Data%20Base/profile%20image/Man-16-icon.png" />
+                                             </image></ImageView>
+                                       </graphic>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="286.0" layoutY="119.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <Text fill="#000000e5" layoutX="265.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wallet Balance($)">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXButton layoutX="267.0" layoutY="213.0" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Charge">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXComboBox layoutX="258.0" layoutY="170.0" promptText="Favorite balance" />
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="38.0" layoutY="277.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-gift-64.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXTextField layoutX="90.0" layoutY="292.0" prefHeight="26.0" prefWidth="179.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField editable="false" layoutX="475.0" layoutY="78.0" prefHeight="26.0" prefWidth="179.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField editable="false" layoutX="705.0" layoutY="78.0" prefHeight="26.0" prefWidth="179.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField editable="false" layoutX="705.0" layoutY="153.0" prefHeight="26.0" prefWidth="179.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField editable="false" focusColor="#415aa6" layoutX="475.0" layoutY="153.0" prefHeight="26.0" prefWidth="179.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField editable="false" focusColor="#415aa6" layoutX="475.0" layoutY="226.0" prefHeight="26.0" prefWidth="230.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXButton layoutX="276.0" layoutY="290.0" prefHeight="30.0" prefWidth="78.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Apply">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <Text layoutX="44.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you have a gift card, enter the code in the field above." />
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="264.0" layoutY="126.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/icons8-wallet-48.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton layoutX="861.0" layoutY="580.0" prefHeight="30.0" prefWidth="76.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Logout">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="455.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="527.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="491.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="563.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </JFXTextField>
+                                    <Text fill="#000000e5" layoutX="472.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digital currency wallet">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Text>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="489.0" layoutY="458.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/Dollar-USD-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="489.0" layoutY="494.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/Ark-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="489.0" layoutY="530.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/Ethereum-ETH-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="489.0" layoutY="566.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/icons/Bitcoin-BTC-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                    <JFXButton layoutX="630.0" layoutY="457.0" prefHeight="30.0" prefWidth="58.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Charge">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton layoutX="630.0" layoutY="493.0" prefHeight="30.0" prefWidth="58.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Charge">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton layoutX="630.0" layoutY="529.0" prefHeight="30.0" prefWidth="58.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Charge">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <JFXButton layoutX="630.0" layoutY="565.0" prefHeight="30.0" prefWidth="58.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Charge">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                    <ImageView fitHeight="145.0" fitWidth="117.0" layoutX="742.0" layoutY="457.0">
+                                       <image>
+                                          <Image url="@../Data%20Base/banners/pngfind.com-tin-man-png-6105098.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="724.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" We support digital currencies!!!" wrappingWidth="100.7913818359375" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../Data%20Base/icons/icons8-account-64.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="23.0" layoutY="14.0" AnchorPane.bottomAnchor="714.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="961.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../Data%20Base/icons/dec208a64b794e63a2dcae992d9c7f85.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="374.0" layoutY="19.0" ripplerFill="BLACK" style="-fx-background-radius: 16px; -fx-background-color: D5D5D5;" text="Today's Deals" textFill="#000000cc">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="502.0" layoutY="19.0" style="-fx-background-radius: 16px; -fx-background-color: D5D5D5;" text="Customer Service" textFill="#000000cc">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="656.0" layoutY="19.0" style="-fx-background-radius: 16px; -fx-background-color: D5D5D5;" text="Gift Cards" textFill="#000000cc">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField layoutX="137.0" layoutY="19.0" opacity="0.9" promptText="Search" unFocusColor="#f2f0f0" />
+            <Button layoutX="17.0" layoutY="706.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../Data%20Base/icons/icons8-settings-50.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="901.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="901.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../Data%20Base/icons/icons8-comment-64.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="945.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="945.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="20.0">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../Data%20Base/icons/icons8-bell-48.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="106.0" layoutY="18.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="36.0" style="-fx-background-color: none;">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0">
+                     <image>
+                        <Image url="@../Data%20Base/icons/icons8-search-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="945.0" layoutY="706.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;" />
+            <Text layoutX="127.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your country and city." wrappingWidth="289.33673095703125" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="106.0" layoutY="709.0">
+               <image>
+                  <Image url="@../Data%20Base/icons/—Pngtree—vector%20location%20icon_4231903.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,4 +1,73 @@
+/*login page css code*/
+.anchor1{
+   -fx-background-color: linear-gradient(to right bottom, #7693fe, #008fd6, #007b88, #005f3a, #2c4100);
+   -fx-background-radius: 15px;
+}
+
 .anchors1{
    -fx-background-color: linear-gradient(to right bottom, #c0c0c0, #9fbad6, #41bdd8, #00bdae, #01b55a);
    -fx-background-radius: 15px;
 }
+
+/*home page css code*/
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #F2F0F0;
+}
+
+.homeAnchorPane, .categoriesAnchorPane, .cartAnchorPane, .favoritesAnchorPane, .accountAnchorPane {
+   -fx-background-color: linear-gradient(to right bottom, #94f7ff, #7ef7fc, #65f6f7, #46f6f1, #0bf5ea);
+}
+
+.todayDealAnchorPane, .forMenCategories, .forWomenCategories, .forKidsCategories, .suggestCartAnchorPane, .suggestLatestOrdersAnchorPane {
+   -fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);
+   -fx-background-radius: 20px;
+}
+
+.favoriteshomeAnchorPane {
+   -fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {   
+    -fx-background-color: derive;
+    -fx-stroke: transparent;
+    -fx-size:50;
+    -fx-alignment: CENTER ;    
+    -fx-text-alignment: center;
+
+}
+
+.table-row-cell:filled:hover {
+
+    -fx-size:50;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: center;
+
+
+}
+
+.table-view:row-selection {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-fixed-cell-size: 50;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: center;
+
+}
+
+.table-view .table-column{
+    -fx-text-alignment: center;
+    -fx-alignment: CENTER 
+
+}
+/*
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+*/
+/*
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-effect: null;
+}
+*/
