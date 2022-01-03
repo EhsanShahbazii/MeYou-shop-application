@@ -3,21 +3,11 @@ package controllers.customer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import modules.files.LoginCustomer;
 import modules.objects.Customer;
+import modules.tools.GlobalTools;
 
 import java.io.IOException;
 
@@ -26,13 +16,13 @@ public class Login {
     //variables which are used
     public static Customer customer = new Customer();
     public LoginCustomer loginCustomer = new LoginCustomer();
-    private final Alert alert = new Alert(Alert.AlertType.ERROR);
+    public GlobalTools globalTools = new GlobalTools();
     String username, password;
 
     public void initialize() {
-        LimitedTextField(passwordTextField, 20);
-        LimitedTextField(userNameTextField, 20);
-        alert.setHeaderText("Me and You app says:");
+        //limit text field length
+        globalTools.LimitedTextField(passwordTextField, 20);
+        globalTools.LimitedTextField(userNameTextField, 20);
     }
 
     @FXML
@@ -47,69 +37,37 @@ public class Login {
     @FXML
     private JFXButton createNewAccountButton;
 
+    //open sign in pages and close current page
     @FXML
     void createNewAccount(ActionEvent event) throws IOException {
-        Stage primaryStage = (Stage) createNewAccountButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../../pages/customer/SigninPage.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Sign in");
-        primaryStage.setScene(scene);
-        scene.setFill(Color.TRANSPARENT);
-        primaryStage.show();
+        //open new sign in page and close login pages
+        globalTools.OpenNewPage(LoginButton, "../../pages/customer/SigninPage.fxml", "Sign in");
     }
 
+    //add login logic in below
     @FXML
     void login(ActionEvent event) throws IOException {
 
+        //save text field data in variables
         username = userNameTextField.getText();
         password = passwordTextField.getText();
 
-        if (userNameTextField.getText().isEmpty()) {
-           AlertShow("please enter your username.");
-        }else if (passwordTextField.getText().isEmpty()) {
-            AlertShow("please enter your password.");
-        }
-        else if (loginCustomer.loginCheck(username, password) == false) {
-            //checkToLogin method checks is username and password are right or not
-            AlertShow("your username or password is incorrect.");
-        }
-        else {
+        // show error if fields are empty
+        if (userNameTextField.getText().isEmpty())
+           globalTools.AlertShow("please enter your username.");
+        else if (passwordTextField.getText().isEmpty())
+            globalTools.AlertShow("please enter your password.");
+        else if (!loginCustomer.loginCheck(username, password)) {
+            //checkToLogin() method checks is username and password are right or not
+            globalTools.AlertShow("your username or password is incorrect.");
+        } else {
             //set username and password of current customer
             customer.setUsername(username);
             customer.setPassword(password);
 
             //open new main page and close login pages
-            Stage primaryStage = (Stage) createNewAccountButton.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("../../pages/customer/MainPage.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("You and Me");
-            primaryStage.setScene(scene);
-            primaryStage.setX(450);
-            primaryStage.setY(100);
-            scene.setFill(Color.TRANSPARENT);
-            primaryStage.show();
+            globalTools.OpenNewPageXY(LoginButton, "../../pages/customer/MainPage.fxml", "You and Me", 450, 100);
         }
-
-    }
-
-    //set ERROR Alert with content
-    public void AlertShow(String content) {
-        alert.setContentText(content);
-        alert.show();
-    }
-
-    //this method used for limited characters in textField
-    public void LimitedTextField(TextField textField, int maxLength){
-
-        textField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
-                if (textField.getText().length() > maxLength) {
-                    String string = textField.getText().substring(0, maxLength);
-                    textField.setText(string);
-                }
-            }
-        });
     }
 }
 
