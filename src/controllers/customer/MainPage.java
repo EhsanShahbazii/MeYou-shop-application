@@ -6,9 +6,16 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MainPage {
 
@@ -153,8 +160,16 @@ public class MainPage {
     }
 
     @FXML
-    void logoutAction(ActionEvent event) {
-
+    void logoutAction(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) logoutButton.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("../../pages/customer/LoginPage.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Login");
+        primaryStage.setScene(scene);
+        primaryStage.setX(550);
+        primaryStage.setY(250);
+        scene.setFill(Color.TRANSPARENT);
+        primaryStage.show();
     }
 
     @FXML
