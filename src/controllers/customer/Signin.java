@@ -6,11 +6,6 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import modules.files.SigninCustomer;
 import modules.tools.GlobalTools;
 
@@ -88,9 +83,14 @@ public class Signin {
         else if (phoneNumberTextField.getText().length() < 11)
             globalTools.AlertShow("phone number should be 11 digits.");
         else if (signinCustomer.checkSameUserOrNot(usernameTextField.getText())) {
+            //checkSameUserOrNot() methods check it username is repetitious or not
             globalTools.AlertShow("this username in invalid. try another.");
-        
-    }
+        }else {
+            signinCustomer.usernameAndPasswordOfNewCustomer(usernameTextField.getText(), passwordTextField.getText());
+            
 
+            globalTools.clearFields(fullNameTextField, usernameTextField, emailTextField, phoneNumberTextField, addressTextArea, passwordTextField, repeatPasswordTextField);
+        }
+    }
 }
 
