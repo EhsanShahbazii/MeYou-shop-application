@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -24,6 +25,16 @@ public class GlobalTools {
         alert.show();
     }
 
+    //Check that parameter is a digit
+    public boolean OnlyDigits(String n) {
+        for (int i = 0; i < n.length(); i++) {
+            if (!Character.isDigit(n.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     //this method used for limited characters in textField
     public void LimitedTextField(TextField textField, int maxLength){
 
@@ -33,6 +44,20 @@ public class GlobalTools {
                 if (textField.getText().length() > maxLength) {
                     String string = textField.getText().substring(0, maxLength);
                     textField.setText(string);
+                }
+            }
+        });
+    }
+
+    //this method used for limited characters in textArea
+    public void LimitedTextArea(TextArea textArea, int maxLength){
+
+        textArea.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
+                if (textArea.getText().length() > maxLength) {
+                    String string = textArea.getText().substring(0, maxLength);
+                    textArea.setText(string);
                 }
             }
         });
