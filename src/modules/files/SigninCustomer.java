@@ -50,11 +50,23 @@ public class SigninCustomer {
         return state;
     }
 
+    //add username and password of new customer in usernameAndPassword.txt file
     public void usernameAndPasswordOfNewCustomer(String username, String password) {
         try {
             RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\usernameAndPassword.txt", "rw");
             Library.seek(Library.length());
-            Library.writeBytes(username + "\n" + password + "\n");
+            Library.writeBytes("\n" + username + "\n" + password + "\n");
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
+    //add new customer information in userInformation.txt file
+    public void signinNewCustomer(String fullName, String username, String password, String email, String phoneNumber, String address) {
+        try {
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userInformation.txt", "rw");
+            Library.seek(Library.length());
+            Library.writeBytes(fullName + "\n" + username + "\n" + password + "\n" + email + "\n" + phoneNumber + "\n" + address + "\n");
         }catch (Exception exception){
             System.out.println(exception.toString());
         }
