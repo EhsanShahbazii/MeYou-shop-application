@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class GlobalFileTools {
 
+    //this method count number of lines in files
     public int fileLengthCounter(String path) {
         int lineCount = 0;
         try {
@@ -22,6 +23,7 @@ public class GlobalFileTools {
         return lineCount;
     }
 
+    //this method get all data of any files in array list
     public String[] fileAllRead(String path) {
         int index = 0;
         //count lines of files in userInformation file
