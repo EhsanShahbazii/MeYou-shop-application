@@ -2,10 +2,6 @@ package modules.files;
 
 import modules.tools.GlobalFileTools;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class LoginCustomer {
 
     public GlobalFileTools globalFileTools = new GlobalFileTools();
@@ -20,6 +16,7 @@ public class LoginCustomer {
         //add username and password in array
         int correctIndex = 0;
         String[] counter = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\usernameAndPassword.txt");
+
         //find correct index which one is equals with data
         //j = j+2 because odd lines are username and even lines are passwords
         for (int j = 0; j < lineCount-1; j = j+2) {
