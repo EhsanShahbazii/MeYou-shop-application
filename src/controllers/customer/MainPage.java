@@ -15,25 +15,39 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import modules.tools.GlobalFileTools;
+import modules.tools.GlobalTools;
 
 import java.io.IOException;
 
 public class MainPage {
-    
+
     public GlobalFileTools globalFileTools = new GlobalFileTools();
+    public GlobalTools globalTools = new GlobalTools();
 
     public void initialize() {
-        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
-        String customerFullName = userDataInformation[0];
-        String customerUsername = userDataInformation[1];
-        String customerEmail = userDataInformation[2];
-        String customerPhoneNumber = userDataInformation[3];
-        String customerAddress = userDataInformation[4];
-        fullNameTextField.setText(customerFullName);
-        usernameTextField.setText(customerUsername);
-        emailTextField.setText(customerEmail);
-        phoneNumberTextField.setText(customerPhoneNumber);
-        addressTextArea.setText(customerAddress);
+
+        //do this works when login is successful
+        if (Login.loginIsDone) {
+            //get current customer data from files
+            String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
+
+            String customerFullName = userDataInformation[0]; //add customerFullName
+            String customerUsername = userDataInformation[1]; //add customerUsername
+            String customerEmail = userDataInformation[2]; //add customerEmail
+            String customerPhoneNumber = userDataInformation[3]; //add customerPhoneNumber
+            String customerAddress = userDataInformation[4]; //add customerAddress
+
+            //create refund method of customer
+            String customerRefund = globalTools.makeRefund(customerPhoneNumber);
+
+            //set data in own fields in personal information field
+            fullNameTextField.setText(customerFullName);
+            usernameTextField.setText(customerUsername);
+            emailTextField.setText(customerEmail);
+            phoneNumberTextField.setText(customerPhoneNumber);
+            addressTextArea.setText(customerAddress);
+            refundMethodTextField.setText(customerRefund);
+        }
     }
 
     @FXML
@@ -171,9 +185,28 @@ public class MainPage {
 
     }
 
+    boolean reAgain = false;
     @FXML
     void editInformationAction(ActionEvent event) {
+        if (reAgain) {
+            editInformationButton.setText("Edit");
+            editInformationButton.setStyle("-fx-background-color: #0CF485; -fx-background-radius: 16px;");
 
+            fullNameTextField.setEditable(false);
+            emailTextField.setEditable(false);
+            phoneNumberTextField.setEditable(false);
+            addressTextArea.setEditable(false);
+            reAgain = false;
+        }else {
+            editInformationButton.setText("Done");
+            editInformationButton.setStyle("-fx-background-color: #FFAB0F; -fx-background-radius: 16px;");
+
+            fullNameTextField.setEditable(true);
+            emailTextField.setEditable(true);
+            phoneNumberTextField.setEditable(true);
+            addressTextArea.setEditable(true);
+            reAgain = true;
+        }
     }
 
     @FXML
