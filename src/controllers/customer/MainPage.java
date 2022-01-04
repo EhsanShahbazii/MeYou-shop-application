@@ -14,13 +14,26 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import modules.tools.GlobalFileTools;
 
 import java.io.IOException;
 
 public class MainPage {
+    
+    public GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public void initialize() {
-
+        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
+        String customerFullName = userDataInformation[0];
+        String customerUsername = userDataInformation[1];
+        String customerEmail = userDataInformation[2];
+        String customerPhoneNumber = userDataInformation[3];
+        String customerAddress = userDataInformation[4];
+        fullNameTextField.setText(customerFullName);
+        usernameTextField.setText(customerUsername);
+        emailTextField.setText(customerEmail);
+        phoneNumberTextField.setText(customerPhoneNumber);
+        addressTextArea.setText(customerAddress);
     }
 
     @FXML

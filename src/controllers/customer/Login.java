@@ -7,11 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import modules.files.LoginCustomer;
 import modules.objects.Customer;
-import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Login {
 
