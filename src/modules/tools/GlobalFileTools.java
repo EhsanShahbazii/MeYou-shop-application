@@ -69,6 +69,7 @@ public class GlobalFileTools {
         return data;
     }
 
+    //return curront customer wallet balance
     public String returnWalletBalance(String username) {
         int usernameIndex = 0;
         String walletBalance = "0";
@@ -87,5 +88,31 @@ public class GlobalFileTools {
             exception.printStackTrace();
         }
         return walletBalance;
+    }
+
+    //return current user profile image path for set in image view in profile
+    public String userImageProfilePath(String username) {
+        int usernameIndex = 0;
+        //this is default image path for show in image view
+        String imagePath = "D:\\project final\\src\\files\\image\\icon\\Man-16-icon.png";
+        try {
+            Scanner scanner = new Scanner(new File("D:\\project final\\src\\files\\data\\userProfileImage.txt"));
+            while (scanner.hasNextLine()) {
+                String user = scanner.nextLine();
+                usernameIndex++;
+                //try to found username and then return wallet balance current customer
+                if (username.equals(user)) {
+                    String[] files = fileAllRead("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+                    imagePath = files[usernameIndex];
+                }
+            }
+        } catch (FileNotFoundException exception) {
+            exception.printStackTrace();
+        }
+        return imagePath;
+    }
+
+    public void updateUserProfileImage(String username, String imagePath) {
+
     }
 }
