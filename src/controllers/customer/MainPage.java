@@ -38,6 +38,9 @@ public class MainPage {
             String customerPhoneNumber = userDataInformation[3]; //add customerPhoneNumber
             String customerAddress = userDataInformation[4]; //add customerAddress
 
+            //get customer wallet balance
+            String customerWallet = globalFileTools.returnWalletBalance(customerUsername);
+
             //create refund method of customer
             String customerRefund = globalTools.makeRefund(customerPhoneNumber);
 
@@ -48,6 +51,9 @@ public class MainPage {
             phoneNumberTextField.setText(customerPhoneNumber);
             addressTextArea.setText(customerAddress);
             refundMethodTextField.setText(customerRefund);
+
+            //set wallet balance of customer in field
+            walletBalanceTextField.setText(customerWallet);
 
             //limit text field length
             globalTools.LimitedTextField(fullNameTextField, 20);
@@ -206,17 +212,22 @@ public class MainPage {
     private JFXButton logoutButton;
 
     @FXML
+    void deleteCartAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void paymentCartAction(ActionEvent event) {
+
+    }
+
+    @FXML
     void applyGiftAction(ActionEvent event) {
 
     }
 
     @FXML
     void chargeWalletAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void deleteCartAcion(ActionEvent event) {
 
     }
 
@@ -265,10 +276,4 @@ public class MainPage {
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
     }
-
-    @FXML
-    void paymentCartAction(ActionEvent event) {
-
-    }
-
 }
