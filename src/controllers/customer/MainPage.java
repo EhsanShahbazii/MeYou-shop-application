@@ -19,6 +19,10 @@ import java.io.IOException;
 
 public class MainPage {
 
+    public void initialize() {
+
+    }
+
     @FXML
     private Tab homeTab;
 
