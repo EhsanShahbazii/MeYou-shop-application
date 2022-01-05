@@ -25,6 +25,7 @@ import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MainPage {
@@ -308,7 +309,7 @@ public class MainPage {
     }
 
     @FXML
-    void changeProfileImageAction(ActionEvent event) {
+    void changeProfileImageAction(ActionEvent event) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser(); //create file chooser
         File file = fileChooser.showOpenDialog(null); //get file(pic) path
 
@@ -316,8 +317,7 @@ public class MainPage {
             String path;
             path = file.getAbsolutePath();
             File files = new File(path);
-            Image image = new Image(files.toURI().toString());
-            imageviewProfile.setImage(image);
+            globalFileTools.updateUserProfileImage(usernameTextField.getText(), path);
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
