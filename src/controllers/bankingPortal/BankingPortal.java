@@ -141,6 +141,7 @@ public class BankingPortal {
         alert.setHeaderText("Pay Pal");
         alert.setContentText("Your CVV is: " + cvv);
         alert.show();
+        recuqestSMSOTPButton.setDisable(true);
     }
 
     //prossed and finish payment
