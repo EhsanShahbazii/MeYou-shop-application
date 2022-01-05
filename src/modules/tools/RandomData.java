@@ -1,18 +1,15 @@
 package modules.tools;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import java.util.Arrays;
-
 public class RandomData {
 
+    //this method create random number
     public String randomNumberCreator(long min, long max) {
         long randomNumber = (long) Math.floor(Math.random()*(max-min+1)+min);
         String result = Long.toString(randomNumber);
         return result;
     }
 
+    //this method create captcha logic format (int1 + int2)
     public String captchaData(long min, long max) {
         String number1 = randomNumberCreator(min, max);
         String number2 = randomNumberCreator(min, max);
@@ -20,6 +17,7 @@ public class RandomData {
         return result;
     }
 
+    //this method solve captcha and post it
     public String captchaSolve(String string) {
         String[] st = string.split("\\+");
         int st1 = Integer.parseInt(st[0]);
