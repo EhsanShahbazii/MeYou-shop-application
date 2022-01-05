@@ -8,6 +8,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
@@ -15,7 +18,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
@@ -28,6 +34,7 @@ public class MainPage {
     //variables which are used
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
+    public static String chargeAmount = "0$";
 
     //this list use for items of charge wallet combo box
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
@@ -253,8 +260,23 @@ public class MainPage {
     }
 
     @FXML
-    void chargeWalletAction(ActionEvent event) {
+    void chargeWalletAction(ActionEvent event) throws IOException {
 
+        chargeAmount = chargeComboBox.getValue();
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/pages/bankingPortal/bankingPortal.fxml"));
+        //if "fx:controller" is not set in fxml
+        //fxmlLoader.setController(NewWindowController);
+        Scene scene = new Scene(fxmlLoader.load());
+        scene.setFill(Color.TRANSPARENT);
+        Stage stage = new Stage();
+        stage.setTitle("banking portal");
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setX(650);
+        stage.setY(130);
+        stage.show();
     }
 
     //use for change state of edit button in personal information part

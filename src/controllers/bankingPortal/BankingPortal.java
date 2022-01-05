@@ -1,12 +1,30 @@
 package controllers.bankingPortal;
 
 import com.jfoenix.controls.JFXButton;
+import controllers.customer.MainPage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import modules.tools.GlobalTools;
 
 public class BankingPortal {
+
+    GlobalTools globalTools = new GlobalTools();
+
+    public void initialize() {
+        globalTools.moveToNextFieldByLimited(cardNumberTextField1, cardNumberTextField2, 4);
+        globalTools.moveToNextFieldByLimited(cardNumberTextField2, cardNumberTextField3, 4);
+        globalTools.moveToNextFieldByLimited(cardNumberTextField3, cardNumberTextField4, 4);
+        globalTools.moveToNextFieldByLimited(cardNumberTextField4, CVV2TextFIeld, 4);
+
+        globalTools.LimitedTextField(CVV2TextFIeld, 4);
+        globalTools.LimitedTextField(captchaTextField, 4);
+        globalTools.LimitedTextField(cvvTextField, 7);
+        globalTools.LimitedTextField(emailTextField, 32);
+
+        amountText.setText(MainPage.chargeAmount);
+    }
 
     @FXML
     private Text amountText;
