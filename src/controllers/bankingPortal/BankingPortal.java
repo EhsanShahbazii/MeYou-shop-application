@@ -4,13 +4,17 @@ import com.jfoenix.controls.JFXButton;
 import controllers.customer.MainPage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import modules.tools.GlobalTools;
+import modules.tools.RandomData;
 
 public class BankingPortal {
 
     GlobalTools globalTools = new GlobalTools();
+    RandomData randomData = new RandomData();
 
     public void initialize() {
         globalTools.moveToNextFieldByLimited(cardNumberTextField1, cardNumberTextField2, 4);
@@ -25,6 +29,7 @@ public class BankingPortal {
 
         amountText.setText(MainPage.chargeAmount);
         refundText.setText(MainPage.refundMethod);
+        captchaRandomTextField.setText(randomData.captchaData(1, 98));
     }
 
     @FXML
@@ -68,6 +73,19 @@ public class BankingPortal {
 
     @FXML
     private JFXButton cancelButton;
+
+    @FXML
+    private Button nextCaptchaButton;
+
+    @FXML
+    private ImageView captchaImageView;
+
+    @FXML
+    void nextCaptchaAction(ActionEvent event) {
+        amountText.setText(MainPage.chargeAmount);
+        refundText.setText(MainPage.refundMethod);
+        captchaRandomTextField.setText(randomData.captchaData(1, 98));
+    }
 
     @FXML
     void cancelAction(ActionEvent event) {
