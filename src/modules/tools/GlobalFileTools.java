@@ -25,14 +25,6 @@ public class GlobalFileTools {
         return lineCount;
     }
 
-    //this method delete file items but file is safe
-    public void clearFileData(String filePath) throws FileNotFoundException {
-        PrintWriter writer = new PrintWriter(filePath);
-        //set all data with empty string
-        writer.print("");
-        writer.close();
-    }
-
     //this method get all data of any files in array list
     public String[] fileAllRead(String path) {
         int index = 0;
@@ -52,24 +44,6 @@ public class GlobalFileTools {
             System.out.println(exception.getMessage());
         }
         return counter;
-    }
-
-    //this method write data in file
-    public void writeDataInfile(String[] data, String filePath) {
-        //get count of lines in current file
-        int lineCount = fileLengthCounter(filePath);
-
-        try {
-            //write data in file by random access file
-            RandomAccessFile Library = new RandomAccessFile(filePath, "rw");
-            Library.seek(Library.length());
-            for (int i=0; i < lineCount; i++){
-                //write data format (data) \n
-                Library.writeBytes(data[i] + "\n");
-            }
-        }catch (Exception exception){
-            System.out.println(exception.toString());
-        }
     }
 
     //return specific user information
@@ -157,10 +131,22 @@ public class GlobalFileTools {
             }
         }
         //clear current file but file is safe
-        clearFileData("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
 
+        try {
             //write data in file by random access file
-            writeDataInfile(counter, "D:\\project final\\src\\files\\data\\userProfileImage.txt");
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userProfileImage.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                //write data format (data) \n
+                Library.writeBytes(counter[i] + "\n");
+            }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
     }
 
     //set default image path for new customer when sign in
@@ -172,7 +158,10 @@ public class GlobalFileTools {
         String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\userProfileImage.txt");
 
         //clear current file but file is safe
-        clearFileData("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
 
         try {
             //write data in file by random access file
@@ -188,5 +177,5 @@ public class GlobalFileTools {
             System.out.println(exception.toString());
         }
     }
-    
+
 }
