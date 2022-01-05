@@ -40,7 +40,7 @@ public class SigninCustomer {
         try {
             RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\usernameAndPassword.txt", "rw");
             Library.seek(Library.length());
-            Library.writeBytes("\n" + username + "\n" + password + "\n");
+            Library.writeBytes(username + "\n" + password + "\n");
         }catch (Exception exception){
             System.out.println(exception.toString());
         }

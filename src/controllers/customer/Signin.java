@@ -7,9 +7,11 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import modules.files.SigninCustomer;
+import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 import javax.swing.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Signin {
@@ -17,6 +19,7 @@ public class Signin {
     //variables which are used
     SigninCustomer signinCustomer = new SigninCustomer();
     GlobalTools globalTools = new GlobalTools();
+    GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public void initialize() {
         //limit text field length
@@ -64,7 +67,7 @@ public class Signin {
 
     //add sign in logic in below
     @FXML
-    void createAccount(ActionEvent event) {
+    void createAccount(ActionEvent event) throws FileNotFoundException {
 
         //save text field data in variables
         String fullName = fullNameTextField.getText();
@@ -102,10 +105,15 @@ public class Signin {
         }else {
             //write username and password in usernameAndPassword.txt file
             signinCustomer.usernameAndPasswordOfNewCustomer(username, password);
+
             //write all information of customer in userInformation.txt file
             signinCustomer.signinNewCustomer(fullName, username, password, email, phoneNumber, address);
+
+            globalFileTools.addNewUserProfileImage(username);
+
             //show message when the register logic is not problem
             JOptionPane.showMessageDialog(null, "Registration was successful!", "Registration", JOptionPane.INFORMATION_MESSAGE);
+
             //clear text fields when register was successful
             globalTools.clearFields(fullNameTextField, usernameTextField, emailTextField, phoneNumberTextField, addressTextArea, passwordTextField, repeatPasswordTextField);
         }

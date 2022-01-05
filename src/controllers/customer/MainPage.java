@@ -8,9 +8,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
@@ -18,9 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
@@ -84,6 +79,7 @@ public class MainPage {
             //set user profile image
             File files = new File(userProfileImagePath);
             Image image = new Image(files.toURI().toString());
+            //set image format in imageview
             imageviewProfile.setImage(image);
         }
     }
@@ -276,8 +272,7 @@ public class MainPage {
             phoneNumberTextField.setEditable(false);
             addressTextArea.setEditable(false);
             exceptionForFields();
-            //change state
-            reAgain = false;
+            reAgain = false; //change state
         }else {
             //change button text to done and change style
             editInformationButton.setText("Done");
@@ -297,17 +292,10 @@ public class MainPage {
     //close main page and open new login page
     @FXML
     void logoutAction(ActionEvent event) throws IOException {
-        Stage primaryStage = (Stage) logoutButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../../pages/customer/LoginPage.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Login");
-        primaryStage.setScene(scene);
-        primaryStage.setX(550);
-        primaryStage.setY(250);
-        scene.setFill(Color.TRANSPARENT);
-        primaryStage.show();
+        globalTools.OpenNewPageXY(chargeBtn, "../../pages/customer/LoginPage.fxml", "Login", 550, 250);
     }
 
+    //change profile image by click on image view in profile
     @FXML
     void changeProfileImageAction(ActionEvent event) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser(); //create file chooser
@@ -315,12 +303,12 @@ public class MainPage {
 
         if (file != null){
             String path;
-            path = file.getAbsolutePath();
-            File files = new File(path);
+            path = file.getAbsolutePath(); //take file path which is choose
+            File files = new File(path); //convert path to file format
+            //update new profile image path current customer
             globalFileTools.updateUserProfileImage(usernameTextField.getText(), path);
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
     }
-
 }

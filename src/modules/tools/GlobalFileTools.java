@@ -133,9 +133,31 @@ public class GlobalFileTools {
             RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userProfileImage.txt", "rw");
             Library.seek(Library.length());
             for (int i=0; i < lineCount; i++){
-
                 Library.writeBytes(counter[i] + "\n");
             }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
+    //set default image path for new customer when sign in
+    public void addNewUserProfileImage(String username) throws FileNotFoundException {
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+        String[] counter;
+        counter = fileAllRead("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userProfileImage.txt");
+        writer.print("");
+        writer.close();
+
+        try {
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userProfileImage.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                Library.writeBytes(counter[i] + "\n");
+            }
+            Library.writeBytes(username + "\n");
+            Library.writeBytes("D:\\project final\\src\\files\\image\\profile image\\Man-16-icon.png"+ "\n");
         }catch (Exception exception){
             System.out.println(exception.toString());
         }
