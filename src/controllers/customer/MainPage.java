@@ -35,6 +35,7 @@ public class MainPage {
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
     public static String chargeAmount = "0$";
+    public static String refundMethod;
 
     //this list use for items of charge wallet combo box
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
@@ -263,6 +264,7 @@ public class MainPage {
     void chargeWalletAction(ActionEvent event) throws IOException {
 
         chargeAmount = chargeComboBox.getValue();
+        refundMethod = refundMethodTextField.getText();
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/pages/bankingPortal/bankingPortal.fxml"));

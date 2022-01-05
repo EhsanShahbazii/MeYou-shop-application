@@ -1,5 +1,8 @@
 package modules.tools;
 
+import javafx.stage.Stage;
+
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -177,7 +180,5 @@ public class GlobalFileTools {
             System.out.println(exception.toString());
         }
     }
-
-    
 
 }

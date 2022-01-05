@@ -112,4 +112,9 @@ public class GlobalTools {
         passwordField2.setText("");
     }
 
+    //this method close page without closing previous pages
+    public void closeCurrentPage(Button button, String currentPagePath) {
+        Stage stage = (Stage) button.getScene().getWindow();
+        stage.close();
+    }
 }

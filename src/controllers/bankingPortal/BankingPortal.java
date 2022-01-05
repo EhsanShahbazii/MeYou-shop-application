@@ -24,6 +24,7 @@ public class BankingPortal {
         globalTools.LimitedTextField(emailTextField, 32);
 
         amountText.setText(MainPage.chargeAmount);
+        refundText.setText(MainPage.refundMethod);
     }
 
     @FXML
@@ -70,7 +71,7 @@ public class BankingPortal {
 
     @FXML
     void cancelAction(ActionEvent event) {
-
+        globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
     }
 
     @FXML
