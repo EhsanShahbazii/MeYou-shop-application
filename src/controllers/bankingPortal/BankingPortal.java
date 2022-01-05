@@ -6,10 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
+
+import java.io.File;
 
 public class BankingPortal {
 
@@ -30,6 +33,10 @@ public class BankingPortal {
         amountText.setText(MainPage.chargeAmount);
         refundText.setText(MainPage.refundMethod);
         captchaRandomTextField.setText(randomData.captchaData(1, 98));
+
+        File file = new File("D:\\project final\\src\\files\\image\\gif\\spinner.gif");
+        Image image = new Image(file.toURI().toString());
+        connectingImageView.setImage(image);
     }
 
     @FXML
@@ -79,6 +86,9 @@ public class BankingPortal {
 
     @FXML
     private ImageView captchaImageView;
+
+    @FXML
+    private ImageView connectingImageView;
 
     @FXML
     void nextCaptchaAction(ActionEvent event) {

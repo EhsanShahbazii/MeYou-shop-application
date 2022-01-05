@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -116,5 +117,19 @@ public class GlobalTools {
     public void closeCurrentPage(Button button, String currentPagePath) {
         Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
+    }
+
+    public void connectToBankingPortal() throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/bankingPortal/bankingPortal.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("loading page");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(650);
+        stage1.setY(130);
+        stage1.show();
     }
 }
