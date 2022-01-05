@@ -41,6 +41,15 @@ public class GlobalTools {
         return true;
     }
 
+    //this method move focus area when characters limited in int
+    public void moveToNextFieldByLimited(TextField textField1, TextField textField2, int length) {
+        textField1.textProperty().addListener((obs, oldText, newText) -> {
+            if (oldText.length() < length && newText.length() >= length) {
+                textField2.requestFocus();
+            }
+        });
+    }
+
     //this method used for limited characters in textField
     public void LimitedTextField(TextField textField, int maxLength){
 
