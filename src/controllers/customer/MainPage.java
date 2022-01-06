@@ -32,6 +32,7 @@ public class MainPage {
     //variables for set in banking portal fields
     public static String chargeAmount = "0$";
     public static String refundMethod;
+    public static String usernames;
 
     //this list use for items of charge wallet combo box
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
@@ -40,6 +41,7 @@ public class MainPage {
 
         //do this works when login is successful
         if (Login.loginIsDone) {
+            usernames = Login.customer.getUsername();
             //get current customer data from files
             String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
 
