@@ -10,7 +10,41 @@ import javafx.scene.text.Text;
 public class ProductMainAnchorPane {
 
     @FXML
+    public ImageView imageViewProduct;
+
+    @FXML
+    public Text ProductNameText;
+
+    @FXML
     private AnchorPane productMainAnchorPane;
+
+    @FXML
+    private Text productPriceText;
+
+    @FXML
+    private JFXButton productIncreaseCounter;
+
+    @FXML
+    private JFXButton productDecreaseCounter;
+
+    @FXML
+    private Text productCountText;
+
+    public ImageView getImageViewProduct() {
+        return imageViewProduct;
+    }
+
+    public void setImageViewProduct(ImageView imageViewProduct) {
+        this.imageViewProduct = imageViewProduct;
+    }
+
+    public Text getProductNameText() {
+        return ProductNameText;
+    }
+
+    public void setProductNameText(Text productNameText) {
+        ProductNameText = productNameText;
+    }
 
     public AnchorPane getProductMainAnchorPane() {
         return productMainAnchorPane;
@@ -18,22 +52,6 @@ public class ProductMainAnchorPane {
 
     public void setProductMainAnchorPane(AnchorPane productMainAnchorPane) {
         this.productMainAnchorPane = productMainAnchorPane;
-    }
-
-    public ImageView getTe() {
-        return te;
-    }
-
-    public void setTe(ImageView te) {
-        this.te = te;
-    }
-
-    public Text getPri() {
-        return pri;
-    }
-
-    public void setPri(Text pri) {
-        this.pri = pri;
     }
 
     public Text getProductPriceText() {
@@ -77,24 +95,6 @@ public class ProductMainAnchorPane {
     }
 
     @FXML
-    private ImageView te;
-
-    @FXML
-    private Text pri;
-
-    @FXML
-    private Text productPriceText;
-
-    @FXML
-    private JFXButton productIncreaseCounter;
-
-    @FXML
-    private JFXButton productDecreaseCounter;
-
-    @FXML
-    private Text productCountText;
-
-    @FXML
     private JFXButton buyItButton;
 
     @FXML
@@ -108,7 +108,7 @@ public class ProductMainAnchorPane {
     }
 
     @FXML
-    void productecreaseCounterAction(ActionEvent event) {
+    void productDecreaseCounterAction(ActionEvent event) {
 
     }
 
