@@ -101,25 +101,25 @@
                           <content>
                             <AnchorPane fx:id="cartAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="cartAnchorPane">
                                  <children>
-                                    <AnchorPane layoutX="192.0" layoutY="22.0" prefHeight="400.0" prefWidth="730.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);; -fx-background-radius: 0 0 12px 12px;" AnchorPane.topAnchor="22.0">
+                                    <AnchorPane layoutX="192.0" layoutY="22.0" prefHeight="330.0" prefWidth="730.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);; -fx-background-radius: 0 0 12px 12px;" AnchorPane.topAnchor="22.0">
                                        <children>
-                                          <TableView fx:id="cartTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="730.0" style="-fx-border-color: white; -fx-border-radius: 0 0 12px 12px; -fx-border-width: 2px;" stylesheets="@../css%20style/homePageStyle.css">
+                                          <TableView fx:id="cartTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="330.0" prefWidth="730.0" style="-fx-border-color: white; -fx-border-radius: 0 0 12px 12px; -fx-border-width: 2px;" stylesheets="@../css%20style/homePageStyle.css">
                                              <columnResizePolicy>
                                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                              </columnResizePolicy></TableView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="suggestCartAnchorPane" layoutX="21.0" layoutY="445.0" prefHeight="150.0" prefWidth="902.0" styleClass="suggestCartAnchorPane">
+                                    <AnchorPane fx:id="suggestCartAnchorPane" layoutX="21.0" layoutY="380.0" prefHeight="220.0" prefWidth="902.0" styleClass="suggestCartAnchorPane">
                                        <stylesheets>
                                           <URL value="@../css%20style/homePageStyle.css" />
                                           <URL value="@../css/homePageStyle.css" />
                                        </stylesheets></AnchorPane>
-                                    <Text fill="#000000e5" layoutX="40.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggest for you">
+                                    <Text fill="#000000e5" layoutX="40.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggest for you">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                    <JFXTextField fx:id="totalAmountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="61.0" layoutY="151.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="totalAmountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="61.0" layoutY="90.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -127,17 +127,17 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <Text fill="#000000e5" layoutX="45.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount($)">
+                                    <Text fill="#000000e5" layoutX="45.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount($)">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000e5" layoutX="61.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount($)">
+                                    <Text fill="#000000e5" layoutX="61.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount($)">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <JFXTextField fx:id="discountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="60.0" layoutY="231.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="discountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="60.0" layoutY="170.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -145,7 +145,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <JFXButton fx:id="cartPaymentButton" layoutX="43.0" layoutY="295.0" onAction="#paymentCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Payment">
+                                    <JFXButton fx:id="cartPaymentButton" layoutX="43.0" layoutY="225.0" onAction="#paymentCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Payment">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -153,7 +153,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="deleteCartButton" layoutX="42.0" layoutY="367.0" onAction="#deleteCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
+                                    <JFXButton fx:id="deleteCartButton" layoutX="42.0" layoutY="272.0" onAction="#deleteCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
