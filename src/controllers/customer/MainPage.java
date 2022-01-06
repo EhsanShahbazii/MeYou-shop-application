@@ -87,6 +87,7 @@ public class MainPage {
             //set image format in imageview
             imageviewProfile.setImage(image);
 
+            //get and save information in values
             usernames = Login.customer.getUsername();
             fullName = fullNameTextField.getText();
             email = emailTextField.getText();
@@ -284,8 +285,8 @@ public class MainPage {
         if (reAgain) {
             //change button text to edit and change style
             editInformationButton.setText("Edit");
+            //change color of edit button
             editInformationButton.setStyle("-fx-background-color: #0CF485; -fx-background-radius: 16px;");
-
 
             //text fields are not editable
             fullNameTextField.setEditable(false);
@@ -297,6 +298,7 @@ public class MainPage {
         }else {
             //change button text to done and change style
             editInformationButton.setText("Done");
+            //change color of done button
             editInformationButton.setStyle("-fx-background-color: #FFAB0F; -fx-background-radius: 16px;");
 
             //text fields are editable
@@ -308,9 +310,9 @@ public class MainPage {
             //change state
             reAgain = true;
         }
-        globalTools.AlertShowInformation("Edit information is successful!");
+        //post new data personal information for userInformation.txt files
         globalFileTools.updatePersonalInformation(usernames, fullNameTextField.getText(), emailTextField.getText(), phoneNumberTextField.getText(), addressTextArea.getText());
-
+        globalTools.AlertShowInformation("Edit information is successful!"); //show successful alert
     }
 
     //close main page and open new login page
