@@ -144,7 +144,7 @@ public class BankingPortal {
         recuqestSMSOTPButton.setDisable(true);
     }
 
-    //prossed and finish payment
+    //pressed and finish payment
     @FXML
     void proceedAction(ActionEvent event) {
 
