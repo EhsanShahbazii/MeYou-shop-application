@@ -72,5 +72,16 @@
             <Font size="14.0" />
          </font>
       </Text>
+      <Text fx:id="scoreText" layoutX="668.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="636.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../files/image/icon/icons8-star-48.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="countScore" fill="#000000b4" layoutX="669.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>

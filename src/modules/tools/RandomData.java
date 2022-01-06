@@ -8,6 +8,22 @@ public class RandomData {
         return Long.toString(randomNumber);
     }
 
+    //round number by digit
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
+    }
+
+    //this method create random number
+    public String randomNumberCreatorRound(long min, long max, int digit) {
+        double randomNumber = round((Math.random()*(max-min+1)+min), digit);
+        return Double.toString(randomNumber);
+    }
+
     //this method create captcha logic format (int1 + int2)
     public String captchaData(long min, long max) {
         String number1 = randomNumberCreator(min, max);
