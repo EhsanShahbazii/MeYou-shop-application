@@ -149,7 +149,7 @@ public class BankingPortal {
         alert.setHeaderText("Pay Pal");
         alert.setContentText("Your CVV is: " + cvv);
         alert.show();
-        requqestSMSOTPButton.setDisable(true);
+        requestSMSOTPButton.setDisable(true);
     }
 
     //pressed and finish payment

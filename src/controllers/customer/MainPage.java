@@ -32,7 +32,7 @@ public class MainPage {
     //variables for set in banking portal fields
     public static String chargeAmount = "0$";
     public static String refundMethod;
-    public static String usernames;
+    public static String usernames, fullName, email, phoneNumber, address;
 
     //this list use for items of charge wallet combo box
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
@@ -41,7 +41,6 @@ public class MainPage {
 
         //do this works when login is successful
         if (Login.loginIsDone) {
-            usernames = Login.customer.getUsername();
             //get current customer data from files
             String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
 
@@ -87,6 +86,12 @@ public class MainPage {
             Image image = new Image(files.toURI().toString());
             //set image format in imageview
             imageviewProfile.setImage(image);
+
+            usernames = Login.customer.getUsername();
+            fullName = fullNameTextField.getText();
+            email = emailTextField.getText();
+            phoneNumber = phoneNumberTextField.getText();
+            address = addressTextArea.getText();
         }
     }
 
@@ -258,8 +263,9 @@ public class MainPage {
 
     }
 
+    //use for charge wallet balance
     @FXML
-    void chargeWalletAction(ActionEvent event) throws IOException, InterruptedException {
+    void chargeWalletAction(ActionEvent event) throws IOException {
         //set combo box select data and sent refund method
         chargeAmount = chargeComboBox.getValue();
         refundMethod = refundMethodTextField.getText();
@@ -274,11 +280,12 @@ public class MainPage {
     //use for change state of edit button in personal information part
     boolean reAgain = false;
     @FXML
-    void editInformationAction(ActionEvent event) {
+    void editInformationAction(ActionEvent event) throws FileNotFoundException {
         if (reAgain) {
             //change button text to edit and change style
             editInformationButton.setText("Edit");
             editInformationButton.setStyle("-fx-background-color: #0CF485; -fx-background-radius: 16px;");
+
 
             //text fields are not editable
             fullNameTextField.setEditable(false);
@@ -301,6 +308,9 @@ public class MainPage {
             //change state
             reAgain = true;
         }
+        globalTools.AlertShowInformation("Edit information is successful!");
+        globalFileTools.updatePersonalInformation(usernames, fullNameTextField.getText(), emailTextField.getText(), phoneNumberTextField.getText(), addressTextArea.getText());
+
     }
 
     //close main page and open new login page
