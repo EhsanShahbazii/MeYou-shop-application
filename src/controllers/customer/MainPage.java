@@ -8,7 +8,6 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
@@ -23,7 +22,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import modules.files.SelectAndBuyProduct;
 import modules.objects.Product;
 import modules.tools.GlobalFileTools;
@@ -33,8 +31,6 @@ import modules.tools.RandomData;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class MainPage {
 
@@ -547,55 +543,28 @@ public class MainPage {
     @FXML
     public JFXToggleButton darkModeToggle;
 
-    
+    //this method show services pages
     @FXML
     public void showServiceAction(ActionEvent event) throws IOException {
         globalTools.openNewPageWithoutCloseCurrentPage("/pages/home/sevicePage.fxml", "message", 600, 300);
     }
 
+    //this method show giftCard
     @FXML
     public void giftCardAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/home/giftCardPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("message");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(640);
-        stage1.setY(240);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/home/giftCardPage.fxml", "gift card", 640, 240);
     }
 
+    //this method show messages
     @FXML
     public void showMessageAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/home/messagePage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("message");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(1050);
-        stage1.setY(179);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/home/messagePage.fxml", "message", 1050, 179);
     }
 
+    //this method show notification
     @FXML
     public void showNotificationAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/home/notificationPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("notification");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(1000);
-        stage1.setY(179);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/home/notificationPage.fxml", "notification", 1000, 179);
     }
 
     //dark mode toggle operations
@@ -609,6 +578,8 @@ public class MainPage {
         primaryStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
+
+        //check if dark mode is enabled or not
         if (Login.darkModeState == 1) {
             scene.getStylesheets().remove("./pages/css/homePageStyle.css");
             scene.getStylesheets().add("./pages/css/darkMode.css");
@@ -621,6 +592,7 @@ public class MainPage {
 
     }
 
+    //this method delete product from cart
     @FXML
     void deleteCartAction(ActionEvent event) throws FileNotFoundException {
         Product selectItem = cartTable.getSelectionModel().getSelectedItem();
@@ -628,21 +600,13 @@ public class MainPage {
         selectAndBuyProduct.removeProductToCard(Login.customer.getUsername(), selectItem.getProductName());
     }
 
+    //this method open the payment pages
     @FXML
     void paymentCartAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/bankingPortal/finalPaymentPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("final payment");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(650);
-        stage1.setY(130);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/bankingPortal/finalPaymentPage.fxml", "final payment", 650, 130);
     }
 
+    //nothing :)
     @FXML
     void applyGiftAction(ActionEvent event) {
 
@@ -721,5 +685,4 @@ public class MainPage {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
     }
-
 }
