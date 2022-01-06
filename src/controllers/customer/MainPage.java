@@ -8,6 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
@@ -37,7 +39,7 @@ public class MainPage {
     //this list use for items of charge wallet combo box
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
 
-    public void initialize() {
+    public void initialize() throws IOException {
 
         //do this works when login is successful
         if (Login.loginIsDone) {
@@ -93,6 +95,31 @@ public class MainPage {
             email = emailTextField.getText();
             phoneNumber = phoneNumberTextField.getText();
             address = addressTextArea.getText();
+
+            //******************************************************************************//
+            float length = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+            String[] productData = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+            for (int i = 0; i < Math.floor(length/5); i++) {
+                FXMLLoader loader = new FXMLLoader(this.getClass().getResource("../../pages/customer/productAnchorPane.fxml"));
+
+                Parent root = loader.load();
+                ProductAnchorPane control = loader.getController();
+
+                control.getDetailsText().setText(productData[5*i]);
+                control.getPriceText().setText(productData[5*i+2]);
+                File file = new File(productData[5*i+4]);
+                Image image1 = new Image(file.toURI().toString());
+                control.getImageViewProduct().setImage(image1);
+
+                double margin = 10;
+
+                AnchorPane.setLeftAnchor(root, margin + i * (margin + control.getAnchorPane().getPrefWidth()));
+                AnchorPane.setTopAnchor(root, 10.0);
+
+                todayDealAnchorPane.getChildren().add(root);
+            }
+
         }
     }
 
