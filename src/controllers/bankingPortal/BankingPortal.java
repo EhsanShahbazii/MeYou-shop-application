@@ -15,8 +15,7 @@ import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
 
-import javax.script.ScriptException;
-import javax.swing.*;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -31,7 +30,7 @@ public class BankingPortal {
     String cvv, captcha, amount, username;
     String captchaResult;
 
-    public void initialize() throws ScriptException {
+    public void initialize() {
 
         username = MainPage.usernames;
 
@@ -58,6 +57,7 @@ public class BankingPortal {
         //solve captcha and save it
         captchaResult = randomData.captchaSolve(captcha);
 
+        //remove $ sign in amount text
         amount = globalTools.justDigits(MainPage.chargeAmount);
 
         //create terminal number by random methods
@@ -103,7 +103,7 @@ public class BankingPortal {
     private TextField cvvTextField;
 
     @FXML
-    private JFXButton recuqestSMSOTPButton;
+    private JFXButton requestSMSOTPButton;
 
     @FXML
     private TextField emailTextField;
@@ -125,7 +125,7 @@ public class BankingPortal {
 
     //create new captcha logic
     @FXML
-    void nextCaptchaAction(ActionEvent event) throws ScriptException {
+    void nextCaptchaAction(ActionEvent event) {
         //create new captcha logic
         captcha = randomData.captchaData(1, 98);
         //set captcha in field
@@ -149,7 +149,7 @@ public class BankingPortal {
         alert.setHeaderText("Pay Pal");
         alert.setContentText("Your CVV is: " + cvv);
         alert.show();
-        recuqestSMSOTPButton.setDisable(true);
+        requqestSMSOTPButton.setDisable(true);
     }
 
     //pressed and finish payment
@@ -174,8 +174,13 @@ public class BankingPortal {
         else if (!captchaTextField.getText().equals(captchaResult))
             globalTools.AlertShow("please enter captcha correct");
         else {
+            //update wallet balance and add new balance
             globalFileTools.updateWalletBalance(username, amount);
+
+            //show successful alert
             globalTools.AlertShowInformation("Payment is successful!");
+
+            //close banking portal page and back to dashboard
             globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
         }
     }

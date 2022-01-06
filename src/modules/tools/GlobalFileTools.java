@@ -178,7 +178,7 @@ public class GlobalFileTools {
         }
     }
 
-    //update image path in file with current information
+    //update wallet balance in file
     public void updateWalletBalance(String username, String amount) throws FileNotFoundException {
 
         //get count of lines in current file
@@ -189,8 +189,10 @@ public class GlobalFileTools {
 
         for (int i = 0; i <lineCount; i++) {
             if (counter[i].equals(username)) {
+                //give before balance and + it with new charge value
                 double beforeAmount = Double.parseDouble(counter[i+1]);
                 double newAmount = Double.parseDouble(amount);
+                //round the wallet value
                 String finalResult = Double.toString(Math.floor(beforeAmount + newAmount));
                 counter[i+1] = finalResult;
                 break;
