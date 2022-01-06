@@ -171,16 +171,22 @@ public class MainPage {
             ProductMainAnchorPane control1 = loader1.getController();
 
             control1.getProductNameText().setText(productData[5*i]);
+            control1.getAuthorText().setText(productData[5*i+1]);
             control1.getProductPriceText().setText(productData[5*i+2]);
+            if (productData[5*i+3].equals("0")){
+                control1.getOnlyStockText().setText("Currently unavailable");
+            }else {
+                control1.getOnlyStockText().setText("Only " + productData[5*i+3] + " left in stock(more on the way)");
+            }
             File file1 = new File(productData[5*i+4]);
             Image image2 = new Image(file1.toURI().toString());
             control1.getImageViewProduct().setImage(image2);
 
-            double marginLeft = 15;
+//            double marginLeft = 15;
             double marginTop = 15;
 
             AnchorPane.setTopAnchor(root1, marginTop + i * (marginTop + control1.getProductMainAnchorPane().getPrefHeight()));
-            AnchorPane.setLeftAnchor(root1, marginLeft);
+            AnchorPane.setLeftAnchor(root1, 0.0);
 
             anchorPane.getChildren().add(root1);
         }
