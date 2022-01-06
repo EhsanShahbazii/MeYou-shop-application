@@ -97,10 +97,9 @@ public class MainPage {
             address = addressTextArea.getText();
 
             //******************************************************************************//
-            float length = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
             String[] productData = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
 
-            for (int i = 0; i < Math.floor(length/5); i++) {
+            for (int i = 0; i < 4; i++) {
                 FXMLLoader loader = new FXMLLoader(this.getClass().getResource("../../pages/customer/productAnchorPane.fxml"));
 
                 Parent root = loader.load();
@@ -112,12 +111,36 @@ public class MainPage {
                 Image image1 = new Image(file.toURI().toString());
                 control.getImageViewProduct().setImage(image1);
 
-                double margin = 15;
+                double marginLeft = 45;
+                double marginTop = 15;
 
-                AnchorPane.setLeftAnchor(root, margin + i * (margin + control.getAnchorPane().getPrefWidth()));
-                AnchorPane.setTopAnchor(root, margin);
+                AnchorPane.setLeftAnchor(root, marginLeft + i * (marginLeft + control.getAnchorPane().getPrefWidth()));
+                AnchorPane.setTopAnchor(root, marginTop);
 
                 todayDealAnchorPane.getChildren().add(root);
+            }
+
+            String[] productData1 = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
+
+            for (int i = 0; i < 4; i++) {
+                FXMLLoader loader1 = new FXMLLoader(this.getClass().getResource("../../pages/customer/productAnchorPane.fxml"));
+
+                Parent root1 = loader1.load();
+                ProductAnchorPane control1 = loader1.getController();
+
+                control1.getDetailsText().setText(productData1[5*i]);
+                control1.getPriceText().setText(productData1[5*i+2]);
+                File file1 = new File(productData1[5*i+4]);
+                Image image2 = new Image(file1.toURI().toString());
+                control1.getImageViewProduct().setImage(image2);
+
+                double marginLeft = 45;
+                double marginTop = 15;
+
+                AnchorPane.setLeftAnchor(root1, marginLeft + i * (marginLeft + control1.getAnchorPane().getPrefWidth()));
+                AnchorPane.setTopAnchor(root1, marginTop);
+
+                mostPopularAnchorPane.getChildren().add(root1);
             }
 
         }
@@ -149,6 +172,8 @@ public class MainPage {
         else
             state = true;
     }
+
+    
 
     @FXML
     private Tab homeTab;
