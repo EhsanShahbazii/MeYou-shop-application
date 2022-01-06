@@ -172,11 +172,13 @@ public class MainPage {
             Parent root1 = loader1.load();
             ProductMainAnchorPane control1 = loader1.getController();
 
-            control1.getProductNameText().setText(productData[5*i]);
-            control1.getAuthorText().setText(productData[5*i+1]);
-            control1.getProductPriceText().setText(productData[5*i+2]);
-            control1.getScoreText().setText(randomData.randomNumberCreatorRound(0, 5, 2));
-            control1.getCountScore().setText(randomData.randomNumberCreator(1,2000));
+            control1.getProductNameText().setText(productData[5*i]); //set product name
+            control1.getAuthorText().setText(productData[5*i+1]); //set product  product author
+            control1.getProductPriceText().setText(productData[5*i+2]); //set product price
+            control1.getScoreText().setText(randomData.randomNumberCreatorRound(0, 5, 2));  //set product score
+            control1.getCountScore().setText(randomData.randomNumberCreator(1,2000)); //set product count of vote
+
+            //check it if product is unavailable or not
             if (productData[5*i+3].equals("0")){
                 control1.getOnlyStockText().setText("Currently unavailable");
             }else {
