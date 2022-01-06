@@ -102,8 +102,8 @@ public class MainPage {
             //add product components in most suggest anchorPane
             showProductDivs(productData, suggestCartAnchorPane);
 
+            //add product component with add data in scroll pane
             showProductMain(productData, thisIsScroll);
-
         }
     }
 
