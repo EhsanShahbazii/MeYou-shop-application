@@ -25,6 +25,10 @@ public class GlobalTools {
         return result.toString();
     }
 
+    public String realPrice(String string) {
+        return string.substring(0, string.length()-1) + ".0";
+    }
+
     //refund method for personal information field
     public String makeRefund(String phoneNumber) {
         long number = Long.parseLong(phoneNumber);

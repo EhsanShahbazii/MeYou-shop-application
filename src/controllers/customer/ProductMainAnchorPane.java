@@ -179,11 +179,15 @@ public class ProductMainAnchorPane {
     //add to card product and count and price
     @FXML
     void buyProduct(ActionEvent event) throws FileNotFoundException {
+        if (productCountText.getText().equals("1")) {
+            newPrice.setText(productPriceText.getText());
+        }
         //add product information in card files
-        selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText(), productPriceText.getText());
+        selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText(), globalTools.realPrice(globalTools.justDigits(newPrice.getText())));
         //show success alert and some data
         globalTools.AlertShowInformation("(" + productCountText.getText() +") books named (" + getProductNameText().getText() + ") were added to the shopping cart!");
         productCountText.setText("1");
+        newPrice.setText("");
     }
 
     //increase one step product count until 9 or product count in inventory

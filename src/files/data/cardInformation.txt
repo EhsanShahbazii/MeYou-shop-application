@@ -1,12 +1,8 @@
 ata
+The Words I Wish I Said
+4
+48.0
+ata
 Death Note 1
-1
-56.0
-ata
-Clean Code
-5
-115.0
-ata
-Yeni Hitit 3rd
-1
-27.0
+4
+32.0
