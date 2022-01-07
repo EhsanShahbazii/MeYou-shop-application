@@ -115,9 +115,9 @@
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                    <JFXTextField fx:id="totalAmountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="61.0" layoutY="90.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="totalAmountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="61.0" layoutY="94.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
                                        <font>
-                                          <Font name="System Bold" size="12.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="DEFAULT" />
@@ -133,15 +133,15 @@
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <JFXTextField fx:id="discountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="60.0" layoutY="170.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="discountCartTextField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="60.0" layoutY="174.0" prefHeight="26.0" prefWidth="74.0" unFocusColor="#4059a9">
                                        <font>
-                                          <Font name="System Bold" size="12.0" />
+                                          <Font name="System Bold" size="14.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <JFXButton fx:id="cartPaymentButton" layoutX="43.0" layoutY="225.0" onAction="#paymentCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Payment">
+                                    <JFXButton fx:id="cartPaymentButton" layoutX="43.0" layoutY="236.0" onAction="#paymentCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #0CF485;" text="Payment">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -149,7 +149,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="deleteCartButton" layoutX="42.0" layoutY="272.0" onAction="#deleteCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
+                                    <JFXButton fx:id="deleteCartButton" layoutX="42.0" layoutY="283.0" onAction="#deleteCartAction" prefHeight="30.0" prefWidth="110.0" style="-fx-background-radius: 16px; -fx-background-color: #F98C37;" text="Delete">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>

@@ -111,4 +111,25 @@ public class SelectAndBuyProduct {
         //return format observableArrayList
         return FXCollections.observableArrayList(arrayList);
     }
+
+    //calculate and get total amount of cart
+    public String totalAmount(String username) {
+        //get count of lines in current file
+        int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\cardInformation.txt");
+
+        //set all data of a current file in array
+        String[] counter = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\cardInformation.txt");
+
+        //variable initialize
+        double total = 0;
+
+        for (int i = 0; i <lineCount; i++) {
+            if (counter[i].equals(username)) {
+                //sum before total and new total
+                double price = Double.parseDouble(counter[i+3]);
+                total += price;
+            }
+        }
+        return Double.toString(total);
+    }
 }
