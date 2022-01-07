@@ -17,6 +17,7 @@ public class ProductMainAnchorPane {
     int productCount;
 
     public void initialize() {
+        //set in product count number 1
         productCountText.setText("1");
     }
 
@@ -188,6 +189,7 @@ public class ProductMainAnchorPane {
         //if countBefore bigger than 9 or product count , do nothing
         if (countBefore >= 9 || countBefore >= productCount) {
         }else {
+            //show count*price in format ($number)
             String string1 = getProductPriceText().getText();
             String multi1 = getProductCountText().getText();
             double number1 = Double.parseDouble(string1)*(Double.parseDouble(multi1)+1);
@@ -210,10 +212,11 @@ public class ProductMainAnchorPane {
         if (countBefore <=1) {
 
         }else {
+            //show count*price in format ($number)
             String string = getProductPriceText().getText();
             String multi =  getProductCountText().getText();
-            Double number = Double.parseDouble(string)*(Double.parseDouble(multi)-1);
-            getNewPrice().setText("($" + number.toString() + ")");
+            double number = Double.parseDouble(string)*(Double.parseDouble(multi)-1);
+            getNewPrice().setText("($" + Double.toString(number) + ")");
             countBefore--;
         }
         productCountText.setText(String.valueOf(countBefore));
