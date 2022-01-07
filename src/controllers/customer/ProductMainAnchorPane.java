@@ -10,20 +10,14 @@ import modules.tools.GlobalTools;
 
 public class ProductMainAnchorPane {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
 
+    //variable for set count of product
     int productCount;
 
     public void initialize() {
-        productCount = Integer.parseInt(globalTools.justDigits(getOnlyStockText().getText()));
-        if (productCount == 0) {
-            productIncreaseCounter.setDisable(false);
-            productDecreaseCounter.setDisable(false);
-            productCountText.setText("0");
-        }else {
-            productCountText.setText("1");
-        }
-
+        productCountText.setText("1");
     }
 
     @FXML
@@ -163,22 +157,35 @@ public class ProductMainAnchorPane {
 
     }
 
+    //increase one step product count until 9 or product count in inventory
     @FXML
     void productIncreaseCounterAction(ActionEvent event) {
+        //get product count and save it
+        productCount = Integer.parseInt(globalTools.justDigits(getOnlyStockText().getText()));
 
+        //get product count before by text fields
         int countBefore = Integer.parseInt(productCountText.getText());
 
+        //if countBefore bigger than 9 or product count , do nothing
         if (countBefore >= 9 || countBefore >= productCount) {
 
         }else {
+            String string = getProductPriceText().getText();
             countBefore++;
         }
         productCountText.setText(String.valueOf(countBefore));
     }
 
+    //decrease one step product count until 9 or product count in inventory
     @FXML
     void productDecreaseCounterAction(ActionEvent event) {
+        //get product count and save it
+        productCount = Integer.parseInt(globalTools.justDigits(getOnlyStockText().getText()));
+
+        //get product count before by text fields
         int countBefore = Integer.parseInt(productCountText.getText());
+
+        //if countBefore smaller than 1, do nothing
         if (countBefore <=1) {
 
         }else {
