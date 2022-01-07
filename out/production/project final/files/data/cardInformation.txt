@@ -2,14 +2,11 @@ ata
 Death Note 1
 4
 32.0
-D:\project final\src\files\image\book\Death Note 1.jpg
 ata
 Clean Code
 5
 115.0
-D:\project final\src\files\image\book\Clean Code.jpg
 ata
 Yeni Hitit 3rd
 1
 27.0
-D:\project final\src\files\image\book\Yeni Hitit 3rd.jpg

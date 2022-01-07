@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import modules.objects.Product;
 import modules.tools.GlobalFileTools;
+import modules.tools.RandomData;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 public class SelectAndBuyProduct {
 
     GlobalFileTools globalFileTools = new GlobalFileTools();
+    RandomData randomData = new RandomData();
 
     //update count of product in card of current customer
     public void updateProductToCard(String username, String productName, String productCount, String productPrice) throws FileNotFoundException {
@@ -29,9 +31,9 @@ public class SelectAndBuyProduct {
                 int newCount = Integer.parseInt(productCount);
                 String result = Integer.toString(countBefore+newCount);
                 counter[i+2] = result;
-                int priceBefore = Integer.parseInt(counter[i+3]);
-                int newPrice = Integer.parseInt(productPrice);
-                String result1 = Integer.toString(priceBefore+newPrice);
+                double priceBefore = Double.parseDouble(counter[i+3]);
+                double newPrice = Double.parseDouble(productPrice);
+                String result1 = Double.toString(priceBefore+newPrice);
                 counter[i+3] = result1;
                 flag = true;
             }
@@ -99,11 +101,10 @@ public class SelectAndBuyProduct {
         ArrayList<Product> arrayList = new ArrayList<>();
         for (int i = 0; i <lineCount; i++) {
             if (counter[i].equals(username)) {
-                Product product = new Product(counter[i+1], counter[i+2], counter[i+3], "123");
+                Product product = new Product(counter[i+1], counter[i+2], counter[i+3], randomData.createCode(counter[i+1]));
                 arrayList.add(product);
             }
         }
-        ObservableList<Product> order = FXCollections.observableArrayList(arrayList);
-        return order;
+        return FXCollections.observableArrayList(arrayList);
     }
 }
