@@ -25,6 +25,7 @@ public class GlobalTools {
         return result.toString();
     }
 
+    //convert number format 240 to 24.0
     public String realPrice(String string) {
         return string.substring(0, string.length()-1) + ".0";
     }
