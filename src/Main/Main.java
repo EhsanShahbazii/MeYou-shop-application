@@ -5,10 +5,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.io.File;
 
 public class Main extends Application {
     Parent root;
@@ -21,6 +24,10 @@ public class Main extends Application {
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.setTitle("Me&You");
         primaryStage.setScene(scene);
+        //add application icon
+        File file = new File("D:\\project final\\src\\files\\image\\icon\\mainIcon.png");
+        Image image = new Image(file.toURI().toString());
+        primaryStage.getIcons().add(image);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
 

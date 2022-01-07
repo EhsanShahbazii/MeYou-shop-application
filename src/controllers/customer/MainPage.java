@@ -27,7 +27,7 @@ public class MainPage {
     public GlobalTools globalTools = new GlobalTools();
     public RandomData randomData = new RandomData();
 
-    //variables for set in banking portal fields
+
     public static String chargeAmount = "0$";
     public static String refundMethod;
     public static String usernames, fullName, email, phoneNumber, address;
