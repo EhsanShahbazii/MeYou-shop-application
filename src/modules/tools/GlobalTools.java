@@ -111,6 +111,7 @@ public class GlobalTools {
         Stage primaryStage = (Stage) button.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource(roots));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("./pages/css/homePageStyle.css");
         primaryStage.setTitle(title);
         primaryStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
@@ -122,6 +123,7 @@ public class GlobalTools {
         Stage primaryStage = (Stage) button.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource(roots));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add("./pages/css/homePageStyle.css");
         primaryStage.setTitle(title);
         primaryStage.setScene(scene);
         primaryStage.setX(X);

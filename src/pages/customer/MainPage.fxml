@@ -5,7 +5,6 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXToggleButton?>
-<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
@@ -21,17 +20,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1044.0" style="-fx-background-color: trnsparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.MainPage">
    <children>
-      <AnchorPane layoutX="105.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F2F0F0; -fx-background-radius: 20px;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <AnchorPane layoutX="105.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 20px;" styleClass="layout" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <AnchorPane layoutX="90.0" layoutY="111.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="64.0">
                <children>
                   <TabPane layoutX="66.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <tabs>
-                      <Tab fx:id="homeTab" style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                      <Tab fx:id="homeTab" style="-fx-padding: 16px 12px 16px 12px; -fx-background-color: transparent;" styleClass="tabs">
                            <content>
                               <AnchorPane fx:id="homeAnchorPane" prefHeight="200.0" prefWidth="967.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="homeAnchorPane">
                                  <children>
-                                    <Text fill="#000000e5" layoutX="22.0" layoutY="368.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Today's Deals">
+                                    <Text fill="#000000e5" layoutX="22.0" layoutY="368.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Today's Deals">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -45,9 +44,9 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <AnchorPane fx:id="todayDealAnchorPane" layoutX="21.0" layoutY="378.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="380.0" />
-                                    <AnchorPane fx:id="mostPopularAnchorPane" layoutX="22.0" layoutY="74.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" stylesheets="@../css%20style/homePageStyle.css" />
-                                    <Text fill="#000000e5" layoutX="22.0" layoutY="59.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" text="Most Popular">
+                                    <AnchorPane fx:id="todayDealAnchorPane" layoutX="21.0" layoutY="378.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="380.0" />
+                                    <AnchorPane fx:id="mostPopularAnchorPane" layoutX="22.0" layoutY="74.0" prefHeight="220.0" prefWidth="902.0" styleClass="todayDealAnchorPane" />
+                                    <Text fill="#000000e5" layoutX="22.0" layoutY="59.0" opacity="0.9" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Most Popular">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -61,11 +60,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                 </children>
-                                 <stylesheets>
-                                    <URL value="@../css%20style/homePageStyle.css" />
-                                    <URL value="@../css/homePageStyle.css" />
-                                 </stylesheets></AnchorPane>
+                                 </children></AnchorPane>
                            </content>
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0">
@@ -78,15 +73,11 @@
                               </ImageView>
                            </graphic>
                         </Tab>
-                      <Tab fx:id="categoriesTab" style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                      <Tab fx:id="categoriesTab" style="-fx-padding: 16px 12px 16px 12px; -fx-background-color: transparent;" styleClass="tabs">
                            <content>
-                              <AnchorPane fx:id="categoriesAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="categoriesAnchorPane">
-                                 <stylesheets>
-                                    <URL value="@../css%20style/homePageStyle.css" />
-                                    <URL value="@../css/homePageStyle.css" />
-                                 </stylesheets>
+                              <AnchorPane fx:id="categoriesAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="categoriesAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
                                  <children>
-                                    <ScrollPane hbarPolicy="NEVER" layoutX="41.0" prefHeight="620.0" prefWidth="903.0" styleClass="scrollBarCategories" stylesheets="@../css/homePageStyle.css">
+                                    <ScrollPane hbarPolicy="NEVER" layoutX="41.0" prefHeight="620.0" prefWidth="903.0" styleClass="scrollBarCategories">
                                        <content>
                                           <AnchorPane fx:id="thisIsScroll" prefHeight="619.0" prefWidth="902.0" styleClass="scrollBarCategories" />
                                        </content>
@@ -104,24 +95,20 @@
                               </ImageView>
                            </graphic>
                         </Tab>
-                        <Tab fx:id="cartTab" style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                        <Tab fx:id="cartTab" style="-fx-padding: 16px 12px 16px 12px; -fx-background-color: transparent;" styleClass="tabs">
                           <content>
-                            <AnchorPane fx:id="cartAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="cartAnchorPane">
+                            <AnchorPane fx:id="cartAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="cartAnchorPane" stylesheets="@../css%20style/homePageStyle.css">
                                  <children>
                                     <AnchorPane layoutX="192.0" layoutY="22.0" prefHeight="330.0" prefWidth="730.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #f7fcff, #e6fbff, #d2fbff, #c2fbf8);; -fx-background-radius: 0 0 12px 12px;" AnchorPane.topAnchor="22.0">
                                        <children>
-                                          <TableView fx:id="cartTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="330.0" prefWidth="730.0" style="-fx-border-color: white; -fx-border-radius: 0 0 12px 12px; -fx-border-width: 2px;" stylesheets="@../css%20style/homePageStyle.css">
+                                          <TableView fx:id="cartTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="330.0" prefWidth="730.0" style="-fx-border-color: white; -fx-border-radius: 0 0 12px 12px; -fx-border-width: 2px;">
                                              <columnResizePolicy>
                                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                              </columnResizePolicy></TableView>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="suggestCartAnchorPane" layoutX="21.0" layoutY="380.0" prefHeight="220.0" prefWidth="902.0" styleClass="suggestCartAnchorPane">
-                                       <stylesheets>
-                                          <URL value="@../css%20style/homePageStyle.css" />
-                                          <URL value="@../css/homePageStyle.css" />
-                                       </stylesheets></AnchorPane>
-                                    <Text fill="#000000e5" layoutX="40.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suggest for you">
+                                    <AnchorPane fx:id="suggestCartAnchorPane" layoutX="21.0" layoutY="380.0" prefHeight="220.0" prefWidth="902.0" styleClass="suggestCartAnchorPane" />
+                                    <Text fill="#000000e5" layoutX="40.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Suggest for you">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -134,12 +121,12 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <Text fill="#000000e5" layoutX="45.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Amount($)">
+                                    <Text fill="#000000e5" layoutX="45.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Total Amount($)">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000e5" layoutX="61.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount($)">
+                                    <Text fill="#000000e5" layoutX="61.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Discount($)">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -168,16 +155,12 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cart">
+                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Cart">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                 </children>
-                                 <stylesheets>
-                                    <URL value="@../css%20style/homePageStyle.css" />
-                                    <URL value="@../css/homePageStyle.css" />
-                                 </stylesheets></AnchorPane>
+                                 </children></AnchorPane>
                           </content>
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0">
@@ -190,11 +173,11 @@
                               </ImageView>
                            </graphic>
                         </Tab>
-                        <Tab fx:id="digiCoinTab" style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                        <Tab fx:id="digiCoinTab" style="-fx-padding: 16px 12px 16px 12px; -fx-background-color: transparent;" styleClass="tabs">
                            <content>
                               <AnchorPane fx:id="accountAnchorPane1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="accountAnchorPane">
                                  <children>
-                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digi Coin">
+                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Digi Coin">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
@@ -212,7 +195,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <AnchorPane fx:id="forMenCategories1121" layoutX="695.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories1121" layoutX="695.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="28.0" fitWidth="156.0" layoutX="22.0" layoutY="32.0">
                                              <image>
@@ -241,7 +224,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories11211" layoutX="480.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories11211" layoutX="480.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="64.0" fitWidth="134.0" layoutX="33.0" layoutY="14.0">
                                              <image>
@@ -270,7 +253,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories11212" layoutX="265.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories11212" layoutX="265.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="48.0" fitWidth="146.0" layoutX="26.0" layoutY="23.0">
                                              <image>
@@ -299,7 +282,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories112111" layoutX="50.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories112111" layoutX="50.0" layoutY="363.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="74.0" fitWidth="104.0" layoutX="48.0" layoutY="14.0">
                                              <image>
@@ -328,7 +311,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories11213" layoutX="695.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories11213" layoutX="695.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="53.0" layoutY="14.0">
                                              <image>
@@ -357,7 +340,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories112112" layoutX="480.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories112112" layoutX="480.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="48.0" fitWidth="159.0" layoutX="21.0" layoutY="24.0">
                                              <image>
@@ -386,7 +369,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories112121" layoutX="265.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories112121" layoutX="265.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="49.0" fitWidth="134.0" layoutX="33.0" layoutY="28.0">
                                              <image>
@@ -415,7 +398,7 @@
                                           </JFXButton>
                                        </children>
                                     </AnchorPane>
-                                    <AnchorPane fx:id="forMenCategories1121111" layoutX="50.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories" stylesheets="@../css%20style/homePageStyle.css">
+                                    <AnchorPane fx:id="forMenCategories1121111" layoutX="50.0" layoutY="117.0" prefHeight="230.0" prefWidth="200.0" styleClass="forMenCategories">
                                        <children>
                                           <ImageView fitHeight="95.0" fitWidth="95.0" layoutX="53.0" layoutY="7.0">
                                              <image>
@@ -465,17 +448,13 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <Text layoutX="214.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can receive digi coins with the purchase you make and get the following items with it.">
+                                    <Text layoutX="214.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="You can receive digi coins with the purchase you make and get the following items with it.">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
                                     </Text>
                                     <Separator layoutX="222.0" layoutY="97.0" prefWidth="500.0" />
                                  </children>
-                                 <stylesheets>
-                                    <URL value="@../css%20style/homePageStyle.css" />
-                                    <URL value="@../css/homePageStyle.css" />
-                                 </stylesheets>
                               </AnchorPane>
                            </content>
                            <graphic>
@@ -489,41 +468,41 @@
                               </ImageView>
                            </graphic>
                         </Tab>
-                        <Tab fx:id="dashboardTab" style="-fx-background-color: F2F0F0; -fx-padding: 16px 12px 16px 12px;">
+                        <Tab fx:id="dashboardTab" style="-fx-padding: 16px 12px 16px 12px; -fx-background-color: transparent;" styleClass="tabs">
                            <content>
                               <AnchorPane fx:id="accountAnchorPane2" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 32px 0 0 32px;" styleClass="accountAnchorPane">
                                  <children>
-                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+                                    <Text fill="#000000e5" layoutX="38.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Dashboard">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000e5" layoutX="475.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Information">
+                                    <Text fill="#000000e5" layoutX="475.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Personal Information">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000cc" layoutX="475.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full name:">
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Full name:">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000cc" layoutX="475.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Username:">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000cc" layoutX="475.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address:">
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Email Address:">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000cc" layoutX="705.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number:">
+                                    <Text fill="#000000cc" layoutX="705.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Phone Number:">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
                                     </Text>
-                                    <Text fill="#000000cc" layoutX="475.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                                    <Text fill="#000000cc" layoutX="475.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Address:">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -535,7 +514,7 @@
                                        <cursor>
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor></JFXTextArea>
-                                    <Text fill="#000000cc" layoutX="705.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Refund method:">
+                                    <Text fill="#000000cc" layoutX="705.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Refund method:">
                                        <font>
                                           <Font size="13.0" />
                                        </font>
@@ -571,7 +550,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <Text fill="#000000e5" layoutX="265.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wallet Balance($)">
+                                    <Text fill="#000000e5" layoutX="265.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Wallet Balance($)">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -628,7 +607,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <Text layoutX="44.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you have a gift card, enter the code in the field above." />
+                                    <Text layoutX="44.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="If you have a gift card, enter the code in the field above." />
                                     <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="264.0" layoutY="126.0">
                                        <image>
                                           <Image url="@../../files/image/icon/icons8-wallet-48.png" />
@@ -674,7 +653,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <Text fill="#000000e5" layoutX="472.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digital currency wallet">
+                                    <Text fill="#000000e5" layoutX="472.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Digital currency wallet">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -736,12 +715,8 @@
                                           <Image url="@../../files/image/icon/pngfind.com-tin-man-png-6105098.png" />
                                        </image>
                                     </ImageView>
-                                    <Text layoutX="724.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" We support digital currencies!!!" wrappingWidth="100.7913818359375" />
+                                    <Text layoutX="724.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text=" We support digital currencies!!!" wrappingWidth="100.7913818359375" />
                                  </children>
-                                 <stylesheets>
-                                    <URL value="@../css%20style/homePageStyle.css" />
-                                    <URL value="@../css/homePageStyle.css" />
-                                 </stylesheets>
                               </AnchorPane>
                            </content>
                            <graphic>
@@ -756,10 +731,6 @@
                            </graphic>
                         </Tab>
                     </tabs>
-                     <stylesheets>
-                        <URL value="@../css%20style/homePageStyle.css" />
-                        <URL value="@../css/homePageStyle.css" />
-                     </stylesheets>
                   </TabPane>
                </children>
             </AnchorPane>
@@ -793,7 +764,7 @@
                </cursor>
             </JFXButton>
             <JFXTextField layoutX="137.0" layoutY="19.0" opacity="0.9" promptText="Search" unFocusColor="#f2f0f0" />
-            <Button layoutX="17.0" layoutY="706.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;">
+            <Button layoutX="17.0" layoutY="706.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0">
                      <image>
@@ -805,7 +776,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="901.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="901.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="20.0">
+            <Button layoutX="901.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="901.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="20.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0">
                      <image>
@@ -817,7 +788,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="945.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: F2F0F0;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="945.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="20.0">
+            <Button layoutX="945.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="945.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="20.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0">
                      <image>
@@ -838,7 +809,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Text layoutX="127.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select your country and city." wrappingWidth="289.33673095703125" />
+            <Text layoutX="127.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Please select your country and city." wrappingWidth="289.33673095703125" />
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="106.0" layoutY="709.0">
                <image>
                   <Image url="@../../files/image/icon/—Pngtree—vector%20location%20icon_4231903.png" />
