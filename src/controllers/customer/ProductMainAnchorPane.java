@@ -6,18 +6,24 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 public class ProductMainAnchorPane {
 
-    GlobalFileTools globalFileTools = new GlobalFileTools();
     GlobalTools globalTools = new GlobalTools();
 
-    String productCount;
+    int productCount;
 
     public void initialize() {
-        productCountText.setText("1");
+        productCount = Integer.parseInt(globalTools.justDigits(getOnlyStockText().getText()));
+        if (productCount == 0) {
+            productIncreaseCounter.setDisable(false);
+            productDecreaseCounter.setDisable(false);
+            productCountText.setText("0");
+        }else {
+            productCountText.setText("1");
+        }
+
     }
 
     @FXML
@@ -159,10 +165,10 @@ public class ProductMainAnchorPane {
 
     @FXML
     void productIncreaseCounterAction(ActionEvent event) {
-        productCount = globalTools.justDigits(getOnlyStockText().getText());
+
         int countBefore = Integer.parseInt(productCountText.getText());
 
-        if (countBefore >= 9 || countBefore >= Integer.parseInt(productCount)) {
+        if (countBefore >= 9 || countBefore >= productCount) {
 
         }else {
             countBefore++;
