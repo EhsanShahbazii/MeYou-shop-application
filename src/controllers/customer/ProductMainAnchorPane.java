@@ -176,9 +176,9 @@ public class ProductMainAnchorPane {
     @FXML
     private JFXButton buyItButton;
 
+    //add to card product and count and price
     @FXML
     void buyProduct(ActionEvent event) throws FileNotFoundException {
-//        selectAndBuyProduct.addProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText());
         selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText());
     }
 
