@@ -8,10 +8,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import modules.files.SelectAndBuyProduct;
+import modules.objects.Product;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
@@ -26,7 +29,7 @@ public class MainPage {
     public GlobalFileTools globalFileTools = new GlobalFileTools();
     public GlobalTools globalTools = new GlobalTools();
     public RandomData randomData = new RandomData();
-
+    public SelectAndBuyProduct selectAndBuyProduct = new SelectAndBuyProduct();
 
     public static String chargeAmount = "0$";
     public static String refundMethod;
@@ -106,6 +109,22 @@ public class MainPage {
 
             //add product component with add data in scroll pane
             showProductMain(productData, thisIsScroll);
+
+            Product product = new Product();
+            ObservableList<Product> data = selectAndBuyProduct.tableData(Login.customer.getUsername());
+            TableColumn productCode = new TableColumn("Code");
+            productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
+            TableColumn productName = new TableColumn("Product Name");
+            productName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+            TableColumn productCount = new TableColumn("Count");
+            productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
+            TableColumn productPrice = new TableColumn("Price");
+            productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+
+
+            cartTable.getColumns().addAll(productCode, productName, productCount, productPrice);
+            cartTable.setItems(data);
+
         }
     }
 
@@ -229,7 +248,7 @@ public class MainPage {
     private AnchorPane cartAnchorPane;
 
     @FXML
-    private TableView<?> cartTable;
+    private TableView<Product> cartTable;
 
     @FXML
     private AnchorPane suggestCartAnchorPane;

@@ -179,7 +179,9 @@ public class ProductMainAnchorPane {
     //add to card product and count and price
     @FXML
     void buyProduct(ActionEvent event) throws FileNotFoundException {
-        selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText());
+        //add product information in card files
+        selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText(), productPriceText.getText());
+        //show success alert and some data
         globalTools.AlertShowInformation("(" + productCountText.getText() +") books named (" + getProductNameText().getText() + ") were added to the shopping cart!");
         productCountText.setText("1");
     }
