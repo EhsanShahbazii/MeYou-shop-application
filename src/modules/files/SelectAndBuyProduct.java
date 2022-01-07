@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class SelectAndBuyProduct {
 
+    //variables which are used
     GlobalFileTools globalFileTools = new GlobalFileTools();
     RandomData randomData = new RandomData();
 
@@ -90,7 +91,7 @@ public class SelectAndBuyProduct {
         }
     }
 
-
+    //get product data for showing in table current customer format ObservableList
     public ObservableList<Product> tableData(String username) {
         //get count of lines in current file
         int lineCount = globalFileTools.fileLengthCounter("D:\\project final\\src\\files\\data\\cardInformation.txt");
@@ -98,13 +99,16 @@ public class SelectAndBuyProduct {
         //set all data of a current file in array
         String[] counter = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\cardInformation.txt");
 
+        //create array list product data type
         ArrayList<Product> arrayList = new ArrayList<>();
         for (int i = 0; i <lineCount; i++) {
             if (counter[i].equals(username)) {
+                //set this data in product  productName, productCount, productPrice, productCode
                 Product product = new Product(counter[i+1], counter[i+2], counter[i+3], randomData.createCode(counter[i+1]));
                 arrayList.add(product);
             }
         }
+        //return format observableArrayList
         return FXCollections.observableArrayList(arrayList);
     }
 }
