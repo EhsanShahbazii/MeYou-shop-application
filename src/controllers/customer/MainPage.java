@@ -9,12 +9,15 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import modules.files.SelectAndBuyProduct;
 import modules.objects.Product;
 import modules.tools.GlobalFileTools;
@@ -24,6 +27,7 @@ import modules.tools.RandomData;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 
 public class MainPage {
 
@@ -45,34 +49,8 @@ public class MainPage {
 
         //do this works when login is successful
         if (Login.loginIsDone) {
-            //get current customer data from files
-            String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
-
-            String customerFullName = userDataInformation[0]; //add customerFullName
-            String customerUsername = userDataInformation[1]; //add customerUsername
-            String customerEmail = userDataInformation[2]; //add customerEmail
-            String customerPhoneNumber = userDataInformation[3]; //add customerPhoneNumber
-            String customerAddress = userDataInformation[4]; //add customerAddress
-
-            //get customer wallet balance
-            String customerWallet = globalFileTools.returnWalletBalance(customerUsername);
-
-            //create refund method of customer
-            String customerRefund = globalTools.makeRefund(customerPhoneNumber);
-
-            //get user profile image path
-            String userProfileImagePath = globalFileTools.userImageProfilePath(customerUsername);
-
-            //set data in own fields in personal information field
-            fullNameTextField.setText(customerFullName);
-            usernameTextField.setText(customerUsername);
-            emailTextField.setText(customerEmail);
-            phoneNumberTextField.setText(customerPhoneNumber);
-            addressTextArea.setText(customerAddress);
-            refundMethodTextField.setText(customerRefund);
-
-            //set wallet balance of customer in field
-            walletBalanceTextField.setText(customerWallet);
+            //get personal information data from file
+            getDataFromFile();
 
             //limit text field length
             globalTools.LimitedTextField(fullNameTextField, 20);
@@ -84,12 +62,6 @@ public class MainPage {
             //set data in comboBox in wallet balance
             chargeComboBox.setItems(walletComboBoxType);
             chargeComboBox.getSelectionModel().select("Favorite");
-
-            //set user profile image
-            File files = new File(userProfileImagePath);
-            Image image = new Image(files.toURI().toString());
-            //set image format in imageview
-            imageviewProfile.setImage(image);
 
             //get and save information in values
             usernames = Login.customer.getUsername();
@@ -147,8 +119,20 @@ public class MainPage {
                 public void handle(Event event) {
                     if (dashboardTab.isSelected()) {
                         try {
+                            //get personal information data from file
+                            getDataFromFile();
+
                             //set wallet balance of customer in field
-                            walletBalanceTextField.setText(globalFileTools.returnWalletBalance(customerUsername));
+                            walletBalanceTextField.setText(globalFileTools.returnWalletBalance(usernames));
+
+                            //get user profile image path
+                            String userProfileImagePath = globalFileTools.userImageProfilePath(usernames);
+
+                            //set user profile image
+                            File files = new File(userProfileImagePath);
+                            Image image = new Image(files.toURI().toString());
+                            //set image format in imageview
+                            imageviewProfile.setImage(image);
                         } catch (Exception exception) {
                             System.out.println(exception.toString());
                         }
@@ -156,6 +140,44 @@ public class MainPage {
                 }
             });
         }
+    }
+
+    public void getDataFromFile() {
+        //get current customer data from files
+        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
+
+        String customerFullName = userDataInformation[0]; //add customerFullName
+        String customerUsername = userDataInformation[1]; //add customerUsername
+        String customerEmail = userDataInformation[2]; //add customerEmail
+        String customerPhoneNumber = userDataInformation[3]; //add customerPhoneNumber
+        String customerAddress = userDataInformation[4]; //add customerAddress
+
+        //get customer wallet balance
+        String customerWallet = globalFileTools.returnWalletBalance(customerUsername);
+
+        //create refund method of customer
+        String customerRefund = globalTools.makeRefund(customerPhoneNumber);
+
+        //get user profile image path
+        String userProfileImagePath = globalFileTools.userImageProfilePath(customerUsername);
+
+        //set data in own fields in personal information field
+        fullNameTextField.setText(customerFullName);
+        usernameTextField.setText(customerUsername);
+        emailTextField.setText(customerEmail);
+        phoneNumberTextField.setText(customerPhoneNumber);
+        addressTextArea.setText(customerAddress);
+        refundMethodTextField.setText(customerRefund);
+
+        //set wallet balance of customer in field
+        walletBalanceTextField.setText(customerWallet);
+
+        //set user profile image
+        File files = new File(userProfileImagePath);
+        Image image = new Image(files.toURI().toString());
+        //set image format in imageview
+        imageviewProfile.setImage(image);
+
     }
 
     //this method refresh cart table data
@@ -404,7 +426,15 @@ public class MainPage {
     public JFXToggleButton darkModeToggle;
 
     @FXML
-    public void setToDarkMode(ActionEvent event) {
+    public void setToDarkMode(ActionEvent event) throws IOException {
+        Stage primaryStage = (Stage) darkModeToggle.getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/pages/customer/MainPage.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("./pages/css/darkModeStyle.css");
+        primaryStage.setTitle("Me and You");
+        primaryStage.setScene(scene);
+        scene.setFill(Color.TRANSPARENT);
+        primaryStage.show();
     }
 
     @FXML
