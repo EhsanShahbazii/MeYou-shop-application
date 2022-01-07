@@ -21,6 +21,9 @@ public class ProductMainAnchorPane {
     }
 
     @FXML
+    public Text newPrice;
+
+    @FXML
     public ImageView imageViewProduct;
 
     @FXML
@@ -149,6 +152,22 @@ public class ProductMainAnchorPane {
         this.buyItButton = buyItButton;
     }
 
+    public int getProductCount() {
+        return productCount;
+    }
+
+    public void setProductCount(int productCount) {
+        this.productCount = productCount;
+    }
+
+    public Text getNewPrice() {
+        return newPrice;
+    }
+
+    public void setNewPrice(Text newPrice) {
+        this.newPrice = newPrice;
+    }
+
     @FXML
     private JFXButton buyItButton;
 
@@ -168,9 +187,11 @@ public class ProductMainAnchorPane {
 
         //if countBefore bigger than 9 or product count , do nothing
         if (countBefore >= 9 || countBefore >= productCount) {
-
         }else {
-            String string = getProductPriceText().getText();
+            String string1 = getProductPriceText().getText();
+            String multi1 = getProductCountText().getText();
+            double number1 = Double.parseDouble(string1)*(Double.parseDouble(multi1)+1);
+            getNewPrice().setText("($" + Double.toString(number1) + ")");
             countBefore++;
         }
         productCountText.setText(String.valueOf(countBefore));
@@ -189,6 +210,10 @@ public class ProductMainAnchorPane {
         if (countBefore <=1) {
 
         }else {
+            String string = getProductPriceText().getText();
+            String multi =  getProductCountText().getText();
+            Double number = Double.parseDouble(string)*(Double.parseDouble(multi)-1);
+            getNewPrice().setText("($" + number.toString() + ")");
             countBefore--;
         }
         productCountText.setText(String.valueOf(countBefore));
