@@ -180,6 +180,8 @@ public class ProductMainAnchorPane {
     @FXML
     void buyProduct(ActionEvent event) throws FileNotFoundException {
         selectAndBuyProduct.updateProductToCard(Login.customer.getUsername(), ProductNameText.getText(), productCountText.getText());
+        globalTools.AlertShowInformation("(" + productCountText.getText() +") books named (" + getProductNameText().getText() + ") were added to the shopping cart!");
+        productCountText.setText("1");
     }
 
     //increase one step product count until 9 or product count in inventory
