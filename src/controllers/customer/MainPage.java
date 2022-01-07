@@ -425,6 +425,7 @@ public class MainPage {
     @FXML
     public JFXToggleButton darkModeToggle;
 
+    //dark mode toggle operations
     @FXML
     public void setToDarkMode(ActionEvent event) throws IOException {
         Stage primaryStage = (Stage) darkModeToggle.getScene().getWindow();
