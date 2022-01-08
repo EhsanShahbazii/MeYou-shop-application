@@ -1,7 +1,7 @@
 ata
 Death Note 1
-5
-40.0
+12
+64.0
 ata
 home body
 1
