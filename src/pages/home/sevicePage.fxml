@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.home.Service">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="390.0" prefWidth="790.0" style="-fx-background-color: linear-gradient(to right top, #051937, #002841, #003339, #003c21, #2d4102); -fx-background-radius: 32px;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="100.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="320.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="540.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fill="WHITE" layoutX="134.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="354.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24 Hours">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="569.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Free Fast">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="90.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security is one of the most important pillars of our company. We do our best to ensure that the payments you make are fully protected and secure" textAlignment="CENTER" wrappingWidth="169.603515625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="315.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our company has 24-hour support and it works for you. Whenever there is a problem, you can contact us this way and we will solve it" textAlignment="CENTER" wrappingWidth="169.603515625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="529.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For purchases over $ 100, shipping is free and you can receive it without paying. And our speed in sending orders is very high. Thank you" textAlignment="CENTER" wrappingWidth="169.603515625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="backServiceButton" layoutX="31.0" layoutY="347.0" onAction="#backServiceAction" style="-fx-background-color: #FF8267;" text="Back">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
