@@ -292,6 +292,9 @@ public class MainPage {
     }
 
     @FXML
+    public Button messageButton;
+
+    @FXML
     public Button notificationButton;
 
     @FXML
@@ -430,6 +433,21 @@ public class MainPage {
     public JFXToggleButton darkModeToggle;
 
     @FXML
+    public void showMessageAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/home/messagePage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("message");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(1050);
+        stage1.setY(179);
+        stage1.show();
+    }
+
+    @FXML
     public void showNotificationAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
         fxmlLoader1.setLocation(getClass().getResource("/pages/home/notificationPage.fxml"));
@@ -545,5 +563,6 @@ public class MainPage {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
         }
     }
+
 
 }
