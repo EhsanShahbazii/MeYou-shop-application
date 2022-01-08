@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import com.jfoenix.controls.JFXTextArea?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXToggleButton?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1044.0" style="-fx-background-color: trnsparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.MainPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1044.0" style="-fx-background-color: trnsparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.MainPage">
    <children>
       <AnchorPane layoutX="105.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 20px;" styleClass="layout" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
@@ -776,7 +765,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="901.0" layoutY="20.0" mnemonicParsing="false" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="901.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="20.0">
+            <Button fx:id="notificationButton" layoutX="901.0" layoutY="20.0" mnemonicParsing="false" onAction="#showNotificationAction" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="700.0" AnchorPane.leftAnchor="901.0" AnchorPane.rightAnchor="67.0" AnchorPane.topAnchor="20.0">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0">
                      <image>
