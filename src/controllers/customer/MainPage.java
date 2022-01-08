@@ -443,6 +443,7 @@ public class MainPage {
         stage1.setScene(scene1);
         stage1.initStyle(StageStyle.TRANSPARENT);
         stage1.setX(1050);
+        stage1.setX(1050);
         stage1.setY(179);
         stage1.show();
     }
