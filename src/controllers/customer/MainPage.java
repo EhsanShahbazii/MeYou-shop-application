@@ -290,7 +290,7 @@ public class MainPage {
             anchorPane.getChildren().add(root1);
         }
     }
-    
+
     @FXML
     public JFXButton giftCardButton;
 
@@ -436,7 +436,18 @@ public class MainPage {
     public JFXToggleButton darkModeToggle;
 
     @FXML
-    public void giftCardAction(ActionEvent event) {
+    public void giftCardAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/home/giftCardPage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("message");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(640);
+        stage1.setY(240);
+        stage1.show();
     }
 
     @FXML
@@ -449,7 +460,6 @@ public class MainPage {
         stage1.setTitle("message");
         stage1.setScene(scene1);
         stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(1050);
         stage1.setX(1050);
         stage1.setY(179);
         stage1.show();

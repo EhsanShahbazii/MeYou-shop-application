@@ -744,7 +744,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="656.0" layoutY="19.0" style="-fx-background-radius: 16px; -fx-background-color: D5D5D5;" text="Gift Cards" textFill="#000000cc">
+            <JFXButton fx:id="giftCardButton" layoutX="656.0" layoutY="19.0" onAction="#giftCardAction" style="-fx-background-radius: 16px; -fx-background-color: D5D5D5;" text="Gift Cards" textFill="#000000cc">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
