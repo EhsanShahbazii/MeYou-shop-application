@@ -41,7 +41,7 @@
                   <Font size="17.0" />
                </font>
             </JFXButton>
-            <Text layoutX="38.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Managment">
+            <Text layoutX="38.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Management">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
