@@ -19,7 +19,7 @@ public class Login {
 
         //find correct index which one is equals with data
         //j = j+2 because odd lines are username and even lines are passwords
-        for (int j = 0; j < lineCount-1; j = j+2) {
+        for (int j = 0; j < lineCount-1; j = j+3) {
             if (username.equals(counter[j]) && password.equals(counter[j+1]) && toggle.equals(counter[j+2])) {
                 correctIndex = j;
             }
