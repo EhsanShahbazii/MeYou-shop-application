@@ -162,8 +162,16 @@ public class Admin {
     }
 
     @FXML
-    void chargeProductAction(ActionEvent event) {
-
+    void chargeProductAction(ActionEvent event) throws FileNotFoundException {
+        if (productNewCountTextField.getText().isEmpty()) {
+            globalTools.AlertShow("Please enter new product count");
+        }else {
+            Product selectItem = allProductTable.getSelectionModel().getSelectedItem();
+            String productName = selectItem.getProductName();
+            globalFileTools.chargeProductCount(productName, productNewCountTextField.getText());
+            productNewCountTextField.setText("");
+            globalTools.AlertShowInformation("Product(" + productName + ") charge successful.");
+        }
     }
 
     @FXML
