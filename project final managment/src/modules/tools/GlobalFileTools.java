@@ -43,4 +43,53 @@ public class GlobalFileTools {
         }
         return counter;
     }
+
+    //return specific user information
+    public String[] returnSpecificUserInformation(String username) {
+        int usernameIndex = 0;
+        //array length is 5 because we have 5 lines of data for each customer
+        String[] data = new String[5];
+        try {
+            Scanner scanner = new Scanner(new File("D:\\project final\\project final managment\\src\\files\\data\\adminProfiles.txt"));
+            while (scanner.hasNextLine()) {
+                String user = scanner.nextLine();
+                usernameIndex++;
+                //try to found username and then return information of current customer
+                if (username.equals(user)) {
+                    String[] files = fileAllRead("D:\\project final\\project final managment\\src\\files\\data\\adminProfiles.txt");
+                    data[0] = files[usernameIndex-2]; //return fullName
+                    data[1] = files[usernameIndex-1]; //return username
+                    data[2] = files[usernameIndex+1]; //return email
+                    data[3] = files[usernameIndex+2]; //return phone number
+                    data[4] = files[usernameIndex+3]; //return address
+                }
+            }
+        } catch (FileNotFoundException exception) {
+            exception.printStackTrace();
+        }
+        return data;
+    }
+
+    //return current user profile image path for set in image view in profile
+    public String userImageProfilePath(String username) {
+        int usernameIndex = 0;
+
+        //this is default image path for show in image view
+        String imagePath = "D:\\project final\\src\\files\\image\\profile image\\Man-16-icon.png";
+        try {
+            Scanner scanner = new Scanner(new File("D:\\project final\\project final managment\\src\\files\\data\\userProfileImages.txt"));
+            while (scanner.hasNextLine()) {
+                String user = scanner.nextLine();
+                usernameIndex++;
+                //try to found username and then return wallet balance current customer
+                if (username.equals(user)) {
+                    String[] files = fileAllRead("D:\\project final\\project final managment\\src\\files\\data\\userProfileImages.txt");
+                    imagePath = files[usernameIndex];
+                }
+            }
+        } catch (FileNotFoundException exception) {
+            exception.printStackTrace();
+        }
+        return imagePath;
+    }
 }
