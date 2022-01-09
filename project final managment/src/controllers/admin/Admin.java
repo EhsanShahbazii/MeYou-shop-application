@@ -8,8 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import modules.tools.GlobalTools;
+
+import java.io.IOException;
 
 public class Admin {
+
+    GlobalTools globalTools = new GlobalTools();
 
     @FXML
     public JFXButton logoutButton;
@@ -72,6 +77,7 @@ public class Admin {
 
     }
 
-    public void logoutAction(ActionEvent event) {
+    public void logoutAction(ActionEvent event) throws IOException {
+        globalTools.OpenNewPageXY(logoutButton, "/pages/login/LoginPage.fxml", "login", 650, 110);
     }
 }

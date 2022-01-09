@@ -8,8 +8,13 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import modules.tools.GlobalTools;
+
+import java.io.IOException;
 
 public class Management {
+
+    GlobalTools globalTools = new GlobalTools();
 
     @FXML
     private JFXButton logoutButton;
@@ -88,7 +93,7 @@ public class Management {
 
     }
 
-    public void logoutAction(ActionEvent event) {
-
+    public void logoutAction(ActionEvent event) throws IOException {
+        globalTools.OpenNewPageXY(logoutButton, "/pages/login/LoginPage.fxml", "login", 650, 110);
     }
 }
