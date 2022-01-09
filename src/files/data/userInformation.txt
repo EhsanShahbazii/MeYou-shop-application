@@ -34,3 +34,15 @@ samin
 1111111111111
 11111111111
 111111111111111
+customer1
+c1
+1
+customer1@gmail.com
+09876543211
+customer1customer1customer1customer1customer1customer1custom
+customer2
+c2
+1
+customer2@gmail.com
+09875469498
+customer2customer2customer2customer2customer2customer2

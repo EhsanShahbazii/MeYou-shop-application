@@ -112,6 +112,9 @@ public class Signin {
             //this method add new profile image to userInformation.txt
             globalFileTools.addNewUserProfileImage(username);
 
+            //this method add new wallet to userWalletBalance.txt
+            globalFileTools.addNewWalletBalance(username);
+
             //show message when the register logic is not problem
             JOptionPane.showMessageDialog(null, "Registration was successful!", "Registration", JOptionPane.INFORMATION_MESSAGE);
 
