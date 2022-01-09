@@ -48,9 +48,9 @@ public class Admin {
         productName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         TableColumn productAuthor = new TableColumn("Product Author"); //name column
         productAuthor.setCellValueFactory(new PropertyValueFactory<>("productAuthor"));
-        TableColumn productCount = new TableColumn("Count"); //count column
+        TableColumn productCount = new TableColumn("Price"); //count column
         productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
-        TableColumn productPrice = new TableColumn("Price"); //price column
+        TableColumn productPrice = new TableColumn("Count"); //price column
         productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
         //add columns in cart table javafx
         allProductTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
