@@ -1,13 +1,12 @@
 package modules.tools;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -47,6 +46,24 @@ public class GlobalTools {
                 }
             }
         });
+    }
+
+    //Check that parameter is a digit
+    public boolean OnlyDigits(String n) {
+        for (int i = 0; i < n.length(); i++) {
+            if (!Character.isDigit(n.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void clearFields(JFXTextField productNameTextField, TextField textField1, TextField textField2, TextField textField3, TextField textField4, TextArea textArea) {
+        textField1.setText("");
+        textField2.setText("");
+        textField3.setText("");
+        textField4.setText("");
+        textArea.setText("");
     }
 
     //open new page and close current pages
