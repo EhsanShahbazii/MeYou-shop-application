@@ -20,6 +20,6 @@ Ankara University
 D:\project final\src\files\image\book\Yeni Hitit 3rd.jpg
 home body
 Rupi Kaur
-6.0
-15
+15.0
+6
 D:\project final\src\files\image\book\home body.jpg

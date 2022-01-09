@@ -3,12 +3,16 @@ package controllers.admin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import controllers.Login.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.stage.FileChooser;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
 import javax.swing.*;
+import java.io.File;
 
 public class AddNewProduct {
 
@@ -83,8 +87,10 @@ public class AddNewProduct {
             globalTools.AlertShow("This product is available in stock.");
         }else {
 
+            Double formatPrice = Double.parseDouble(productPrice);
+
             //write all information of customer in userInformation.txt file
-            globalFileTools.addNewProduct(productName, productAuthor, productCount, productImage, productDetail);
+            globalFileTools.addNewProduct(productName, productAuthor, Double.toString(formatPrice), productCount, productImage);
 
             //show message when the register logic is not problem
             JOptionPane.showMessageDialog(null, "product add is successful!", "Registration", JOptionPane.INFORMATION_MESSAGE);
@@ -96,12 +102,23 @@ public class AddNewProduct {
 
     @FXML
     void chooseImageAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser(); //create file chooser
+        File file = fileChooser.showOpenDialog(null); //get file(pic) path
 
+        if (file != null){
+            String path;
+            path = file.getAbsolutePath(); //take file path which is choose
+            File files = new File(path); //convert path to file format
+            //update new profile image path current customer
+            imageTextField.setText(files.toString());
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Please Select Picture"); //show Error alert
+        }
     }
 
     @FXML
     void exitAction(ActionEvent event) {
-
+        globalTools.closeCurrentPage(exitButton, "/pages/admin/addNewProductPage.fxml");
     }
 
 }

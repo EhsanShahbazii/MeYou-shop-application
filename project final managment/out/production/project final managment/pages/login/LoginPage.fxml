@@ -38,7 +38,7 @@
             </AnchorPane>
             <AnchorPane layoutX="50.0" layoutY="52.0" prefHeight="400.0" prefWidth="450.0" styleClass="mainAnchor">
                <children>
-                  <JFXTextField fx:id="usernameTextField" layoutX="120.0" layoutY="125.0" prefWidth="210.0" promptText="Username">
+                  <JFXTextField fx:id="usernameTextField" labelFloat="true" layoutX="120.0" layoutY="125.0" prefWidth="210.0" promptText="Username">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -98,7 +98,7 @@
                         <Font size="14.0" />
                      </font>
                   </JFXButton>
-                  <JFXPasswordField fx:id="passwordTextField" layoutX="120.0" layoutY="200.0" prefWidth="210.0" promptText="Password">
+                  <JFXPasswordField fx:id="passwordTextField" labelFloat="true" layoutX="120.0" layoutY="200.0" prefWidth="210.0" promptText="Password">
                      <font>
                         <Font size="15.0" />
                      </font>
