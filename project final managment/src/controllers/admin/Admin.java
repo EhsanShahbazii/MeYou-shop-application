@@ -18,6 +18,8 @@ import modules.tools.GlobalTools;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Admin {
 
@@ -40,6 +42,13 @@ public class Admin {
 
         //set data in own fields in personal information field
         fullNameTextField.setText(customerFullName);
+
+        //get current date from DateTimeFormatter and LocalDateTime
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        LocalDateTime now = LocalDateTime.now();
+
+        //set current date adn show it
+        dateTextField.setText(dtf.format(now));
 
         //set user profile image
         File files = new File(userProfileImagePath);
