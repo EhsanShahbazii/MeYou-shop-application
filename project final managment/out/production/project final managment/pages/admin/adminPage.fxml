@@ -80,7 +80,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <Text fx:id="timeTextField" layoutX="121.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <Text fx:id="timeTextField" layoutX="105.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font size="17.0" />
                </font>

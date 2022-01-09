@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import modules.tools.DigitalClock;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
@@ -46,6 +47,9 @@ public class Admin {
         //get current date from DateTimeFormatter and LocalDateTime
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         LocalDateTime now = LocalDateTime.now();
+
+        DigitalClock digitalClock = new DigitalClock();
+        digitalClock.LiveDateSwing(timeTextField);
 
         //set current date adn show it
         dateTextField.setText(dtf.format(now));
