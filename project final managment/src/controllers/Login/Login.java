@@ -5,18 +5,17 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+import modules.files.LoginCheck;
+import modules.object.Person;
 import modules.tools.GlobalTools;
 
 import java.io.IOException;
 
 public class Login {
 
+    public static Person person = new Person();
     public GlobalTools globalTools = new GlobalTools();
+    public LoginCheck loginCheck = new LoginCheck();
     String username, password, toggle = "management";
     public static boolean loginIsDone = false;
 
@@ -41,19 +40,32 @@ public class Login {
     @FXML
     void LoginAction(ActionEvent event) throws IOException {
 
-        
+        //save text field data in variables
+        username = usernameTextField.getText();
+        password = passwordTextField.getText();
 
-
-        Stage primaryStage = (Stage) loginButton.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("../pages/managment/managementPage.fxml"));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("./pages/css/homePageStyle.css");
-        primaryStage.setTitle("management");
-        primaryStage.setScene(scene);
-        primaryStage.setX(450);
-        primaryStage.setY(110);
-        scene.setFill(Color.TRANSPARENT);
-        primaryStage.show();
+        // show error if fields are empty
+        if (usernameTextField.getText().isEmpty())
+            globalTools.AlertShow("please enter your username.");
+        else if (passwordTextField.getText().isEmpty())
+            globalTools.AlertShow("please enter your password.");
+        else if (!loginCheck.loginCheck(username, password, toggle)) {
+            //checkToLogin() method checks is username and password  and toggle are right or not
+            globalTools.AlertShow("your username or password is incorrect.");
+        } else {
+            //set username and password of current customer
+            person.setUsername(username);
+            person.setPassword(password);
+            person.setToggle(toggle);
+            loginIsDone = true;
+            if (toggle.equals("management")) {
+                //open new management page and close login pages
+                globalTools.OpenNewPageXY(loginButton, "./pages/managment/managementPage.fxml", "management", 450, 110);
+            } else {
+                //open new admin page and close login pages
+                globalTools.OpenNewPageXY(loginButton, "./pages/admin/adminPage.fxml", "admin", 450, 110);
+            }
+        }
     }
 
     @FXML
