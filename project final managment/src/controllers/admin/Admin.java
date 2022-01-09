@@ -174,8 +174,18 @@ public class Admin {
     }
 
     @FXML
-    void showProductAction(ActionEvent event) {
-
+    void showProductAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader();
+        fxmlLoader1.setLocation(getClass().getResource("/pages/admin/showAllProductPage.fxml"));
+        Scene scene1 = new Scene(fxmlLoader1.load());
+        scene1.setFill(Color.TRANSPARENT);
+        Stage stage1 = new Stage();
+        stage1.setTitle("show all product");
+        stage1.setScene(scene1);
+        stage1.initStyle(StageStyle.TRANSPARENT);
+        stage1.setX(530);
+        stage1.setY(120);
+        stage1.show();
     }
 
     public void logoutAction(ActionEvent event) throws IOException {
