@@ -9,7 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -35,6 +37,19 @@ public class Admin {
 
     public void initialize() {
         getDataFromFile();
+
+        //create cart table columns and give it ids
+        TableColumn productCode = new TableColumn("Code"); //code column
+        productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
+        TableColumn productName = new TableColumn("Product Name"); //name column
+        productName.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        TableColumn productCount = new TableColumn("Count"); //count column
+        productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
+        TableColumn productPrice = new TableColumn("Price"); //price column
+        productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
+        //add columns in cart table javafx
+        allProductTable.getColumns().addAll(productCode, productName, productCount, productPrice);
+
     }
 
     public void getDataFromFile() {
@@ -65,6 +80,9 @@ public class Admin {
         Image image = new Image(files.toURI().toString());
         //set image format in imageview
         profileImageView.setImage(image);
+    }
+
+    public void setDataInTable() {
 
     }
 
@@ -141,10 +159,10 @@ public class Admin {
     }
 
     @FXML
-    void deleteProductAction(ActionEvent event) {
+    void deleteProductAction(ActionEvent event) throws FileNotFoundException {
         Product selectItem = allProductTable.getSelectionModel().getSelectedItem();
         allProductTable.getItems().remove(selectItem);
-        selectAndBuyProduct.removeProductToCard(selectItem.getProductName());
+        globalFileTools.removeProduct(selectItem.getProductName());
     }
 
     @FXML
