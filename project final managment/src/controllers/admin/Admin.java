@@ -17,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modules.object.Product;
 import modules.tools.DigitalClock;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
@@ -80,7 +81,7 @@ public class Admin {
     private JFXButton chargeProductButton;
 
     @FXML
-    private TableView<?> allProductTable;
+    private TableView<Product> allProductTable;
 
     @FXML
     private JFXTextField productNewCountTextField;
@@ -141,7 +142,9 @@ public class Admin {
 
     @FXML
     void deleteProductAction(ActionEvent event) {
-
+        Product selectItem = allProductTable.getSelectionModel().getSelectedItem();
+        allProductTable.getItems().remove(selectItem);
+        selectAndBuyProduct.removeProductToCard(selectItem.getProductName());
     }
 
     @FXML

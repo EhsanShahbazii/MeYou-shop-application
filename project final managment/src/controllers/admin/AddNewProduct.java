@@ -3,7 +3,6 @@ package controllers.admin;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
-import controllers.Login.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -87,7 +86,7 @@ public class AddNewProduct {
             globalTools.AlertShow("This product is available in stock.");
         }else {
 
-            Double formatPrice = Double.parseDouble(productPrice);
+            double formatPrice = Double.parseDouble(productPrice);
 
             //write all information of customer in userInformation.txt file
             globalFileTools.addNewProduct(productName, productAuthor, Double.toString(formatPrice), productCount, productImage);
