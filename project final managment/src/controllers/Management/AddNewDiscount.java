@@ -11,7 +11,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modules.object.Discount;
-import modules.object.Person;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
@@ -68,17 +67,6 @@ public class AddNewDiscount {
 
     @FXML
     void addDiscountAction(ActionEvent event) {
-        String value =discountEndDatePicker.getValue().toString();
-        System.out.println(value);
-    }
-
-    @FXML
-    void discountEndAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void discountStartAction(ActionEvent event) {
 
     }
 
