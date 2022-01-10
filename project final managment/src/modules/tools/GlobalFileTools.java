@@ -2,6 +2,7 @@ package modules.tools;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import modules.object.Person;
 import modules.object.Product;
 
 import java.io.File;
@@ -208,6 +209,25 @@ public class GlobalFileTools {
                 //set this data in product  productName, productCount, productPrice, productCode
                 Product product = new Product(counter[i], counter[i+1], counter[i+2], counter[i+3], randomData.createCode(counter[i+1]));
                 arrayList.add(product);
+        }
+        //return format observableArrayList
+        return FXCollections.observableArrayList(arrayList);
+    }
+
+    //get product data for showing in table current customer format ObservableList
+    public ObservableList<Person> tableDataPersonAdmin() {
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\adminProfiles.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\adminProfiles.txt");
+
+        //create array list product data type
+        ArrayList<Person> arrayList = new ArrayList<>();
+        for (int i = 0; i <lineCount; i = i+6) {
+            //set this data in product  productName, productCount, productPrice, productCode
+            Person person = new Person(counter[i], counter[i+1], counter[i+3], counter[i+4], counter[i+5]);
+            arrayList.add(person);
         }
         //return format observableArrayList
         return FXCollections.observableArrayList(arrayList);
