@@ -159,6 +159,10 @@ public class Management {
 
     @FXML
     void showAllDocumentAction(ActionEvent event) throws IOException {
+    }
+
+    @FXML
+    void showAllProductAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
         fxmlLoader1.setLocation(getClass().getResource("/pages/admin/showAllProductPage.fxml"));
         Scene scene1 = new Scene(fxmlLoader1.load());
@@ -170,11 +174,6 @@ public class Management {
         stage1.setX(530);
         stage1.setY(120);
         stage1.show();
-    }
-
-    @FXML
-    void showAllProductAction(ActionEvent event) {
-
     }
 
     public void logoutAction(ActionEvent event) throws IOException {
