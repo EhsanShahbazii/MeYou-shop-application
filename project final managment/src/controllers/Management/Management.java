@@ -37,7 +37,8 @@ public class Management {
 
     public void getDataFromFile() {
         //get current admin data from files
-        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
+//        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
+        String[] userDataInformation = {"Thomas Shelby", "m"};
 
         String customerFullName = userDataInformation[0]; //add adminFullName
         String customerUsername = userDataInformation[1]; //add customerUsername
