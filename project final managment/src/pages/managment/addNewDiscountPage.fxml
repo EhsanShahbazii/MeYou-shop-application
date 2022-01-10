@@ -44,7 +44,7 @@
                </font>
             </JFXTextField>
             <JFXComboBox fx:id="discountAmountComboBox" layoutX="345.0" layoutY="446.0" prefHeight="25.0" prefWidth="117.0" />
-            <Text layoutX="138.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount Start time:">
+            <Text layoutX="138.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount End time:">
                <font>
                   <Font size="16.0" />
                </font>

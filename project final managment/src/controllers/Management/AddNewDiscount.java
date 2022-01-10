@@ -3,9 +3,11 @@ package controllers.Management;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,6 +20,8 @@ public class AddNewDiscount {
 
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
+
+    final ObservableList<String> discountAmounts = FXCollections.observableArrayList("10","20","50","85");
 
     public void initialize() {
         //create cart table columns and give it ids
@@ -33,6 +37,9 @@ public class AddNewDiscount {
         discountTable.getColumns().addAll(productCode, productName, productAuthor, productCount);
 
         setDataInTable();
+
+        discountAmountComboBox.setItems(discountAmounts);
+        discountAmountComboBox.getSelectionModel().select(0);
     }
 
 
@@ -51,7 +58,7 @@ public class AddNewDiscount {
     private JFXTextField discountNameTextField;
 
     @FXML
-    private JFXComboBox<?> discountAmountComboBox;
+    private JFXComboBox<String> discountAmountComboBox;
 
     @FXML
     private DatePicker startDatePicker;
@@ -67,6 +74,28 @@ public class AddNewDiscount {
 
     @FXML
     void addDiscountAction(ActionEvent event) {
+
+        String discountName = discountNameTextField.getText();
+        String discountAmount = discountAmountComboBox.getSelectionModel().toString();
+        String discountStartDate = startDatePicker.getValue().toString();
+        String discountEndDate = discountEndDatePicker.toString();
+
+        if ((startDatePicker.getValue().isAfter(discountEndDatePicker.getValue()))){
+            globalTools.AlertShow("please enter right date.");
+        }
+
+        else if (discountName.isEmpty()){
+            globalTools.AlertShow("please enter your discount name.");
+        }else if (discountAmount.isEmpty()){
+            globalTools.AlertShow("please enter your discount Amount.");
+        }
+        else if (globalFileTools.checkDiscount(discountName)){
+            globalTools.AlertShow("this discount is invalid. please try another one.");
+        }
+        else {
+            globalFileTools.addNewDiscount(discountName, discountAmount, discountStartDate, discountEndDate);
+            globalTools.AlertShow("discount create!");
+        }
 
     }
 
