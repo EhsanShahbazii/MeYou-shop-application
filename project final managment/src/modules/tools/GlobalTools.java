@@ -48,6 +48,20 @@ public class GlobalTools {
         });
     }
 
+    //this method used for limited characters in textArea
+    public void LimitedTextArea(TextArea textArea, int maxLength){
+
+        textArea.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
+                if (textArea.getText().length() > maxLength) {
+                    String string = textArea.getText().substring(0, maxLength);
+                    textArea.setText(string);
+                }
+            }
+        });
+    }
+
     //Check that parameter is a digit
     public boolean OnlyDigits(String n) {
         for (int i = 0; i < n.length(); i++) {
