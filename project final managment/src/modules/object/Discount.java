@@ -3,15 +3,15 @@ package modules.object;
 public class Discount {
 
     private String discountName;
-    private String dicountAmount;
-    private String startDate;
-    private String endDate;
+    private String discountAmount;
+    private String discountStartDate;
+    private String discountEndDate;
 
-    public Discount(String discountName, String dicountAmount, String startDate, String endDate) {
+    public Discount(String discountName, String discountAmount, String discountStartDate, String discountEndDate) {
         this.discountName = discountName;
-        this.dicountAmount = dicountAmount;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.discountAmount = discountAmount;
+        this.discountStartDate = discountStartDate;
+        this.discountEndDate = discountEndDate;
     }
 
     public Discount() {
@@ -26,27 +26,27 @@ public class Discount {
         this.discountName = discountName;
     }
 
-    public String getDicountAmount() {
-        return dicountAmount;
+    public String getDiscountAmount() {
+        return discountAmount;
     }
 
-    public void setDicountAmount(String dicountAmount) {
-        this.dicountAmount = dicountAmount;
+    public void setDiscountAmount(String discountAmount) {
+        this.discountAmount = discountAmount;
     }
 
-    public String getStartDate() {
-        return startDate;
+    public String getDiscountStartDate() {
+        return discountStartDate;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    public void setDiscountStartDate(String discountStartDate) {
+        this.discountStartDate = discountStartDate;
     }
 
-    public String getEndDate() {
-        return endDate;
+    public String getDiscountEndDate() {
+        return discountEndDate;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
+    public void setDiscountEndDate(String discountEndDate) {
+        this.discountEndDate = discountEndDate;
     }
 }

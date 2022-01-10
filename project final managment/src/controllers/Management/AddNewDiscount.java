@@ -3,11 +3,15 @@ package controllers.Management;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import modules.object.Discount;
+import modules.object.Person;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
@@ -15,10 +19,29 @@ public class AddNewDiscount {
 
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
-    Discount discount = new Discount();
 
     public void initialize() {
+        //create cart table columns and give it ids
+        TableColumn productCode = new TableColumn("Discount name"); //code column
+        productCode.setCellValueFactory(new PropertyValueFactory<>("discountName"));
+        TableColumn productName = new TableColumn("Discount amount"); //name column
+        productName.setCellValueFactory(new PropertyValueFactory<>("discountAmount"));
+        TableColumn productAuthor = new TableColumn("Discount start date"); //name column
+        productAuthor.setCellValueFactory(new PropertyValueFactory<>("discountStartDate"));
+        TableColumn productCount = new TableColumn("Discount end date"); //count column
+        productCount.setCellValueFactory(new PropertyValueFactory<>("discountEndDate"));
+        //add columns in cart table javafx
+        discountTable.getColumns().addAll(productCode, productName, productAuthor, productCount);
 
+        setDataInTable();
+    }
+
+
+
+    public void setDataInTable() {
+        Discount discount = new Discount();
+        ObservableList<Discount> data = globalFileTools.tableDataDiscount();
+        discountTable.setItems(data); //set data in cart table
     }
 
 
