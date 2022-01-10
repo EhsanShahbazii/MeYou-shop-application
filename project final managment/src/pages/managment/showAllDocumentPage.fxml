@@ -21,7 +21,7 @@
                   <Font size="15.0" />
                </font>
             </JFXButton>
-            <LineChart fx:id="profitLineGraph" horizontalGridLinesVisible="false" layoutX="50.0" layoutY="302.0" prefHeight="200.0" prefWidth="500.0">
+            <LineChart fx:id="profitLineGraph" horizontalGridLinesVisible="false" layoutX="50.0" layoutY="302.0" prefHeight="200.0" prefWidth="500.0" stylesheets="@../css/loginStyle.css">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -51,11 +51,6 @@
                </font>
             </Text>
             <Text layoutX="395.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inventory balance graph">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="247.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profit from sales graph">
                <font>
                   <Font size="13.0" />
                </font>
