@@ -33,6 +33,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Admin {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
@@ -53,14 +54,15 @@ public class Admin {
         //add columns in cart table javafx
         allProductTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
+        //refresh table data and show it
         setDataInTable();
     }
 
     public void getDataFromFile() {
-        //get current customer data from files
+        //get current admin data from files
         String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
 
-        String customerFullName = userDataInformation[0]; //add customerFullName
+        String customerFullName = userDataInformation[0]; //add adminFullName
         String customerUsername = userDataInformation[1]; //add customerUsername
 
         //get user profile image path
@@ -86,6 +88,7 @@ public class Admin {
         profileImageView.setImage(image);
     }
 
+    //this method refresh all product table data
     public void setDataInTable() {
         Product product = new Product();
         ObservableList<Product> data = globalFileTools.tableData();
@@ -128,6 +131,7 @@ public class Admin {
     @FXML
     private Text dateTextField;
 
+    //this method adding new product in file
     @FXML
     void addProductAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader1 = new FXMLLoader();
@@ -143,6 +147,7 @@ public class Admin {
         stage1.show();
     }
 
+    //this method changing profile image
     @FXML
     void changeProfileImageAction(ActionEvent event) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser(); //create file chooser
