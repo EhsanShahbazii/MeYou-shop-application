@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="610.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Management.ShowAllDocuments">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="610.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Management.ShowAllDocuments">
    <children>
       <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="760.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right bottom, #ffffff, #eefeff, #ceffff, #c5ffe8, #e7fbb9); -fx-background-radius: 32px;" stylesheets="@../css/tableStyle.css">
          <children>
@@ -25,7 +21,7 @@
                   <Font size="15.0" />
                </font>
             </JFXButton>
-            <LineChart fx:id="profitLineGraph" layoutX="50.0" layoutY="302.0" prefHeight="200.0" prefWidth="500.0">
+            <LineChart fx:id="profitLineGraph" horizontalGridLinesVisible="false" layoutX="50.0" layoutY="302.0" prefHeight="200.0" prefWidth="500.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -49,7 +45,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="taxationText" layoutX="199.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="27419.35$">
+            <Text fx:id="taxationText" layoutX="199.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
@@ -79,7 +75,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Text>
-            <Text fx:id="totalAssetsText" layoutX="352.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0" text="187452.25$">
+            <Text fx:id="totalAssetsText" layoutX="352.0" layoutY="678.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
