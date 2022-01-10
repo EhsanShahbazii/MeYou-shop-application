@@ -263,7 +263,7 @@ public class GlobalFileTools {
 
         //create array list product data type
         ArrayList<Discount> arrayList = new ArrayList<>();
-        for (int i = 0; i <lineCount; i = i+5) {
+        for (int i = 0; i <lineCount; i = i+4) {
             //set this data in product  productName, productCount, productPrice, productCode
             Discount discount = new Discount(counter[i], counter[i+1], counter[i+2], counter[i+3]);
             arrayList.add(discount);
