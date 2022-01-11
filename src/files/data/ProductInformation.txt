@@ -6,20 +6,25 @@ D:\project final\src\files\image\book\the words i wish i said.jpg
 Death Note 1
 Tsugumi Ohba
 8.0
-5
+139
 D:\project final\src\files\image\book\Death Note 1.jpg
 Clean Code
 Robert C. Martin
 23.0
-12
+99
 D:\project final\src\files\image\book\Clean Code.jpg
 Yeni Hitit 3rd
 Ankara University
 27.0
-5
+117
 D:\project final\src\files\image\book\Yeni Hitit 3rd.jpg
 home body
 Rupi Kaur
 15.0
-6
+130
 D:\project final\src\files\image\book\home body.jpg
+DM Kimetsu no Yaiba3
+Koyoharu Gotouge
+12.0
+200
+D:\project final\src\files\image\book\DS Kimetsu no Yaiba 3.jpg
