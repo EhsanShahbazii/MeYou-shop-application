@@ -40,3 +40,9 @@ c1
 customer1@gmail.com
 09876543211
 customer1customer1customer1customer1customer1customer1custom
+customer2
+c2
+1
+customer2@gmail.com
+09875469498
+customer2customer2customer2customer2customer2customer2

@@ -93,24 +93,26 @@ public class FinalPayment {
     void proceedAction(ActionEvent event) throws FileNotFoundException {
 
         //show error message if captcha is invalid
-        if (!captchaTextField.getText().equals(captchaResult))
+        if (!captchaTextField.getText().equals(captchaResult)) {
             globalTools.AlertShow("please enter captcha correct");
-        else {
-            //update wallet balance and add new balance
-            globalFileTools.updateWalletBalance(username, "-" + MainPage.cartAmount);
+        }else if (Double.parseDouble(MainPage.wallet) < Double.parseDouble(MainPage.cartAmount)) {
+            globalTools.AlertShow("please charge your wallet then pay");
+        }else{
+                //update wallet balance and add new balance
+                globalFileTools.updateWalletBalance(username, "-" + MainPage.cartAmount);
 
-            //update product count and set product
-            globalFileTools.updateProductCount(selectAndBuyProduct.finalPayment(username));
+                //update product count and set product
+                globalFileTools.updateProductCount(selectAndBuyProduct.finalPayment(username));
 
-            //show successful alert
-            globalTools.AlertShowInformation("Payment is successful!");
+                //show successful alert
+                globalTools.AlertShowInformation("Payment is successful!");
 
-            //add information into the history payment
-            globalFileTools.addToHistoryPayment(selectAndBuyProduct.finalPayment(username));
+                //add information into the history payment
+                globalFileTools.addToHistoryPayment(selectAndBuyProduct.finalPayment(username));
 
-            //close banking portal page and back to dashboard
-            globalTools.closeCurrentPage(cancelButton);
-        }
+                //close banking portal page and back to dashboard
+                globalTools.closeCurrentPage(cancelButton);
+            }
     }
 }
 

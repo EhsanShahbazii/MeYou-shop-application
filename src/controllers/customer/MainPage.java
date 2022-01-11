@@ -41,7 +41,7 @@ public class MainPage {
     public SelectAndBuyProduct selectAndBuyProduct = new SelectAndBuyProduct();
 
     //static variables
-    public static String chargeAmount = "0$";
+    public static String chargeAmount = "0$", wallet;
     public static String refundMethod, cartAmount;
     public static String usernames, fullName, email, phoneNumber, address;
 
@@ -129,6 +129,8 @@ public class MainPage {
             //set data in comboBox in wallet balance
             chargeComboBox.setItems(walletComboBoxType);
             chargeComboBox.getSelectionModel().select("Favorite");
+
+            wallet = walletBalanceTextField.getText();
 
             //get and save information in values
             usernames = Login.customer.getUsername();
