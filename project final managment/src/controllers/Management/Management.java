@@ -4,8 +4,6 @@ import com.jfoenix.controls.JFXButton;
 import controllers.Login.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
@@ -13,14 +11,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import modules.charts.LineChartData;
 import modules.charts.PieChartData;
-import modules.tools.DigitalClock;
 import modules.tools.DigitalTime;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
@@ -28,8 +22,6 @@ import modules.tools.GlobalTools;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Management {
 
@@ -140,36 +132,19 @@ public class Management {
     @FXML
     private Text dateTextField;
 
+    //this method open a page and adding new admin in file
     @FXML
     void addNewAdminAction(ActionEvent event) throws IOException  {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/addNewAdmin.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("add new admin");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/managment/addNewAdmin.fxml", "add new admin");
     }
 
+    //this method open a page and adding new discount in file
     @FXML
     void addNewDiscountAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/addNewDiscountPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("add new discount");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/managment/addNewDiscountPage.fxml", "add new discount");
     }
 
+    //this method changing profile image
     @FXML
     void changeProfileImageAction(ActionEvent event) throws FileNotFoundException {
         FileChooser fileChooser = new FileChooser(); //create file chooser
@@ -186,66 +161,31 @@ public class Management {
         }
     }
 
+    //this method open a page and show all admin in file
     @FXML
     void showAllAdminsAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/showAllAdminPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("show all admins");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/managment/showAllAdminPage.fxml", "show all admins");
     }
 
+    //this method open a page and show all customer in file
     @FXML
     void showAllCustomersAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/showAllCustomerPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("show all customers");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/managment/showAllCustomerPage.fxml", "show all customers");
     }
 
+    //this method open a page and show all document in file
     @FXML
     void showAllDocumentAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/showAllDocumentPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("show all documents");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/managment/showAllDocumentPage.fxml", "show all documents");
     }
 
+    //this method open a page and show all product in file
     @FXML
     void showAllProductAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/managment/showAllProductPage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("show all product");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(530);
-        stage1.setY(120);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/managment/showAllProductPage.fxml", "show all product");
     }
 
+    //this method close current page and open login page
     @FXML
     void logoutAction(ActionEvent event) throws IOException {
         globalTools.OpenNewPageXY(logoutButton, "/pages/login/LoginPage.fxml", "login", 650, 110);
