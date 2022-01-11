@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="380.0" style="-fx-background-color: ivory; -fx-background-radius: 16px;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.home.NotificationComponent">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="60.0" fitWidth="60.0" layoutX="7.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../files/image/icon/icons8-message-100.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="notificationHeaderTextField" layoutX="69.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi dear ehsan we got your message!">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Separator layoutX="70.0" layoutY="29.0" prefHeight="4.0" prefWidth="277.0" />
+      <Text fx:id="notificationBodyTextField" layoutX="75.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups." wrappingWidth="280.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
