@@ -21,6 +21,7 @@ import javafx.stage.StageStyle;
 import modules.charts.LineChartData;
 import modules.charts.PieChartData;
 import modules.tools.DigitalClock;
+import modules.tools.DigitalTime;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 
@@ -37,45 +38,58 @@ public class Management {
     GlobalFileTools globalFileTools = new GlobalFileTools();
     LineChartData lineChartData = new LineChartData();
     PieChartData pieChartData = new PieChartData();
+    DigitalTime digitalTime = new DigitalTime();
 
     public void initialize() {
+
+        //get management data and set it in fields
         getDataFromFile();
 
         //creating the series
         XYChart.Series series = new XYChart.Series();
+        //set name for series
         series.setName("NapLog(x) = -10^7ln(x/10^7) + y'log(x^ie)");
 
+        //get data from files
         String[] data = lineChartData.lineChartProductData();
         long totalAssets = 0;
 
+        //setting data into line chart
         for (int i = 0; i <data.length/2.5; i = i+2) {
+            //convert to needed format
             double price = Double.parseDouble(data[i]);
             int real = (int) Math.round(price);
             totalAssets += real*Long.parseLong(data[i+1]);
+            //add data into series
             series.getData().add(new XYChart.Data(Integer.toString(i+2009) + "/" + Integer.toString(i+1),Integer.parseInt(data[i+1])*real));
         }
 
         //adding series to the lineChart
         lineChart.getData().add(series);
 
+        //add some attribute for inventory pie graph
         pieChart.setClockwise(false);
         pieChart.setData(pieChartData.PieChartProductData());
 
+        //set live time and date data in fields
+        digitalTime.LiveTimeDate(timeTextField, dateTextField);
     }
 
+    /*get management fullName, username and some other data
+     like user image path and set it in imageview*/
     public void getDataFromFile() {
-        //get current admin data from files
-//        String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
+        //get current management data from files
+//      String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.person.getUsername());
         String[] userDataInformation = {"Thomas Shelby", "m"};
 
-        String customerFullName = userDataInformation[0]; //add adminFullName
-        String customerUsername = userDataInformation[1]; //add customerUsername
+        String managementFullName = userDataInformation[0]; //add adminFullName
+        String managementUsername = userDataInformation[1]; //add customerUsername
 
         //get user profile image path
-        String userProfileImagePath = globalFileTools.userImageProfilePath(customerUsername);
+        String userProfileImagePath = globalFileTools.userImageProfilePath(managementUsername);
 
         //set data in own fields in personal information field
-        fullNameTextField.setText(customerFullName);
+        fullNameTextField.setText(managementFullName);
 
         //set user profile image
         File files = new File(userProfileImagePath);

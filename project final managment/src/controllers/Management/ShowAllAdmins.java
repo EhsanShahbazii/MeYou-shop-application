@@ -55,5 +55,4 @@ public class ShowAllAdmins {
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/managment/showAllAdminPage.fxml");
     }
-
 }
