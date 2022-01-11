@@ -30,10 +30,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Text>
-            <TableView fx:id="allProductTable" layoutX="37.0" layoutY="127.0" prefHeight="445.0" prefWidth="526.0" style="-fx-font-size: 12px;">
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy></TableView>
+            <TableView fx:id="allProductTable" layoutX="37.0" layoutY="127.0" prefHeight="445.0" prefWidth="526.0" style="-fx-font-size: 12px;" />
             <JFXTextField fx:id="productNewCountTextField" alignment="CENTER" layoutX="697.0" layoutY="511.0" prefHeight="37.0" prefWidth="66.0">
                <font>
                   <Font name="System Bold" size="16.0" />
