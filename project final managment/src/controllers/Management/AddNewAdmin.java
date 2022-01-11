@@ -58,6 +58,7 @@ public class AddNewAdmin {
     @FXML
     private JFXPasswordField repeatPasswordTextField;
 
+    //this method add new admin in adminProfile.txt file
     @FXML
     void addAdminAction(ActionEvent event) throws FileNotFoundException {
 
@@ -95,9 +96,10 @@ public class AddNewAdmin {
             //checkSameUserOrNot() methods check it username is repetitious or not
             globalTools.AlertShow("this admin is invalid. try another.");
         }else {
-            //write all information of customer in userInformation.txt file
+            //write all information of admin in adminProfile.txt file
             signinAdmin.signinNewCustomer(fullName, username, password, email, phoneNumber, address);
 
+            //add default image path in new admin
             globalFileTools.addNewUserProfileImage(username);
 
             //show message when the register logic is not problem
@@ -108,9 +110,9 @@ public class AddNewAdmin {
         }
     }
 
+    //this method close current page(add new admin)
     @FXML
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
     }
-
 }
