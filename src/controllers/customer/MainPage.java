@@ -75,13 +75,13 @@ public class MainPage {
             String[] productData = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
 
             //add product components in most popular anchorPane
-            showProductDivs(productData, mostPopularAnchorPane);
+            showProductDivs(productData, mostPopularAnchorPane, 0);
 
             //add product components in most todayDeal anchorPane
-            showProductDivs(productData, todayDealAnchorPane);
+            showProductDivs(productData, todayDealAnchorPane, 20);
 
             //add product components in most suggest anchorPane
-            showProductDivs(productData, suggestCartAnchorPane);
+            showProductDivs(productData, suggestCartAnchorPane, 30);
 
             //add product component with add data in scroll pane
             showProductMain(productData, thisIsScroll);
@@ -220,7 +220,7 @@ public class MainPage {
     }
 
     //this is show product component in main part and suggest part
-    public void showProductDivs(String[] productData, AnchorPane anchorPane) throws IOException {
+    public void showProductDivs(String[] productData, AnchorPane anchorPane, int type) throws IOException {
 
         for (int i = 0; i < 4; i++) {
             //load product anchor pane and control it
@@ -230,10 +230,10 @@ public class MainPage {
             ProductAnchorPane control1 = loader1.getController(); //get anchor pane controller
 
             //set data in product anchor pane text fields
-            control1.getDetailsText().setText(productData[5*i]);
-            control1.getPriceText().setText(productData[5*i+2]);
+            control1.getDetailsText().setText(productData[5*i + type]);
+            control1.getPriceText().setText(productData[5*i+2 + type]);
             //set image in product anchor pane image view
-            File file1 = new File(productData[5*i+4]);
+            File file1 = new File(productData[5*i+4 + type]);
             Image image2 = new Image(file1.toURI().toString());
             control1.getImageViewProduct().setImage(image2);
 
