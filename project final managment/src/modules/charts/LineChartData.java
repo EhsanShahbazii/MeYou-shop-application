@@ -1,11 +1,6 @@
 package modules.charts;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import modules.object.Product;
 import modules.tools.GlobalFileTools;
-
-import java.util.ArrayList;
 
 public class LineChartData {
 
