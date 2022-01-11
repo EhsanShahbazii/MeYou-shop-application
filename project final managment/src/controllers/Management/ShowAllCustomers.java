@@ -55,5 +55,4 @@ public class ShowAllCustomers {
     void exitAction(ActionEvent event) {
         globalTools.closeCurrentPage(exitButton, "/pages/managment/showAllCustomerPage.fxml");
     }
-
 }
