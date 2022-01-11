@@ -25,6 +25,31 @@ Rupi Kaur
 D:\project final\src\files\image\book\home body.jpg
 DM Kimetsu no Yaiba3
 Koyoharu Gotouge
-12.0
-200
+13.0
+152
 D:\project final\src\files\image\book\DS Kimetsu no Yaiba 3.jpg
+The Midnight Library
+Matt Haig
+17.0
+109
+D:\project final\src\files\image\book\The Midnight Library.jpg
+moriarty the patriot
+Ryosuke Takeuchi
+22.0
+85
+D:\project final\src\files\image\book\moriarty the patriot 1.jpg
+Ikigai
+Albert Liebermann
+7.0
+49
+D:\project final\src\files\image\book\Ikigai.jpg
+DM Kimetsu no Yaiba1
+Koyoharu Gotouge
+13.0
+37
+D:\project final\src\files\image\book\DS Kimetsu no Yaiba 1.jpg
+loki where mischief 
+Mackenzi Lee
+22.0
+67
+D:\project final\src\files\image\book\loki where mischief lies.jpg
