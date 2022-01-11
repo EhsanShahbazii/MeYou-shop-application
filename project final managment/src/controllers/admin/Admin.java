@@ -36,7 +36,7 @@ public class Admin {
         //get admin some data from userInformation.txt file
         getDataFromFile();
 
-        //create cart table columns and give it ids
+        //create product table columns and give it ids
         TableColumn productCode = new TableColumn("Code"); //code column
         productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
         TableColumn productName = new TableColumn("Product Name"); //name column
@@ -47,7 +47,7 @@ public class Admin {
         productCount.setCellValueFactory(new PropertyValueFactory<>("productCount"));
         TableColumn productPrice = new TableColumn("Count"); //price column
         productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
-        //add columns in cart table javafx
+        //add columns in product table javafx
         allProductTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
         //refresh table data and show it
@@ -83,7 +83,7 @@ public class Admin {
     public void setDataInTable() {
         Product product = new Product();
         ObservableList<Product> data = globalFileTools.tableData();
-        allProductTable.setItems(data); //set data in cart table
+        allProductTable.setItems(data); //set data in product table
     }
 
     @FXML

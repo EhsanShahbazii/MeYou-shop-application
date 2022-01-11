@@ -19,7 +19,7 @@ public class ShowAllProductsAdmin {
 
     public void initialize() {
 
-        //create cart table columns and give it ids
+        //create product table columns and give it ids
         TableColumn productCode = new TableColumn("Code"); //code column
         productCode.setCellValueFactory(new PropertyValueFactory<>("productCode"));
         TableColumn productName = new TableColumn("Product Name"); //name column
@@ -31,7 +31,7 @@ public class ShowAllProductsAdmin {
         TableColumn productPrice = new TableColumn("Count"); //price column
         productPrice.setCellValueFactory(new PropertyValueFactory<>("productPrice"));
 
-        //add columns in cart table javafx
+        //add columns in product table javafx
         productTable.getColumns().addAll(productCode, productName, productAuthor, productCount, productPrice);
 
         //set new data of product in product table
@@ -42,7 +42,7 @@ public class ShowAllProductsAdmin {
     public void setDataInTable() {
         Product product = new Product();
         ObservableList<Product> data = globalFileTools.tableData();
-        productTable.setItems(data); //set data in cart table
+        productTable.setItems(data); //set data in product table
     }
 
     @FXML

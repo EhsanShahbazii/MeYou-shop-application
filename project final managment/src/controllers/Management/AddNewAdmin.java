@@ -21,6 +21,7 @@ public class AddNewAdmin {
     SigninAdmin signinAdmin = new SigninAdmin();
 
     public void initialize() {
+
         //limit text field length
         globalTools.LimitedTextField(fullNameTextField, 20);
         globalTools.LimitedTextField(usernameTextField, 20);

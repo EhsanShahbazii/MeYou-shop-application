@@ -20,6 +20,7 @@ public class AddNewProduct {
     GlobalFileTools globalFileTools = new GlobalFileTools();
 
     public void initialize() {
+
         //limit text field length
         globalTools.LimitedTextField(productNameTextField, 20);
         globalTools.LimitedTextField(authorTextField, 20);
