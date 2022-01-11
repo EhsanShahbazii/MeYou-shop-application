@@ -100,6 +100,9 @@ public class AddNewAdmin {
             //write all information of admin in adminProfile.txt file
             signinAdmin.signinNewCustomer(fullName, username, password, email, phoneNumber, address);
 
+            //write all information of admin in adminProfile.txt file
+            signinAdmin.signinNewCustomer(username, password, "admin");
+
             //add default image path in new admin
             globalFileTools.addNewUserProfileImage(username);
 
