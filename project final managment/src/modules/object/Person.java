@@ -1,7 +1,7 @@
 package modules.object;
 
 public class Person {
-    //this data is personal information.
+
     private String fullName;
     private String username;
     private String password;

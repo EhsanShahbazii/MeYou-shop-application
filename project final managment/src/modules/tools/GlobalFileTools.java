@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 public class GlobalFileTools {
 
+    //variables which are used
     RandomData randomData = new RandomData();
 
     //this method count number of lines in files
@@ -149,6 +150,7 @@ public class GlobalFileTools {
         }
     }
 
+    //this method check it is product available or not
     public boolean checkProductAvailable(String productName) {
         boolean state = false;
         //get count of lines in current file
@@ -166,6 +168,7 @@ public class GlobalFileTools {
         return state;
     }
 
+    //tis method delete product from productInformation.txt file
     public void removeProduct(String productName) throws FileNotFoundException {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
@@ -196,7 +199,7 @@ public class GlobalFileTools {
         }
     }
 
-    //get product data for showing in table current customer format ObservableList
+    //get product data for showing in table current admin format ObservableList
     public ObservableList<Product> tableData() {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
@@ -215,7 +218,7 @@ public class GlobalFileTools {
         return FXCollections.observableArrayList(arrayList);
     }
 
-    //get product data for showing in table current customer format ObservableList
+    //get person data for showing in table current management format ObservableList
     public ObservableList<Person> tableDataPersonAdmin() {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\project final managment\\src\\files\\data\\adminProfiles.txt");
@@ -223,10 +226,10 @@ public class GlobalFileTools {
         //set all data of a current file in array
         String[] counter = fileAllRead("D:\\project final\\project final managment\\src\\files\\data\\adminProfiles.txt");
 
-        //create array list product data type
+        //create array list person data type
         ArrayList<Person> arrayList = new ArrayList<>();
         for (int i = 0; i <lineCount; i = i+6) {
-            //set this data in product  productName, productCount, productPrice, productCode
+            //set this data in person  personName, personUsername, personEmail, personPhoneNumber and personAddress
             Person person = new Person(counter[i], counter[i+1], counter[i+3], counter[i+4], counter[i+5]);
             arrayList.add(person);
         }
@@ -234,7 +237,7 @@ public class GlobalFileTools {
         return FXCollections.observableArrayList(arrayList);
     }
 
-    //get product data for showing in table current customer format ObservableList
+    //get person data for showing in table current management format ObservableList
     public ObservableList<Person> tableDataPersonCustomer() {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userInformation.txt");
@@ -242,10 +245,10 @@ public class GlobalFileTools {
         //set all data of a current file in array
         String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\userInformation.txt");
 
-        //create array list product data type
+        //create array list person data type
         ArrayList<Person> arrayList = new ArrayList<>();
         for (int i = 0; i <lineCount; i = i+6) {
-            //set this data in product  productName, productCount, productPrice, productCode
+            //set this data in person  personName, personUsername, personEmail, personPhoneNumber and personAddress
             Person person = new Person(counter[i], counter[i+1], counter[i+3], counter[i+4], counter[i+5]);
             arrayList.add(person);
         }
@@ -253,7 +256,7 @@ public class GlobalFileTools {
         return FXCollections.observableArrayList(arrayList);
     }
 
-    //get product data for showing in table current customer format ObservableList
+    //get discount data for showing in table current management format ObservableList
     public ObservableList<Discount> tableDataDiscount() {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt");
@@ -261,10 +264,10 @@ public class GlobalFileTools {
         //set all data of a current file in array
         String[] counter = fileAllRead("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt");
 
-        //create array list product data type
+        //create array list discount data type
         ArrayList<Discount> arrayList = new ArrayList<>();
         for (int i = 0; i <lineCount; i = i+4) {
-            //set this data in product  productName, productCount, productPrice, productCode
+            //set this data in discount  discountName, discountAmount, discountStartDate, discountEndDate
             Discount discount = new Discount(counter[i], counter[i+1], counter[i+2], counter[i+3]);
             arrayList.add(discount);
         }
@@ -272,7 +275,7 @@ public class GlobalFileTools {
         return FXCollections.observableArrayList(arrayList);
     }
 
-    //update image path in file with current information
+    //charge product count current information
     public void chargeProductCount(String productName, String newCount) throws FileNotFoundException {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\ProductInformation.txt");
@@ -306,7 +309,7 @@ public class GlobalFileTools {
         }
     }
 
-    //set default image path for new customer when sign in
+    //set default image path for new admin when sign in
     public void addNewUserProfileImage(String username) throws FileNotFoundException {
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\project final managment\\src\\files\\data\\userProfileImages.txt");
@@ -335,7 +338,7 @@ public class GlobalFileTools {
         }
     }
 
-    //add new customer information in userInformation.txt file
+    //add new discount information in discountDetails.txt file
     public void addNewDiscount(String discountName, String discountAmount, String discountStartDate, String discountEndDate) {
         try {
             RandomAccessFile Library = new RandomAccessFile("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt", "rw");
@@ -347,8 +350,9 @@ public class GlobalFileTools {
         }
     }
 
+    //this method check it is discount is available or not
     public boolean checkDiscount(String discountName) {
-        boolean state = false;
+        boolean state = false; // set state
         //get count of lines in current file
         int lineCount = fileLengthCounter("D:\\project final\\project final managment\\src\\files\\data\\discountDetails.txt");
 
