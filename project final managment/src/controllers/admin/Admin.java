@@ -125,7 +125,7 @@ public class Admin {
     //this method open a page and adding new product in file
     @FXML
     void addProductAction(ActionEvent event) throws IOException {
-        globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/addNewProductPage.fxml", "add new product", 530, 120);
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/addNewProductPage.fxml", "add new product");
     }
 
     //this method changing profile image
@@ -175,7 +175,7 @@ public class Admin {
     //this method open a page and show all product
     @FXML
     void showProductAction(ActionEvent event) throws IOException {
-        globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/showAllProductPage.fxml", "show all product", 530, 120);
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/admin/showAllProductPage.fxml", "show all product");
     }
 
     //this method close current page and open login page

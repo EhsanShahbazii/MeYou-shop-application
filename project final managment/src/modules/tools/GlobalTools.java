@@ -124,7 +124,7 @@ public class GlobalTools {
         stage.close();
     }
 
-    public void openNewPageWithoutCloseCurrentPage(String pagePath, String title, double x, double y) throws IOException {
+    public void openNewPageWithoutCloseCurrentPage(String pagePath, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource(pagePath));
         Scene scene = new Scene(fxmlLoader.load());
@@ -133,8 +133,8 @@ public class GlobalTools {
         stage.setTitle(title);
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setX(x);
-        stage.setY(y);
+        stage.setX(530);
+        stage.setY(120);
         stage.show();
     }
 
