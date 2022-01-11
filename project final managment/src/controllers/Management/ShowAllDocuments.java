@@ -79,7 +79,7 @@ public class ShowAllDocuments implements Initializable {
     //this method close current page(show all document)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/managment/showAllDocumentPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 }
 

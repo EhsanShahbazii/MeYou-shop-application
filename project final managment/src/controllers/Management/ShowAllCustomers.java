@@ -53,6 +53,6 @@ public class ShowAllCustomers {
     //this method close current page(show all product)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/managment/showAllCustomerPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 }

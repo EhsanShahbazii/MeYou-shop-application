@@ -114,6 +114,6 @@ public class AddNewAdmin {
     //this method close current page(add new admin)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 }

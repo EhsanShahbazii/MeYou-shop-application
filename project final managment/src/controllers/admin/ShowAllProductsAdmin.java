@@ -54,7 +54,7 @@ public class ShowAllProductsAdmin {
     //this method close current page(show all products admin)
     @FXML
     void exitAction(ActionEvent event) {
-        globalTools.closeCurrentPage(exitButton, "/pages/admin/showAllProductPage.fxml");
+        globalTools.closeCurrentPage(exitButton);
     }
 
 }
