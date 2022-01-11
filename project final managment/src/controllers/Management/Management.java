@@ -2,12 +2,9 @@ package controllers.Management;
 
 import com.jfoenix.controls.JFXButton;
 import controllers.Login.Login;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
@@ -79,16 +76,6 @@ public class Management {
 
         //set data in own fields in personal information field
         fullNameTextField.setText(customerFullName);
-
-        //get current date from DateTimeFormatter and LocalDateTime
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        LocalDateTime now = LocalDateTime.now();
-
-        DigitalClock digitalClock = new DigitalClock();
-        digitalClock.LiveDateSwing(timeTextField);
-
-        //set current date adn show it
-        dateTextField.setText(dtf.format(now));
 
         //set user profile image
         File files = new File(userProfileImagePath);
