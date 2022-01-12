@@ -624,7 +624,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="455.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="AdigitalField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="455.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -632,7 +632,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="527.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="CDigitalField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="527.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -640,7 +640,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="491.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="BitdigitalField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="491.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>
@@ -648,7 +648,7 @@
                                           <Cursor fx:constant="DEFAULT" />
                                        </cursor>
                                     </JFXTextField>
-                                    <JFXTextField alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="563.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
+                                    <JFXTextField fx:id="DdigitalField" alignment="CENTER" editable="false" focusColor="#405aa800" layoutX="510.0" layoutY="563.0" prefHeight="26.0" prefWidth="110.0" unFocusColor="#4059a9">
                                        <font>
                                           <Font name="System Bold" size="12.0" />
                                        </font>

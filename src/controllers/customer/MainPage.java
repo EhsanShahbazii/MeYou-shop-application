@@ -132,6 +132,11 @@ public class MainPage {
             phoneNumber = phoneNumberTextField.getText();
             address = addressTextArea.getText();
 
+            AdigitalField.setText(Double.toString(Double.parseDouble(walletBalanceTextField.getText())*0.000002));
+            BitdigitalField.setText(Double.toString(Double.parseDouble(walletBalanceTextField.getText())*0.0007));
+            CDigitalField.setText(Double.toString(Double.parseDouble(walletBalanceTextField.getText())*0.02));
+            DdigitalField.setText(Double.toString(Double.parseDouble(walletBalanceTextField.getText())*0.000015));
+
             //read product information for set it in parts of suggest
             String[] productData = globalFileTools.fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
 
@@ -357,10 +362,10 @@ public class MainPage {
     public JFXTextField AdigitalField;
 
     @FXML
-    public JFXTextField CdigitalField;
+    public JFXTextField CDigitalField;
 
     @FXML
-    public JFXTextField DigitalField;
+    public JFXTextField DdigitalField;
 
     @FXML
     public JFXTextField BitdigitalField;
