@@ -354,6 +354,18 @@ public class MainPage {
     }
 
     @FXML
+    public JFXTextField AdigitalField;
+
+    @FXML
+    public JFXTextField CdigitalField;
+
+    @FXML
+    public JFXTextField DigitalField;
+
+    @FXML
+    public JFXTextField BitdigitalField;
+
+    @FXML
     private CategoryAxis xAxis;
 
     @FXML
