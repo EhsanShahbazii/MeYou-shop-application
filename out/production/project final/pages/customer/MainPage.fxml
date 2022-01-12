@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1044.0" style="-fx-background-color: trnsparent;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.MainPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="1044.0" style="-fx-background-color: trnsparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.customer.MainPage">
    <children>
       <AnchorPane layoutX="105.0" layoutY="149.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 20px;" styleClass="layout" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
@@ -705,6 +719,14 @@
                                        </image>
                                     </ImageView>
                                     <Text layoutX="724.0" layoutY="561.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text=" We support digital currencies!!!" wrappingWidth="100.7913818359375" />
+                                    <AreaChart fx:id="currencyChart" layoutX="3.0" layoutY="364.0" prefHeight="250.0" prefWidth="450.0">
+                                      <xAxis>
+                                        <CategoryAxis label="Month" side="BOTTOM" fx:id="xAxis" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis fx:id="yAxis" label="dollas" side="LEFT" />
+                                      </yAxis>
+                                    </AreaChart>
                                  </children>
                               </AnchorPane>
                            </content>

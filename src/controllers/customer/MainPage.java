@@ -8,8 +8,13 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.AreaChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
@@ -29,6 +34,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 public class MainPage {
 
@@ -47,6 +53,61 @@ public class MainPage {
     final ObservableList<String> walletComboBoxType = FXCollections.observableArrayList("10$", "20$", "50$", "100$", "500$", "Favorite");
 
     public void initialize() throws IOException {
+
+        XYChart.Series<String, Double> series1 = new XYChart.Series<>();
+
+        series1.setName("Bitcoin (BTC)");
+        series1.getData().add(new XYChart.Data<>("Jan", 40521.0));
+        series1.getData().add(new XYChart.Data<>("Feb", 42671.0));
+        series1.getData().add(new XYChart.Data<>("Mar", 45785.0));
+        series1.getData().add(new XYChart.Data<>("April", 46285.0));
+        series1.getData().add(new XYChart.Data<>("May", 49528.0));
+        series1.getData().add(new XYChart.Data<>("June", 54528.0));
+        series1.getData().add(new XYChart.Data<>("July", 50646.0));
+        series1.getData().add(new XYChart.Data<>("Sep", 47646.0));
+
+        XYChart.Series<String, Double> series2 = new XYChart.Series<>();
+
+        series2.setName("Ethereum (ETH)");
+        series2.getData().add(new XYChart.Data<>("Jan", 34467.0));
+        series2.getData().add(new XYChart.Data<>("Feb", 35867.0));
+        series2.getData().add(new XYChart.Data<>("Mar", 36467.0));
+        series2.getData().add(new XYChart.Data<>("April", 38467.0));
+        series2.getData().add(new XYChart.Data<>("May", 34467.0));
+        series2.getData().add(new XYChart.Data<>("June", 34117.0));
+        series2.getData().add(new XYChart.Data<>("July", 34967.0));
+        series2.getData().add(new XYChart.Data<>("Sep", 31967.0));
+
+        XYChart.Series<String, Double> series3 = new XYChart.Series<>();
+
+        series3.setName("Solana (SOL)");
+        series3.getData().add(new XYChart.Data<>("Jan", 18575.0));
+        series3.getData().add(new XYChart.Data<>("Feb", 19275.0));
+        series3.getData().add(new XYChart.Data<>("Mar", 19975.0));
+        series3.getData().add(new XYChart.Data<>("April", 22975.0));
+        series3.getData().add(new XYChart.Data<>("May", 19575.0));
+        series3.getData().add(new XYChart.Data<>("June", 18575.0));
+        series3.getData().add(new XYChart.Data<>("July", 20575.0));
+        series3.getData().add(new XYChart.Data<>("Sep", 27575.0));
+
+        XYChart.Series<String, Double> series4 = new XYChart.Series<>();
+
+        series4.setName("Solana (SOL)");
+        series4.getData().add(new XYChart.Data<>("Jan", 8575.0));
+        series4.getData().add(new XYChart.Data<>("Feb", 9275.0));
+        series4.getData().add(new XYChart.Data<>("Mar", 9975.0));
+        series4.getData().add(new XYChart.Data<>("April", 2975.0));
+        series4.getData().add(new XYChart.Data<>("May", 3575.0));
+        series4.getData().add(new XYChart.Data<>("June", 5575.0));
+        series4.getData().add(new XYChart.Data<>("July", 13575.0));
+        series4.getData().add(new XYChart.Data<>("Sep", 17575.0));
+
+        currencyChart.getData().add(series1);
+        currencyChart.getData().add(series2);
+        currencyChart.getData().add(series3);
+        currencyChart.getData().add(series4);
+
+
 
         //do this works when login is successful
         if (Login.loginIsDone) {
@@ -291,6 +352,15 @@ public class MainPage {
             anchorPane.getChildren().add(root1);
         }
     }
+
+    @FXML
+    private CategoryAxis xAxis;
+
+    @FXML
+    private NumberAxis yAxis;
+
+    @FXML
+    public AreaChart currencyChart;
 
     @FXML
     public JFXButton serviceButton;
