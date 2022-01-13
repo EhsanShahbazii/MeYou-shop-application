@@ -87,10 +87,8 @@ public class FinalPayment {
         if (!captchaTextField.getText().equals(captchaResult))
             globalTools.AlertShow("please enter captcha correct");
         else {
-
-            String amount = amountText.getText();
             //update wallet balance and add new balance
-            globalFileTools.updateWalletBalance(username, "-" + amount);
+            globalFileTools.updateWalletBalance(username, "-" + MainPage.cartAmount);
 
             //show successful alert
             globalTools.AlertShowInformation("Payment is successful!");
