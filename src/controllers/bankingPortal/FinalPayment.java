@@ -12,6 +12,8 @@ import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
 
+import java.io.FileNotFoundException;
+
 public class FinalPayment {
 
     //variables which are used
@@ -78,8 +80,22 @@ public class FinalPayment {
     }
 
     @FXML
-    void proceedAction(ActionEvent event) {
+    void proceedAction(ActionEvent event) throws FileNotFoundException {
 
+        if (!captchaTextField.getText().equals(captchaResult))
+            globalTools.AlertShow("please enter captcha correct");
+        else {
+            
+            String amount = amountText.getText();
+            //update wallet balance and add new balance
+            globalFileTools.updateWalletBalance(username, "-" + amount);
+
+            //show successful alert
+            globalTools.AlertShowInformation("Payment is successful!");
+
+            //close banking portal page and back to dashboard
+            globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/finalPaymentPage.fxml");
+        }
     }
 
 }
