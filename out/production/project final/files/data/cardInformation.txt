@@ -1,7 +1,3 @@
-ata
-home body
-1
-6.0
 samin
 home body
 1

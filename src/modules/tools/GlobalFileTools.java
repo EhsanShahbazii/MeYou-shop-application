@@ -295,7 +295,7 @@ public class GlobalFileTools {
         String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\ProductInformation.txt");
 
         for(int j = 1; j < array.size(); j= j+3) {
-            for (int i = 1; i < lineCount; i++) {
+            for (int i = 0; i < lineCount; i++) {
                 if (counter[i].equals(array.get(j))) {
 
                     int before = Integer.parseInt(counter[i+3]) - Integer.parseInt(array.get(j+1));

@@ -90,10 +90,13 @@ public class FinalPayment {
             //update wallet balance and add new balance
             globalFileTools.updateWalletBalance(username, "-" + MainPage.cartAmount);
 
+            globalFileTools.updateProductCount(selectAndBuyProduct.finalPayment(username));
+
             //show successful alert
             globalTools.AlertShowInformation("Payment is successful!");
 
             globalFileTools.addToHistoryPayment(selectAndBuyProduct.finalPayment(username));
+
             //close banking portal page and back to dashboard
             globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/finalPaymentPage.fxml");
         }
