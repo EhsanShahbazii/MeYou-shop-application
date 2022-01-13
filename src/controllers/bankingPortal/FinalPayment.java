@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import modules.files.SelectAndBuyProduct;
 import modules.tools.GlobalFileTools;
 import modules.tools.GlobalTools;
 import modules.tools.RandomData;
@@ -20,6 +21,7 @@ public class FinalPayment {
     GlobalTools globalTools = new GlobalTools();
     GlobalFileTools globalFileTools = new GlobalFileTools();
     RandomData randomData = new RandomData();
+    SelectAndBuyProduct selectAndBuyProduct = new SelectAndBuyProduct();
 
     String username, captcha, captchaResult;
 
@@ -85,13 +87,15 @@ public class FinalPayment {
         if (!captchaTextField.getText().equals(captchaResult))
             globalTools.AlertShow("please enter captcha correct");
         else {
-            
+
             String amount = amountText.getText();
             //update wallet balance and add new balance
             globalFileTools.updateWalletBalance(username, "-" + amount);
 
             //show successful alert
             globalTools.AlertShowInformation("Payment is successful!");
+
+            selectAndBuyProduct.finalPayment(username);
 
             //close banking portal page and back to dashboard
             globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/finalPaymentPage.fxml");
