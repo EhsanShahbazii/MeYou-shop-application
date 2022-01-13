@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GlobalFileTools {
@@ -248,6 +249,36 @@ public class GlobalFileTools {
             for (int i=0; i < lineCount; i++){
                 //write data format (data) \n
                 Library.writeBytes(counter[i] + "\n");
+            }
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
+    public void addToHistoryPayment(ArrayList<String> array) throws FileNotFoundException {
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userPaymentHistory.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\userPaymentHistory.txt");
+
+        //clear current file but file is safe
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userPaymentHistory.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
+
+        try {
+            //write data in file by random access file
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userPaymentHistory.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                //write data format (data) \n
+                Library.writeBytes(counter[i] + "\n");
+            }
+            for(int i = 0; i < array.size(); i++) {
+                //write data format (data) \n
+                Library.writeBytes(array.get(i) + "\n");
             }
         }catch (Exception exception){
             System.out.println(exception.toString());
