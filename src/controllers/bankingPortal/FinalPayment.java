@@ -69,7 +69,12 @@ public class FinalPayment {
 
     @FXML
     void nextCaptchaAction(ActionEvent event) {
-
+        //create new captcha logic
+        captcha = randomData.captchaData(1, 98);
+        //set captcha in field
+        captchaRandomTextField.setText(captcha);
+        //solve captcha and save it
+        captchaResult = randomData.captchaSolve(captcha);
     }
 
     @FXML
