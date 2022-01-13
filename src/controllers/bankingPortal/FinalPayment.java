@@ -1,6 +1,7 @@
 package controllers.bankingPortal;
 
 import com.jfoenix.controls.JFXButton;
+import controllers.customer.MainPage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,11 +19,20 @@ public class FinalPayment {
     GlobalFileTools globalFileTools = new GlobalFileTools();
     RandomData randomData = new RandomData();
 
+    String username;
+
+    public void initialize() {
+
+        username = MainPage.usernames;
+
+        globalTools.LimitedTextField(captchaTextField, 4);
+    }
+
     @FXML
     private Text amountText;
 
     @FXML
-    private TextField discountTextFIeld;
+    private TextField discountTextField;
 
     @FXML
     private TextField captchaRandomTextField;
