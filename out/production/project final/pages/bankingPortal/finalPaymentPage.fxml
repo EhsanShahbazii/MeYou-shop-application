@@ -46,7 +46,7 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <TextField fx:id="discountTextFIeld" alignment="CENTER" layoutX="217.0" layoutY="373.0" prefHeight="30.0" prefWidth="79.0">
+            <TextField fx:id="discountTextField" alignment="CENTER" layoutX="217.0" layoutY="373.0" prefHeight="30.0" prefWidth="79.0">
                <font>
                   <Font name="Calibri Bold" size="16.0" />
                </font>

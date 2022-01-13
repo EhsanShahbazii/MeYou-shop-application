@@ -46,7 +46,7 @@ public class MainPage {
 
     //static variables
     public static String chargeAmount = "0$";
-    public static String refundMethod;
+    public static String refundMethod, cartAmount;
     public static String usernames, fullName, email, phoneNumber, address;
 
     //this list use for items of charge wallet combo box
@@ -254,6 +254,7 @@ public class MainPage {
         ObservableList<Product> data = selectAndBuyProduct.tableData(Login.customer.getUsername());
         //set amount of total price in amount text field
         totalAmountCartTextField.setText(selectAndBuyProduct.totalAmount(usernames));
+        cartAmount = selectAndBuyProduct.totalAmount(usernames);
 
         cartTable.setItems(data); //set data in cart table
     }
