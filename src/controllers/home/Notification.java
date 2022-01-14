@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class Notification {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
 
     public void initialize() throws IOException {
@@ -53,14 +54,16 @@ public class Notification {
     @FXML
     private JFXButton deleteNotificationButton;
 
+    //this method is closeNotification pages
     @FXML
     void closeNotificationAction(ActionEvent event) {
         globalTools.closeCurrentPage(closeNotificationButton);
     }
 
+    //this method is delete notification
     @FXML
     void deleteNotificationAction(ActionEvent event) {
-
+        notificationScrollAnchor.getChildren().clear();
     }
 
 }
