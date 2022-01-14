@@ -40,6 +40,7 @@ public class RandomData {
         return Integer.toString(sts);
     }
 
+    //create codes for products
     public String createCode(String productName) {
         String result = "";
         int decimal = 0;
