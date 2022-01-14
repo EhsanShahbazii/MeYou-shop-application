@@ -208,6 +208,12 @@ public class MainPage {
                 }
             });
         }
+
+        if (Login.darkModeState == 1) {
+            darkModeToggle.setSelected(true);
+        }else {
+            darkModeToggle.setSelected(false);
+        }
     }
 
     public void getDataFromFile() {
@@ -593,11 +599,21 @@ public class MainPage {
         Stage primaryStage = (Stage) darkModeToggle.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/pages/customer/MainPage.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("./pages/css/darkMode.css");
+        System.out.println(Login.darkModeState);
         primaryStage.setTitle("Me and You");
         primaryStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
         primaryStage.show();
+        if (Login.darkModeState == 1) {
+            scene.getStylesheets().remove("./pages/css/homePageStyle.css");
+            scene.getStylesheets().add("./pages/css/darkMode.css");
+            Login.darkModeState = -1;
+        }else {
+            scene.getStylesheets().remove("./pages/css/darkMode.css");
+            scene.getStylesheets().add("./pages/css/homePageStyle.css");
+            Login.darkModeState = 1;
+        }
+
     }
 
     @FXML

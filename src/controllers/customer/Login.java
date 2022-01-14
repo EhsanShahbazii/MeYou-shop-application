@@ -19,6 +19,7 @@ public class Login {
     public GlobalTools globalTools = new GlobalTools();
     String username, password;
     public static boolean loginIsDone = false;
+    public static int darkModeState = 1;
 
     public void initialize() {
         //limit text field length
