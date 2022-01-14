@@ -3,6 +3,7 @@ package controllers.customer;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -24,6 +25,9 @@ public class ProductMainAnchorPane {
         //set in product count number 1
         productCountText.setText("1");
     }
+
+    @FXML
+    public Button priceHistoryButton;
 
     @FXML
     public Text newPrice;
@@ -233,6 +237,9 @@ public class ProductMainAnchorPane {
             countBefore--;
         }
         productCountText.setText(String.valueOf(countBefore));
+    }
+
+    public void priceLineChartAction(ActionEvent event) {
     }
 }
 
