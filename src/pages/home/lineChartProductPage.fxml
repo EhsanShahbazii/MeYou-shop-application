@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.home.ProductPriceLineChart">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="390.0" prefWidth="790.0" style="-fx-background-color: linear-gradient(to right top, #051937, #002841, #003339, #003c21, #2d4102); -fx-background-radius: 32px;">
+         <children>
+            <JFXButton fx:id="backServiceButton" layoutX="40.0" layoutY="345.0" onAction="#backServiceAction" style="-fx-background-color: #FF8267;" text="Back">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <AreaChart fx:id="lineChart" layoutX="45.0" layoutY="14.0" prefHeight="300.0" prefWidth="700.0">
+              <xAxis>
+                <CategoryAxis fx:id="xAxis" side="BOTTOM" tickLabelFill="WHITE" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" tickLabelFill="WHITE" />
+              </yAxis>
+            </AreaChart>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
