@@ -109,6 +109,7 @@ public class Signin {
             //write all information of customer in userInformation.txt file
             signinCustomer.signinNewCustomer(fullName, username, password, email, phoneNumber, address);
 
+            //this method add new profile image to userInformation.txt
             globalFileTools.addNewUserProfileImage(username);
 
             //show message when the register logic is not problem
