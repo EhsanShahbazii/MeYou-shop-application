@@ -54,8 +54,10 @@ public class MainPage {
 
     public void initialize() throws IOException {
 
+        //set series for area chart and show it
         XYChart.Series<String, Double> series1 = new XYChart.Series<>();
 
+        //set series data for show
         series1.setName("Bitcoin (BTC)");
         series1.getData().add(new XYChart.Data<>("Jan", 40521.0));
         series1.getData().add(new XYChart.Data<>("Feb", 42671.0));
@@ -66,8 +68,10 @@ public class MainPage {
         series1.getData().add(new XYChart.Data<>("July", 50646.0));
         series1.getData().add(new XYChart.Data<>("Sep", 47646.0));
 
+        //set series for area chart and show it
         XYChart.Series<String, Double> series2 = new XYChart.Series<>();
 
+        //set series data for show
         series2.setName("Ethereum (ETH)");
         series2.getData().add(new XYChart.Data<>("Jan", 34467.0));
         series2.getData().add(new XYChart.Data<>("Feb", 35867.0));
@@ -78,8 +82,10 @@ public class MainPage {
         series2.getData().add(new XYChart.Data<>("July", 34967.0));
         series2.getData().add(new XYChart.Data<>("Sep", 31967.0));
 
+        //set series for area chart and show it
         XYChart.Series<String, Double> series3 = new XYChart.Series<>();
 
+        //set series data for show
         series3.setName("Solana (SOL)");
         series3.getData().add(new XYChart.Data<>("Jan", 18575.0));
         series3.getData().add(new XYChart.Data<>("Feb", 19275.0));
@@ -90,8 +96,10 @@ public class MainPage {
         series3.getData().add(new XYChart.Data<>("July", 20575.0));
         series3.getData().add(new XYChart.Data<>("Sep", 27575.0));
 
+        //set series for area chart and show it
         XYChart.Series<String, Double> series4 = new XYChart.Series<>();
 
+        //set series data for show
         series4.setName("Solana (SOL)");
         series4.getData().add(new XYChart.Data<>("Jan", 8575.0));
         series4.getData().add(new XYChart.Data<>("Feb", 9275.0));
@@ -102,6 +110,7 @@ public class MainPage {
         series4.getData().add(new XYChart.Data<>("July", 13575.0));
         series4.getData().add(new XYChart.Data<>("Sep", 17575.0));
 
+        //adding series in chart
         currencyChart.getData().add(series1);
         currencyChart.getData().add(series2);
         currencyChart.getData().add(series3);
@@ -209,6 +218,7 @@ public class MainPage {
             });
         }
 
+        //set selected mode for toggle button dark mode
         if (Login.darkModeState == 1) {
             darkModeToggle.setSelected(true);
         }else {
@@ -216,7 +226,9 @@ public class MainPage {
         }
     }
 
+    //this method is getting called and data from files
     public void getDataFromFile() {
+
         //get current customer data from files
         String[] userDataInformation = globalFileTools.returnSpecificUserInformation(Login.customer.getUsername());
 
@@ -267,7 +279,9 @@ public class MainPage {
 
     //this is Exception methods for text field if they are empty or invalid
     public void exceptionForFields() {
-        boolean state = false;
+
+        boolean state = false; //this is for fields state
+
         //save text field data in variables
         String fullName = fullNameTextField.getText();
         String username = usernameTextField.getText();
@@ -533,19 +547,10 @@ public class MainPage {
     @FXML
     public JFXToggleButton darkModeToggle;
 
+    
     @FXML
     public void showServiceAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader();
-        fxmlLoader1.setLocation(getClass().getResource("/pages/home/sevicePage.fxml"));
-        Scene scene1 = new Scene(fxmlLoader1.load());
-        scene1.setFill(Color.TRANSPARENT);
-        Stage stage1 = new Stage();
-        stage1.setTitle("message");
-        stage1.setScene(scene1);
-        stage1.initStyle(StageStyle.TRANSPARENT);
-        stage1.setX(600);
-        stage1.setY(300);
-        stage1.show();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/home/sevicePage.fxml", "message", 600, 300);
     }
 
     @FXML

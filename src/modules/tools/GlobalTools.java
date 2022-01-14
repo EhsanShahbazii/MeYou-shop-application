@@ -163,4 +163,19 @@ public class GlobalTools {
         stage1.setY(130);
         stage1.show();
     }
+
+    //this method open new page without closing current page
+    public void openNewPageWithoutCloseCurrentPage(String pagePath, String title, double x, double y) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource(pagePath));
+        Scene scene = new Scene(fxmlLoader.load());
+        scene.setFill(Color.TRANSPARENT);
+        Stage stage = new Stage();
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setX(x);
+        stage.setY(y);
+        stage.show();
+    }
 }
