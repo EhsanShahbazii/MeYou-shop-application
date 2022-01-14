@@ -1,15 +1,8 @@
 package controllers.home;
 
-import controllers.customer.ProductAnchorPane;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-
-import java.io.File;
-import java.io.IOException;
 
 public class MessageComponent {
 
@@ -22,11 +15,11 @@ public class MessageComponent {
     @FXML
     private Text messageBodyTextField;
 
-    public AnchorPane getAnchorpane() {
+    public AnchorPane getAnchorPane() {
         return anchorpane;
     }
 
-    public void setAnchorpane(AnchorPane anchorpane) {
+    public void setAnchorPane(AnchorPane anchorpane) {
         this.anchorpane = anchorpane;
     }
 
