@@ -7,6 +7,7 @@ import modules.tools.GlobalTools;
 
 public class Service {
 
+    //variables which are used
     GlobalTools globalTools = new GlobalTools();
 
     @FXML
