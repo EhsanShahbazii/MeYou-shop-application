@@ -55,7 +55,7 @@ public class Message {
 
     @FXML
     void closeMessageAction(ActionEvent event) {
-        globalTools.closeCurrentPage(closeMessageButton, "/pages/home/messagePage.fxml");
+        globalTools.closeCurrentPage(closeMessageButton);
     }
 
     @FXML

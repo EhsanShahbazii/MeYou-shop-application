@@ -32,6 +32,7 @@ public class BankingPortal {
 
     public void initialize() {
 
+        //get username and save it
         username = MainPage.usernames;
 
         //limit text field length by 4 characters
@@ -137,7 +138,7 @@ public class BankingPortal {
     //go back to dashboard
     @FXML
     void cancelAction(ActionEvent event) {
-        globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
+        globalTools.closeCurrentPage(cancelButton);
     }
 
     //sent cvv to customer and show it
@@ -181,7 +182,7 @@ public class BankingPortal {
             globalTools.AlertShowInformation("Payment is successful!");
 
             //close banking portal page and back to dashboard
-            globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
+            globalTools.closeCurrentPage(cancelButton);
         }
     }
 }

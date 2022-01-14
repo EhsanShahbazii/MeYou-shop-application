@@ -68,7 +68,7 @@ public class FinalPayment {
 
     @FXML
     void cancelAction(ActionEvent event) {
-        globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/bankingPortal.fxml");
+        globalTools.closeCurrentPage(cancelButton);
     }
 
     @FXML
@@ -98,7 +98,7 @@ public class FinalPayment {
             globalFileTools.addToHistoryPayment(selectAndBuyProduct.finalPayment(username));
 
             //close banking portal page and back to dashboard
-            globalTools.closeCurrentPage(cancelButton, "./pages/bankingPortal/finalPaymentPage.fxml");
+            globalTools.closeCurrentPage(cancelButton);
         }
     }
 }
