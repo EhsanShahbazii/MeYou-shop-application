@@ -1,6 +1,8 @@
 package controllers.customer;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -40,6 +42,9 @@ public class ProductAnchorPane {
     }
 
     @FXML
+    public Button priceHistoryButton;
+
+    @FXML
     public AnchorPane anchorPane;
 
     @FXML
@@ -51,5 +56,7 @@ public class ProductAnchorPane {
     @FXML
     private ImageView imageViewProduct;
 
+    public void priceLineChartAction(ActionEvent event) {
+    }
 }
 
