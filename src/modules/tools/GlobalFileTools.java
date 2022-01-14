@@ -179,6 +179,35 @@ public class GlobalFileTools {
         }
     }
 
+    //set default wallet balance for new customer when sign in
+    public void addNewWalletBalance(String username) throws FileNotFoundException {
+        //get count of lines in current file
+        int lineCount = fileLengthCounter("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+
+        //set all data of a current file in array
+        String[] counter = fileAllRead("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+
+        //clear current file but file is safe
+        PrintWriter writer = new PrintWriter("D:\\project final\\src\\files\\data\\userWalletBalance.txt");
+        //set all data with empty string
+        writer.print("");
+        writer.close();
+
+        try {
+            //write data in file by random access file
+            RandomAccessFile Library = new RandomAccessFile("D:\\project final\\src\\files\\data\\userWalletBalance.txt", "rw");
+            Library.seek(Library.length());
+            for (int i=0; i < lineCount; i++){
+                //write data format (data) \n
+                Library.writeBytes(counter[i] + "\n");
+            }
+            Library.writeBytes(username + "\n");
+            Library.writeBytes("0"+ "\n");
+        }catch (Exception exception){
+            System.out.println(exception.toString());
+        }
+    }
+
     //update wallet balance in file
     public void updateWalletBalance(String username, String amount) throws FileNotFoundException {
 
