@@ -27,6 +27,10 @@
    -fx-background-radius: 20px;
 }
 
+.headerButton {
+     -fx-background-color: #D5D5D5;
+}
+
 .table-view .column-header,
 .table-view .column-header .filler,
 .table-view .column-header-background .filler {   
