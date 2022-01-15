@@ -34,7 +34,163 @@ The project consists of two main parts, which are:
 
 # :frowning_man:Customer part packages trees
 
-
+```
+src
+   |-- Main
+   |   |-- Controller.java
+   |   |-- Main.java
+   |-- controllers
+   |   |-- bankingPortal
+   |   |   |-- BankingPortal.java
+   |   |   |-- FinalPayment.java
+   |   |-- customer
+   |   |   |-- Login.java
+   |   |   |-- MainPage.java
+   |   |   |-- ProductAnchorPane.java
+   |   |   |-- ProductMainAnchorPane.java
+   |   |   |-- Signin.java
+   |   |-- home
+   |   |   |-- GiftCard.java
+   |   |   |-- Message.java
+   |   |   |-- MessageComponent.java
+   |   |   |-- Notification.java
+   |   |   |-- NotificationComponent.java
+   |   |   |-- ProductPriceLineChart.java
+   |   |   |-- Service.java
+   |-- files
+   |   |-- data
+   |   |   |-- ProductInformation.txt
+   |   |   |-- cardInformation.txt
+   |   |   |-- userInformation.txt
+   |   |   |-- userPaymentHistory.txt
+   |   |   |-- userProfileImage.txt
+   |   |   |-- userWalletBalance.txt
+   |   |   |-- usernameAndPassword.txt
+   |   |-- image
+   |   |   |-- book
+   |   |   |   |-- Atomic Habits.jpg
+   |   |   |   |-- Clean Code.jpg
+   |   |   |   |-- DS Kimetsu no Yaiba 1.jpg
+   |   |   |   |-- DS Kimetsu no Yaiba 3.jpg
+   |   |   |   |-- Death Note 1.jpg
+   |   |   |   |-- Ikigai.jpg
+   |   |   |   |-- The Midnight Library.jpg
+   |   |   |   |-- Yeni Hitit 3rd.jpg
+   |   |   |   |-- home body.jpg
+   |   |   |   |-- loki where mischief lies.jpg
+   |   |   |   |-- moriarty the patriot 1.jpg
+   |   |   |   |-- the words i wish i said.jpg
+   |   |   |-- gif
+   |   |   |   |-- spinner.gif
+   |   |   |-- gift card
+   |   |   |   |-- 25654-2-major-credit-card-logo-transparent.png
+   |   |   |   |-- img-716.jpg
+   |   |   |   |-- img-719.jpg
+   |   |   |   |-- img-721.jpg
+   |   |   |   |-- img-722.jpg
+   |   |   |   |-- img-724.jpg
+   |   |   |   |-- img-727.jpg
+   |   |   |-- icon
+   |   |   |   |-- 580b57fcd9996e24bc43c4f2.png
+   |   |   |   |-- 580b57fcd9996e24bc43c518.png
+   |   |   |   |-- 58419140a6515b1e0ad75a4c.png
+   |   |   |   |-- 5847e991cef1014c0b5e4826.png
+   |   |   |   |-- 5859902f4f6ae202fedf28d0.png
+   |   |   |   |-- 587b511a44060909aa603a81.png
+   |   |   |   |-- 587b518244060909aa603a8b.png
+   |   |   |   |-- 5a314c90cb9a85480a628f7f.png
+   |   |   |   |-- Ark-icon.png
+   |   |   |   |-- Bitcoin-BTC-icon.png
+   |   |   |   |-- Dollar-USD-icon.png
+   |   |   |   |-- Ethereum-ETH-icon.png
+   |   |   |   |-- change.png
+   |   |   |   |-- dec208a64b794e63a2dcae992d9c7f85.png
+   |   |   |   |-- icons8-account-64.png
+   |   |   |   |-- icons8-bell-48.png
+   |   |   |   |-- icons8-chart-64.png
+   |   |   |   |-- icons8-coin-63.png
+   |   |   |   |-- icons8-coin-64.png
+   |   |   |   |-- icons8-coins-64.png
+   |   |   |   |-- icons8-comment-64.png
+   |   |   |   |-- icons8-favorite-50.png
+   |   |   |   |-- icons8-favorite-60.png
+   |   |   |   |-- icons8-gift-64.png
+   |   |   |   |-- icons8-health-data-50.png
+   |   |   |   |-- icons8-home-60.png
+   |   |   |   |-- icons8-message-100.png
+   |   |   |   |-- icons8-movie-ticket-48.png
+   |   |   |   |-- icons8-search-64.png
+   |   |   |   |-- icons8-settings-50.png
+   |   |   |   |-- icons8-shopping-cart-50.png
+   |   |   |   |-- icons8-star-48.png
+   |   |   |   |-- icons8-wallet-48.png
+   |   |   |   |-- instagram-logo-24.png
+   |   |   |   |-- linkedin-square-logo-24.png
+   |   |   |   |-- mainIcon.png
+   |   |   |   |-- pngfind.com-tin-man-png-6105098.png
+   |   |   |   |-- telegram-logo-24.png
+   |   |   |   |-- twitter-logo-24.png
+   |   |   |   |-- whatsapp-logo-24.png
+   |   |   |   |-- \342\200\224Pngtree\342\200\224vector location icon_4231903.png"
+   |   |   |-- profile image
+   |   |   |   |-- 12-modified.png
+   |   |   |   |-- 2-modified.png
+   |   |   |   |-- 22-modified.png
+   |   |   |   |-- 30-modified.png
+   |   |   |   |-- 59-modified.png
+   |   |   |   |-- 64-modified.png
+   |   |   |   |-- 81-modified.png
+   |   |   |   |-- 82-modified.png
+   |   |   |   |-- 83-modified.png
+   |   |   |   |-- 92-modified.png
+   |   |   |   |-- 94-modified.png
+   |   |   |   |-- Man-1-icon.png
+   |   |   |   |-- Man-14-icon.png
+   |   |   |   |-- Man-16-icon.png
+   |   |   |   |-- Man-6-icon.png
+   |   |   |   |-- Man-9-icon.png
+   |   |   |   |-- Woman-15-icon.png
+   |   |   |   |-- Woman-9-icon.png
+   |   |   |-- service
+   |   |   |   |-- icons8-lock-100.png
+   |   |   |   |-- icons8-service-100.png
+   |   |   |   |-- icons8-truck-100.png
+   |-- modules
+   |   |-- files
+   |   |   |-- LoginCustomer.java
+   |   |   |-- SelectAndBuyProduct.java
+   |   |   |-- SigninCustomer.java
+   |   |-- objects
+   |   |   |-- Customer.java
+   |   |   |-- Product.java
+   |   |-- tools
+   |   |   |-- GlobalFileTools.java
+   |   |   |-- GlobalTools.java
+   |   |   |-- RandomData.java
+   |-- pages
+   |   |-- bankingPortal
+   |   |   |-- bankingPortal.fxml
+   |   |   |-- finalPaymentPage.fxml
+   |   |-- css
+   |   |   |-- LoginStyle.css
+   |   |   |-- bankingPortalStyle.css
+   |   |   |-- darkMode.css
+   |   |   |-- homePageStyle.css
+   |   |-- customer
+   |   |   |-- LoginPage.fxml
+   |   |   |-- MainPage.fxml
+   |   |   |-- SigninPage.fxml
+   |   |   |-- productAnchorPane.fxml
+   |   |   |-- productMainAnchorPane.fxml
+   |   |-- home
+   |   |   |-- giftCardPage.fxml
+   |   |   |-- lineChartProductPage.fxml
+   |   |   |-- messageComponentPage.fxml
+   |   |   |-- messagePage.fxml
+   |   |   |-- notificationComponentPage.fxml
+   |   |   |-- notificationPage.fxml
+   |   |   |-- sevicePage.fxml
+```
 
 # :frowning_man:Customer part details
 
@@ -62,7 +218,8 @@ There are several options, some of which are as follows:
 
 With this method, we perform the process of sending emails:
 
-`public static void sendEmail(Session session, String toEmail, String subject, String body)`
+```
+public static void sendEmail(Session session, String toEmail, String subject, String body) {
         
        MimeMessage msg = new MimeMessage(session);
        //set message headers
@@ -77,3 +234,5 @@ With this method, we perform the process of sending emails:
        msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
        System.out.println("Message is ready");
        Transport.send(msg);
+}
+```
