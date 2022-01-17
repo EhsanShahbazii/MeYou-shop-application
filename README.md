@@ -495,3 +495,11 @@ Options that can be used in the dashboard are:
    |   |   |   |-- showAllDocumentPage.fxml
    |   |   |   |-- showAllProductPage.fxml
 ```
+
+# :office_worker:Management part details
+
+### This is preview of login page in management app
+![This is preview of login page in management app](loginManagementPreview.jpg)
+
+### This is preview of home page in management app
+![This is preview of home page in management app](managementDashboardPreview.jpg)
