@@ -348,3 +348,14 @@ I will work on the graphics of the project and make its model more modern. I als
 # :dizzy:Dashboard preview
 ![dashboard preview image](rsz_1dashboardpreview.png)
 
+Options that can be used in the dashboard are:
+1. You can **change your profile picture** as you wish
+2. On the right you will see your **personal information** and you can **edit it** whenever you want.
+3. Next to your profile picture you will see the **amount of money** you have in your **wallet**.
+4. You can **recharge your wallet**.
+5. You can hit the gift card and **charge your wallet** with the gift cards that your friends have given you.
+6. At the bottom left of the page you can see the **value of each digital currency** by month.
+7. You can also make **purchases with digital currencies** (not yet available)
+8. You can choose your **location or country** and do not need to enter the address manually (not yet available)
+9. There is also **Dark Mode and Light Mode** and you can use it according to your taste
+10. **Automatically switches** the theme to Dark Mode or Light Mode (not yet available)
