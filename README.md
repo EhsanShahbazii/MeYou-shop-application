@@ -514,3 +514,14 @@ Options that Management can be used in the dashboard are:
 7. On the right, it sees the **date and time** live.
 8. **change your profile picture** as he wish
 9. see the **number and profit of goods instantly** at the bottom of the page.
+
+<hr>
+
+### This is preview of document part in management app
+![This is preview of document part in management app](documentManagementPreview.jpg)
+
+According to Article 165.2 of the Constitution, the taxes paid by digital and marketing companies are based on the 9% value added tax for you, with the information that we have from the company's net profit, and the calculations made on the tax result to be paid are as follows By paying taxes on time, you can also get rewards, and on the contrary, you will receive heavy fines for not paying taxes.<br>
+
+In the chart above, the profits that the company is supposed to make by selling the goods are drawn according to each product and its selling price.The total assets of the company, including net profit and value added, and transportation and storage costs of goods are as follows<br>
+
+The algorithm for calculating this number is such that it subtracts taxes and VAT from the total sales prices and gross profit, and then reduces the cost of transporting and storing goods, and finally obtains this number.<br>
