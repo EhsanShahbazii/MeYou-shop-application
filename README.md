@@ -526,8 +526,14 @@ In the chart above, the profits that the company is supposed to make by selling 
 
 The algorithm for calculating this number is such that it subtracts taxes and VAT from the total sales prices and gross profit, and then reduces the cost of transporting and storing goods, and finally obtains this number.<br>
 
-<hr>
+
 # :office_worker:Admin part details
 
   ### This is preview of Admin page in app
 ![This is preview of Admin page in management app](rsz_adminpreview.png)
+
+Options that Admin can be used in the dashboard are:
+1. **Add goods** to the warehouse.
+2. **Remove goods** from the warehouse.
+3. **Add the number** of goods in stock.
+4. **See** the list of all goods.
