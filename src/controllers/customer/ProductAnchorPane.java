@@ -6,8 +6,15 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import modules.tools.GlobalTools;
+
+import java.io.IOException;
 
 public class ProductAnchorPane {
+
+    GlobalTools globalTools = new GlobalTools();
+
+    public static String price, productName;
 
     public Text getPriceText() {
         return priceText;
@@ -56,7 +63,10 @@ public class ProductAnchorPane {
     @FXML
     private ImageView imageViewProduct;
 
-    public void priceLineChartAction(ActionEvent event) {
+    public void priceLineChartAction(ActionEvent event) throws IOException {
+        price = priceText.getText();
+        productName = detailsText.getText();
+        globalTools.openNewPageWithoutCloseCurrentPage("/pages/home/lineChartProductPage.fxml", "price history", 600, 300);
     }
 }
 

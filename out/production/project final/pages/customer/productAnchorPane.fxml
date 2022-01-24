@@ -33,7 +33,7 @@
                   <Image url="@../../files/image/icon/Dollar-USD-icon.png" />
                </image>
             </ImageView>
-            <Button layoutX="6.0" layoutY="49.0" mnemonicParsing="false" style="-fx-background-color: none;">
+            <Button fx:id="priceHistoryButton" layoutX="6.0" layoutY="49.0" mnemonicParsing="false" onAction="#priceLineChartAction" style="-fx-background-color: none;">
                <graphic>
                   <ImageView fitHeight="19.0" fitWidth="19.0">
                      <image>
