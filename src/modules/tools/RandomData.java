@@ -51,4 +51,13 @@ public class RandomData {
         return result;
     }
 
+    //
+    public double[] create7RandomNumbers() {
+        double[] array = new double[7];
+        for (int i = 0; i < 7; i++) {
+            array[i] = Double.parseDouble(randomNumberCreator(-5, 15));
+        }
+        return array;
+    }
+
 }
