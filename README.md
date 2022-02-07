@@ -6,7 +6,19 @@ This project is related to the final project of the Tabriz University computer b
 :red_circle:The **path** where the project folder should be placed is **D** driver. it's important notice.<br>
 because in javaFile i write absolute path of files like below:<br>
 `D:\project final\src\files\data\cardInformation.txt`<br><br>
-:red_circle:**Java** must be installed on your system first. Then add the **JFoenix** and **JavaFX** libraries to the project.<br>
+:red_circle:**Java** must be installed on your system first. Then add the **JFoenix** and **JavaFX** libraries to the project.<hr>
+
+#### :yellow_circle:Install Java
+Download an appropriate JDK for your operating system. The latest JDK can be downloaded from the official [OpenJDK](http://jdk.java.net/11/) website.<br>
+Once installed, you can use the `java` command from your command line.<br><br>
+Check if the correct java version is installed. The following shows the output for OpenJDK 15:
+```
+$ java -version
+openjdk version "15" 2020-09-15
+OpenJDK Runtime Environment (build 15+36-1562)
+OpenJDK 64-Bit Server VM (build 15+36-1562, mixed mode, sharing)
+```
+You need to set the **JAVA_HOME** environment variable to the JDK installation directory. You can follow [this guide](https://www.baeldung.com/java-home-on-windows-7-8-10-mac-os-x-linux) to set JAVA_HOME for your platform.<hr>
 
 Libraries and their versions:
 - javafx-sdk-**11.0.2**
@@ -17,6 +29,8 @@ Libraries and their versions:
   - [download activation-1.1.1 jar file from here](https://jar-download.com/artifacts/javax.activation/activation/1.1.1/source-code)
 - javax.mail
   - [download javax.mail jar file from here](https://javaee.github.io/javamail/#Latest_News)
+
+#### :yellow_circle:Add Library
 
 Download these ready-made libraries and add them to your project:<br>
 
