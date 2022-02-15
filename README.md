@@ -210,6 +210,12 @@ src
 
 # :frowning_man:Customer part details
 
+### This is preview of login page in customer app
+![This is preview of login page in customer app](loginPreview.jpg)
+
+### This is preview of home page in customer app
+![This is preview of home page in customer app](homePagePreview.jpg)
+
 We will first go into the details of the client project. this project made by :fire:**Java** and graphics of the program are written by **Java FX**, :rocket:**JFoenix**  useful library and the data storage part is written by **Java File**.
 
 The customer part is divided into several parts, which are:
