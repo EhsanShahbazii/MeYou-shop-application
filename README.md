@@ -341,3 +341,10 @@ public class MailSender {
 
 
 ```
+<hr>
+This project is not complete yet and many options will be added to the project in the near future. It is just a project version 1.0.1.<br>
+I will work on the graphics of the project and make its model more modern. I also plan to create a real authentication protocol in the project.<br>
+  
+# :dizzy:Dashboard preview
+![dashboard preview image](rsz_1dashboardpreview.png)
+
