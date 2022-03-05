@@ -48,7 +48,7 @@ The project consists of two main parts, which are:
 - :frowning_man:Customer application
 - :office_worker:Management application
 
-# :frowning_man:Customer part packages trees
+# :frowning_man:Customer part packages tree
 
 ```
 src
@@ -346,7 +346,7 @@ This project is not complete yet and many options will be added to the project i
 I will work on the graphics of the project and make its model more modern. I also plan to create a real authentication protocol in the project.<br>
   
 # :dizzy:Dashboard preview
-![dashboard preview image](rsz_1dashboardpreview.png)
+![dashboard preview image](rsz_dashboardpreview.png)
 
 Options that can be used in the dashboard are:
 1. You can **change your profile picture** as you wish
@@ -359,3 +359,139 @@ Options that can be used in the dashboard are:
 8. You can choose your **location or country** and do not need to enter the address manually (not yet available)
 9. There is also **Dark Mode and Light Mode** and you can use it according to your taste
 10. **Automatically switches** the theme to Dark Mode or Light Mode (not yet available)
+<hr>
+
+# :office_worker:Management part packages tree
+```
+ |-- project final managment.iml
+   |-- src
+   |   |-- Main
+   |   |   |-- Controller.java
+   |   |   |-- Main.java
+   |   |-- controllers
+   |   |   |-- Login
+   |   |   |   |-- Login.java
+   |   |   |-- Management
+   |   |   |   |-- AddNewAdmin.java
+   |   |   |   |-- AddNewDiscount.java
+   |   |   |   |-- Management.java
+   |   |   |   |-- ShowAllAdmins.java
+   |   |   |   |-- ShowAllCustomers.java
+   |   |   |   |-- ShowAllDocuments.java
+   |   |   |   |-- ShowAllProducts.java
+   |   |   |-- admin
+   |   |   |   |-- AddNewProduct.java
+   |   |   |   |-- Admin.java
+   |   |   |   |-- ShowAllProductsAdmin.java
+   |   |-- files
+   |   |   |-- data
+   |   |   |   |-- adminProfiles.txt
+   |   |   |   |-- discountDetails.txt
+   |   |   |   |-- managementAndAdminLogin.txt
+   |   |   |   |-- managementProfile.txt
+   |   |   |   |-- userProfileImages.txt
+   |   |   |-- image
+   |   |   |   |-- book
+   |   |   |   |   |-- Clean Code.jpg
+   |   |   |   |   |-- Death Note 1.jpg
+   |   |   |   |   |-- Yeni Hitit 3rd.jpg
+   |   |   |   |   |-- home body.jpg
+   |   |   |   |   |-- the words i wish i said.jpg
+   |   |   |   |-- gif
+   |   |   |   |   |-- spinner.gif
+   |   |   |   |-- gift card
+   |   |   |   |   |-- img-716.jpg
+   |   |   |   |   |-- img-719.jpg
+   |   |   |   |   |-- img-721.jpg
+   |   |   |   |   |-- img-722.jpg
+   |   |   |   |   |-- img-724.jpg
+   |   |   |   |   |-- img-727.jpg
+   |   |   |   |-- icon
+   |   |   |   |   |-- 580b57fcd9996e24bc43c4f2.png
+   |   |   |   |   |-- 580b57fcd9996e24bc43c518.png
+   |   |   |   |   |-- 58419140a6515b1e0ad75a4c.png
+   |   |   |   |   |-- 5847e991cef1014c0b5e4826.png
+   |   |   |   |   |-- 5859902f4f6ae202fedf28d0.png
+   |   |   |   |   |-- 587b511a44060909aa603a81.png
+   |   |   |   |   |-- 587b518244060909aa603a8b.png
+   |   |   |   |   |-- 5a314c90cb9a85480a628f7f.png
+   |   |   |   |   |-- Ark-icon.png
+   |   |   |   |   |-- Bitcoin-BTC-icon.png
+   |   |   |   |   |-- Dollar-USD-icon.png
+   |   |   |   |   |-- Ethereum-ETH-icon.png
+   |   |   |   |   |-- change.png
+   |   |   |   |   |-- dec208a64b794e63a2dcae992d9c7f85.png
+   |   |   |   |   |-- icons8-account-64.png
+   |   |   |   |   |-- icons8-bell-48.png
+   |   |   |   |   |-- icons8-chart-64.png
+   |   |   |   |   |-- icons8-coin-63.png
+   |   |   |   |   |-- icons8-coin-64.png
+   |   |   |   |   |-- icons8-coins-64.png
+   |   |   |   |   |-- icons8-comment-64.png
+   |   |   |   |   |-- icons8-favorite-50.png
+   |   |   |   |   |-- icons8-favorite-60.png
+   |   |   |   |   |-- icons8-gift-64.png
+   |   |   |   |   |-- icons8-health-data-50.png
+   |   |   |   |   |-- icons8-home-60.png
+   |   |   |   |   |-- icons8-movie-ticket-48.png
+   |   |   |   |   |-- icons8-search-64.png
+   |   |   |   |   |-- icons8-settings-50.png
+   |   |   |   |   |-- icons8-shopping-cart-50.png
+   |   |   |   |   |-- icons8-star-48.png
+   |   |   |   |   |-- icons8-wallet-48.png
+   |   |   |   |   |-- instagram-logo-24.png
+   |   |   |   |   |-- linkedin-square-logo-24.png
+   |   |   |   |   |-- mainIcon.png
+   |   |   |   |   |-- pngfind.com-tin-man-png-6105098.png
+   |   |   |   |   |-- telegram-logo-24.png
+   |   |   |   |   |-- twitter-logo-24.png
+   |   |   |   |   |-- whatsapp-logo-24.png
+   |   |   |   |   |-- \342\200\224Pngtree\342\200\224vector location icon_4231903.png"
+   |   |   |   |-- profile image
+   |   |   |   |   |-- Man-1-icon.png
+   |   |   |   |   |-- Man-14-icon.png
+   |   |   |   |   |-- Man-16-icon.png
+   |   |   |   |   |-- Man-6-icon.png
+   |   |   |   |   |-- Man-9-icon.png
+   |   |   |   |   |-- Woman-15-icon.png
+   |   |   |   |   |-- Woman-9-icon.png
+   |   |   |   |-- service
+   |   |   |   |   |-- icons8-lock-100.png
+   |   |   |   |   |-- icons8-service-100.png
+   |   |   |   |   |-- icons8-truck-100.png
+   |   |-- modules
+   |   |   |-- charts
+   |   |   |   |-- LineChartData.java
+   |   |   |   |-- PieChartData.java
+   |   |   |-- files
+   |   |   |   |-- LoginCheck.java
+   |   |   |   |-- SigninAdmin.java
+   |   |   |-- object
+   |   |   |   |-- Discount.java
+   |   |   |   |-- Person.java
+   |   |   |   |-- Product.java
+   |   |   |-- tools
+   |   |   |   |-- DigitalClock.java
+   |   |   |   |-- DigitalTime.java
+   |   |   |   |-- GlobalFileTools.java
+   |   |   |   |-- GlobalTools.java
+   |   |   |   |-- RandomData.java
+   |   |-- pages
+   |   |   |-- admin
+   |   |   |   |-- addNewProductPage.fxml
+   |   |   |   |-- adminPage.fxml
+   |   |   |   |-- showAllProductPage.fxml
+   |   |   |-- css
+   |   |   |   |-- loginStyle.css
+   |   |   |   |-- tableStyle.css
+   |   |   |-- login
+   |   |   |   |-- LoginPage.fxml
+   |   |   |-- managment
+   |   |   |   |-- addNewAdmin.fxml
+   |   |   |   |-- addNewDiscountPage.fxml
+   |   |   |   |-- managementPage.fxml
+   |   |   |   |-- showAllAdminPage.fxml
+   |   |   |   |-- showAllCustomerPage.fxml
+   |   |   |   |-- showAllDocumentPage.fxml
+   |   |   |   |-- showAllProductPage.fxml
+```
