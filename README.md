@@ -503,3 +503,14 @@ Options that can be used in the dashboard are:
 
 ### This is preview of home page in management app
 ![This is preview of home page in management app](managementDashboardPreview.jpg)
+
+Options that Management can be used in the dashboard are:
+1. view all **customer information** except their **password**.
+2. view all **employee information**.
+3. view all the **information of the goods** that are in **stock**.
+4. View the **discount code** and create a **new discount code**.
+5. Hire a **new employee** and save the information.
+6. View **documentation and all purchase information, profits and taxes**.
+7. On the right, it sees the **date and time** live.
+8. **change your profile picture** as he wish
+9. see the **number and profit of goods instantly** at the bottom of the page.
