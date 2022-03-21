@@ -525,3 +525,9 @@ According to Article 165.2 of the Constitution, the taxes paid by digital and ma
 In the chart above, the profits that the company is supposed to make by selling the goods are drawn according to each product and its selling price.The total assets of the company, including net profit and value added, and transportation and storage costs of goods are as follows<br>
 
 The algorithm for calculating this number is such that it subtracts taxes and VAT from the total sales prices and gross profit, and then reduces the cost of transporting and storing goods, and finally obtains this number.<br>
+
+<hr>
+# :office_worker:Admin part details
+
+  ### This is preview of Admin page in app
+![This is preview of Admin page in management app](rsz_adminpreview.png)
