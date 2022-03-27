@@ -520,6 +520,7 @@ Options that Management can be used in the dashboard are:
 ### This is preview of document part in management app
 ![This is preview of document part in management app](documentManagementPreview.jpg)
 
+
 According to Article 165.2 of the Constitution, the taxes paid by digital and marketing companies are based on the 9% value added tax for you, with the information that we have from the company's net profit, and the calculations made on the tax result to be paid are as follows By paying taxes on time, you can also get rewards, and on the contrary, you will receive heavy fines for not paying taxes.<br>
 
 In the chart above, the profits that the company is supposed to make by selling the goods are drawn according to each product and its selling price.The total assets of the company, including net profit and value added, and transportation and storage costs of goods are as follows<br>
@@ -537,3 +538,5 @@ Options that Admin can be used in the dashboard are:
 2. **Remove goods** from the warehouse.
 3. **Add the number** of goods in stock.
 4. **See** the list of all goods.
+
+To delete a product, select it in the table and click the delete product button. To increase the number of goods, you can enter the number of new goods in the text field below and then click the increase goods buttonTo add a new product, you can also click the Add Product button and enter product information
