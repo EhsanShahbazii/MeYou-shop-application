@@ -517,6 +517,7 @@ Options that Management can be used in the dashboard are:
 
 <hr>
 
+
 ### This is preview of document part in management app
 ![This is preview of document part in management app](documentManagementPreview.jpg)
 
