@@ -544,3 +544,4 @@ Options that Admin can be used in the dashboard are:
 To delete a product, select it in the table and click the delete product button. To increase the number of goods, you can enter the number of new goods in the text field below and then click the increase goods buttonTo add a new product, you can also click the Add Product button and enter product information
 
 :) updating comming soon
+ 
