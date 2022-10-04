@@ -1,5 +1,5 @@
 # Me-You-shop-app
-## this is shop app made by java for university project. (updating)
+## this is shop app made by java for university project.
 It will be written with the database soon and new features will be added!
 
 This project is related to the final project of the Tabriz University computer basics course. The limitations that should not be broken by me in this project is that I am not allowed to use the database and I can only use the **JavaFile**. That's why I did not want to implement many options with **JavaFile**, and next semester I will develop this project with a **database** and add many options.<hr>
